@@ -1,0 +1,7 @@
+mutation CreateFile($data: FileCreateInput!) {
+    createFile(data: $data) {
+        id
+        uploadPath
+        storageKey
+    }
+}
