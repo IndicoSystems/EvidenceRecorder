@@ -5,9 +5,9 @@ struct EvidenceButtonStyle: ButtonStyle {
     
     var clipShape: ClipShape
     
-    enum ClipShape: String, CaseIterable, Shape {
-        case capsule = "Capsule"
-        case roundedRect = "Rounded Rectangle"
+    enum ClipShape: Shape {
+        case capsule
+        case roundedRect
         
         func path(in rect: CGRect) -> Path {
             switch self {
