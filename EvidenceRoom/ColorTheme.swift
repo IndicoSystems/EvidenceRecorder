@@ -6,4 +6,5 @@ extension Color {
     static let primary = Color("colorPrimary")
     static let secondary = Color("colorSecondary")
     static let text = Color("colorText")
+    static let card = Color("colorCard")
 }
