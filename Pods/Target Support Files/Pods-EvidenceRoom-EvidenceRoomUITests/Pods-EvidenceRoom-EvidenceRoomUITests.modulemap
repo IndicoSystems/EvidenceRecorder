@@ -1,0 +1,6 @@
+framework module Pods_EvidenceRoom_EvidenceRoomUITests {
+  umbrella header "Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
