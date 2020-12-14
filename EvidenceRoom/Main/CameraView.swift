@@ -83,19 +83,11 @@ struct CameraView: View {
                     .foregroundColor(Color.red)
             }
             
-            Button {
+            Button(viewModel.isPreviewing ? "Hide preview" : "Show preview") {
                 viewModel.isPreviewing.toggle()
-            } label: {
-                Text(viewModel.isPreviewing ? "Hide preview" : "Show preview")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 48)
-                    .padding(.vertical, 25)
             }
-            .background(Color.secondary)
-            .clipShape(Capsule())
-            .shadow(radius: 4)
-            .padding(.top)
+            .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
+            
         }
         .frame(width: 500, height: 500)
         .padding()

@@ -48,12 +48,7 @@ struct MainView: View {
                     if viewModel.cameras.count > 0 {
                         ForEach(viewModel.cameraViewModels, id: \.camera.ip) { viewModel in
                             CameraView(viewModel: viewModel)
-                            
                         }
-//                        ForEach(viewModel.cameras, id: \.ip) { camera in
-//                            let cameraViewModel = CameraViewModel(camera: camera)
-//                            CameraView(viewModel: cameraViewModel)
-//                        }
                     } else {
                         Text("No cameras found")
                             .font(.caption)
@@ -61,23 +56,14 @@ struct MainView: View {
                 }
             }
             
-            Button {
+            Button(isRecordingFromAllCameras ? "Stop all cameras" : "Start all cameras") {
                 for cameraViewModel in viewModel.cameraViewModels {
                     isRecordingFromAllCameras ? cameraViewModel.stopRecording() : cameraViewModel.startRecording()
                 }
                 
                 isRecordingFromAllCameras.toggle()
-            } label: {
-                Text(isRecordingFromAllCameras ? "Stop all cameras" : "Start all cameras")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 48)
-                    .padding(.vertical, 25)
             }
-            .background(Color.secondary)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            .shadow(radius: 4)
-            .padding(.top)
+            .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .roundedRect))
         }
     }
 }
