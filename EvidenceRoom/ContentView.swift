@@ -15,7 +15,7 @@ struct ContentView: View {
                         .font(.custom("MetroDF", size: 56))
                         .foregroundColor(.text)
                     Text("Evidence Recorder")
-                        .font(.custom("MetroDF", size: 27))
+                        .font(.custom("Roboto-Regular", size: 27))
                         .foregroundColor(.text)
                 }
                 .padding(.top)

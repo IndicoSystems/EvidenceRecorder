@@ -19,7 +19,7 @@ struct EvidenceButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.custom("Roboto", size: 16, relativeTo: .headline))
+            .font(.custom("Roboto-Regular", size: 16, relativeTo: .headline))
             .foregroundColor(.white)
             .padding(.horizontal, 48)
             .padding(.vertical, 25)
