@@ -9,18 +9,49 @@ struct LoginView: View {
     
     var body: some View {
         
-        Form {
-            TextField("Host", text: $host) { changed in
-                
-            } onCommit: {
-                authClient.signIn(withHost: host)
-            }
+        ZStack {
+            Color.background
             
-            Button("Sign in") {
-                authClient.signIn(withHost: host)
-                hideKeyboard()
+            VStack {
+                TitleView()
+                    .foregroundColor(.text)
+                VStack(alignment: .leading) {
+                    Text("Sign in to server")
+                        .font(.custom("Roboto-Regular", size: 32))
+                        .foregroundColor(.text)
+                        .padding()
+                    
+                    HStack {
+                        Text("https://")
+                            .font(.custom("Roboto-Regular", size: 16))
+                            .foregroundColor(.text)
+                        
+                        TextField("Host", text: $host) { changed in
+                            
+                        } onCommit: {
+                            authClient.signIn(withHost: host)
+                        }
+                        .textFieldStyle(EvidenceTextFieldStyle())
+                        .autocapitalization(.none)
+                    }
+                    .padding(.horizontal)
+                                        
+                    HStack {
+                        Spacer()
+                        
+                        Button("Sign in") {
+                            authClient.signIn(withHost: host)
+                        }
+                        .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
+                        .padding()
+                    }
+                }
+                .background(Color.card)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .padding()
             }
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

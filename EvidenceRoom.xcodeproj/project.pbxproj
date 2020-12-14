@@ -19,6 +19,7 @@
 		C211648E258261BB00FC788F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211648D258261BB00FC788F /* WebView.swift */; };
 		C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C216CC7F255BC22A00699CA5 /* LoginView.swift */; };
 		C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */; };
+		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
 		C24F6681257518DA00D6A62C /* AddCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */; };
 		C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */; };
 		C24F668D2575277D00D6A62C /* AddCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */; };
@@ -78,6 +79,7 @@
 		C211648D258261BB00FC788F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		C216CC7F255BC22A00699CA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceButtonStyle.swift; sourceTree = "<group>"; };
+		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCameraViewModel.swift; sourceTree = "<group>"; };
 		C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNetworkingClient.swift; sourceTree = "<group>"; };
 		C285D074255D959200271787 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				C2A43603255579D5004479E0 /* AppDelegate.swift */,
 				C2A43605255579D5004479E0 /* SceneDelegate.swift */,
 				C2A43607255579D5004479E0 /* ContentView.swift */,
+				C242638A2587935900BC3005 /* TitleView.swift */,
 				C2116437257F92EE00FC788F /* API.swift */,
 				C2116426257F8A7500FC788F /* schema.json */,
 				C216CC7F255BC22A00699CA5 /* LoginView.swift */,
@@ -524,6 +527,7 @@
 				C2A43608255579D5004479E0 /* ContentView.swift in Sources */,
 				C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */,
 				C2A4364025557C4A004479E0 /* MainViewMenuItem.swift in Sources */,
+				C242638B2587935900BC3005 /* TitleView.swift in Sources */,
 				C211648E258261BB00FC788F /* WebView.swift in Sources */,
 				C2116438257F92EE00FC788F /* API.swift in Sources */,
 				C2A678972577D3950022D16B /* RecordingModel.swift in Sources */,

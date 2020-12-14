@@ -10,20 +10,11 @@ struct ContentView: View {
         ZStack {
             Color.background
             VStack {
-                VStack {
-                    Text("indico")
-                        .font(.custom("MetroDF", size: 56))
-                        .foregroundColor(.text)
-                    Text("Evidence Recorder")
-                        .font(.custom("Roboto-Regular", size: 27))
-                        .foregroundColor(.text)
-                }
-                .padding(.top)
+                TitleView()
+                    .padding(.top)
                 Spacer()
                 MainView()
-                    .sheet(isPresented: $authClient.isSignedOut, content: {
-                        LoginView()
-                    })
+                    .fullScreenCover(isPresented: $authClient.isSignedOut, content: LoginView.init)
                 Spacer()
             }
         }.edgesIgnoringSafeArea(.all)
