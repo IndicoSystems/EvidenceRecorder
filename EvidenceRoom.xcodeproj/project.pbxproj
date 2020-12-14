@@ -1,0 +1,914 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2ED1269DED803A59285D83FA /* Pods_EvidenceRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47760F72D0C901320F71599E /* Pods_EvidenceRoom.framework */; };
+		54789189252A2F8D17BA251A /* Pods_EvidenceRoom_EvidenceRoomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E7FEE431D9C6D51239E4FD /* Pods_EvidenceRoom_EvidenceRoomUITests.framework */; };
+		596A79BFB793633835265F0B /* Pods_EvidenceRoomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548209EF05A24EEC9143C3AC /* Pods_EvidenceRoomTests.framework */; };
+		C2116422257F892900FC788F /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = C2116421257F892900FC788F /* Apollo */; };
+		C2116427257F8A7500FC788F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = C2116426257F8A7500FC788F /* schema.json */; };
+		C211642C257F8AF600FC788F /* CloudClient.graphql in Resources */ = {isa = PBXBuildFile; fileRef = C211642B257F8AF600FC788F /* CloudClient.graphql */; };
+		C2116438257F92EE00FC788F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2116437257F92EE00FC788F /* API.swift */; };
+		C2116447257FB6B900FC788F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = C2116446257FB6B900FC788F /* SwiftKeychainWrapper */; };
+		C211647D25824AD500FC788F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211647C25824AD500FC788F /* File.swift */; };
+		C211648E258261BB00FC788F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211648D258261BB00FC788F /* WebView.swift */; };
+		C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C216CC7F255BC22A00699CA5 /* LoginView.swift */; };
+		C24F6681257518DA00D6A62C /* AddCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */; };
+		C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */; };
+		C24F668D2575277D00D6A62C /* AddCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */; };
+		C285D075255D959200271787 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C285D074255D959200271787 /* AuthModels.swift */; };
+		C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43603255579D5004479E0 /* AppDelegate.swift */; };
+		C2A43606255579D5004479E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43605255579D5004479E0 /* SceneDelegate.swift */; };
+		C2A43608255579D5004479E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43607255579D5004479E0 /* ContentView.swift */; };
+		C2A4360A255579D7004479E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A43609255579D7004479E0 /* Assets.xcassets */; };
+		C2A4360D255579D7004479E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A4360C255579D7004479E0 /* Preview Assets.xcassets */; };
+		C2A43610255579D7004479E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A4360E255579D7004479E0 /* LaunchScreen.storyboard */; };
+		C2A4361B255579D7004479E0 /* EvidenceRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4361A255579D7004479E0 /* EvidenceRoomTests.swift */; };
+		C2A43626255579D7004479E0 /* EvidenceRoomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43625255579D7004479E0 /* EvidenceRoomUITests.swift */; };
+		C2A4363B25557C14004479E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4363A25557C14004479E0 /* MainView.swift */; };
+		C2A4364025557C4A004479E0 /* MainViewMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4363F25557C4A004479E0 /* MainViewMenuItem.swift */; };
+		C2A678972577D3950022D16B /* RecordingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A678962577D3950022D16B /* RecordingModel.swift */; };
+		C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A801B3258361BF0072635A /* ColorTheme.swift */; };
+		C2A801BC258363C10072635A /* metro-df.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801BB258363C00072635A /* metro-df.ttf */; };
+		C2A801C42583B68F0072635A /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801C32583B68F0072635A /* Roboto-Regular.ttf */; };
+		C2AD01D5256F9B4600EC9533 /* AddCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AD01D4256F9B4600EC9533 /* AddCameraView.swift */; };
+		C2D95179255D46D3008ED51D /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C2D95178255D46D3008ED51D /* OAuthSwift */; };
+		C2D95181255D5228008ED51D /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95180255D5228008ED51D /* AuthClient.swift */; };
+		C2D95186255D647B008ED51D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95185255D647B008ED51D /* Camera.swift */; };
+		C2FCCFE025767B9900790212 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCFDF25767B9900790212 /* CameraView.swift */; };
+		C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCFEE257691F000790212 /* CloudClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2A43617255579D7004479E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2A435F8255579D5004479E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2A435FF255579D5004479E0;
+			remoteInfo = EvidenceRoom;
+		};
+		C2A43622255579D7004479E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2A435F8255579D5004479E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2A435FF255579D5004479E0;
+			remoteInfo = EvidenceRoom;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2AFF3AEF4A8075760EC58F3F /* Pods-EvidenceRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom.debug.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.debug.xcconfig"; sourceTree = "<group>"; };
+		30E7FEE431D9C6D51239E4FD /* Pods_EvidenceRoom_EvidenceRoomUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvidenceRoom_EvidenceRoomUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47760F72D0C901320F71599E /* Pods_EvidenceRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvidenceRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		548209EF05A24EEC9143C3AC /* Pods_EvidenceRoomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvidenceRoomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59C15CE9FF79A861CC681E74 /* Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		85912F9BE65A5FEFAE74DE45 /* Pods-EvidenceRoomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoomTests.debug.xcconfig"; path = "Target Support Files/Pods-EvidenceRoomTests/Pods-EvidenceRoomTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1C64C2CA74C96E8EA36336A /* Pods-EvidenceRoomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoomTests.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoomTests/Pods-EvidenceRoomTests.release.xcconfig"; sourceTree = "<group>"; };
+		B54FA67BE7131E85E9C4F3AF /* Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C2116426257F8A7500FC788F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		C211642B257F8AF600FC788F /* CloudClient.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CloudClient.graphql; sourceTree = "<group>"; };
+		C2116437257F92EE00FC788F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C211647C25824AD500FC788F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		C211648D258261BB00FC788F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		C216CC7F255BC22A00699CA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCameraViewModel.swift; sourceTree = "<group>"; };
+		C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNetworkingClient.swift; sourceTree = "<group>"; };
+		C285D074255D959200271787 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		C2A43600255579D5004479E0 /* EvidenceRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvidenceRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A43603255579D5004479E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2A43605255579D5004479E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C2A43607255579D5004479E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C2A43609255579D7004479E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2A4360C255579D7004479E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C2A4360F255579D7004479E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C2A43611255579D7004479E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A43616255579D7004479E0 /* EvidenceRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvidenceRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A4361A255579D7004479E0 /* EvidenceRoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceRoomTests.swift; sourceTree = "<group>"; };
+		C2A4361C255579D7004479E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A43621255579D7004479E0 /* EvidenceRoomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvidenceRoomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A43625255579D7004479E0 /* EvidenceRoomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceRoomUITests.swift; sourceTree = "<group>"; };
+		C2A43627255579D7004479E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A4363625557B98004479E0 /* EvidenceRoom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvidenceRoom.entitlements; sourceTree = "<group>"; };
+		C2A4363A25557C14004479E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C2A4363F25557C4A004479E0 /* MainViewMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewMenuItem.swift; sourceTree = "<group>"; };
+		C2A678962577D3950022D16B /* RecordingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModel.swift; sourceTree = "<group>"; };
+		C2A801B3258361BF0072635A /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		C2A801BB258363C00072635A /* metro-df.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "metro-df.ttf"; sourceTree = "<group>"; };
+		C2A801C32583B68F0072635A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		C2AD01D4256F9B4600EC9533 /* AddCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCameraView.swift; sourceTree = "<group>"; };
+		C2D95180255D5228008ED51D /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
+		C2D95185255D647B008ED51D /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		C2FCCFDF25767B9900790212 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		C2FCCFEE257691F000790212 /* CloudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudClient.swift; sourceTree = "<group>"; };
+		F886CA1A44C6FDBDF756C760 /* Pods-EvidenceRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2A435FD255579D5004479E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2D95179255D46D3008ED51D /* OAuthSwift in Frameworks */,
+				C2116422257F892900FC788F /* Apollo in Frameworks */,
+				C2116447257FB6B900FC788F /* SwiftKeychainWrapper in Frameworks */,
+				2ED1269DED803A59285D83FA /* Pods_EvidenceRoom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A43613255579D7004479E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596A79BFB793633835265F0B /* Pods_EvidenceRoomTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4361E255579D7004479E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54789189252A2F8D17BA251A /* Pods_EvidenceRoom_EvidenceRoomUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		537D18EA8502BB30342BE8B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47760F72D0C901320F71599E /* Pods_EvidenceRoom.framework */,
+				30E7FEE431D9C6D51239E4FD /* Pods_EvidenceRoom_EvidenceRoomUITests.framework */,
+				548209EF05A24EEC9143C3AC /* Pods_EvidenceRoomTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C24F667F257518BF00D6A62C /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				C2AD01D4256F9B4600EC9533 /* AddCameraView.swift */,
+				C2D95185255D647B008ED51D /* Camera.swift */,
+				C2A678962577D3950022D16B /* RecordingModel.swift */,
+				C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */,
+				C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		C2A435F7255579D5004479E0 = {
+			isa = PBXGroup;
+			children = (
+				C2A43602255579D5004479E0 /* EvidenceRoom */,
+				C2A43619255579D7004479E0 /* EvidenceRoomTests */,
+				C2A43624255579D7004479E0 /* EvidenceRoomUITests */,
+				C2A43601255579D5004479E0 /* Products */,
+				EE49ACFCBE6ED3BF0A446865 /* Pods */,
+				537D18EA8502BB30342BE8B5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C2A43601255579D5004479E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2A43600255579D5004479E0 /* EvidenceRoom.app */,
+				C2A43616255579D7004479E0 /* EvidenceRoomTests.xctest */,
+				C2A43621255579D7004479E0 /* EvidenceRoomUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2A43602255579D5004479E0 /* EvidenceRoom */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4363625557B98004479E0 /* EvidenceRoom.entitlements */,
+				C2A43603255579D5004479E0 /* AppDelegate.swift */,
+				C2A43605255579D5004479E0 /* SceneDelegate.swift */,
+				C2A43607255579D5004479E0 /* ContentView.swift */,
+				C2116437257F92EE00FC788F /* API.swift */,
+				C2116426257F8A7500FC788F /* schema.json */,
+				C216CC7F255BC22A00699CA5 /* LoginView.swift */,
+				C211642B257F8AF600FC788F /* CloudClient.graphql */,
+				C2D95180255D5228008ED51D /* AuthClient.swift */,
+				C211648D258261BB00FC788F /* WebView.swift */,
+				C285D074255D959200271787 /* AuthModels.swift */,
+				C211647C25824AD500FC788F /* File.swift */,
+				C2A801B3258361BF0072635A /* ColorTheme.swift */,
+				C24F667F257518BF00D6A62C /* Camera */,
+				C2FCCFCD25767A9C00790212 /* Main */,
+				C2A43609255579D7004479E0 /* Assets.xcassets */,
+				C2A801C82583B6960072635A /* Fonts */,
+				C2A4360E255579D7004479E0 /* LaunchScreen.storyboard */,
+				C2A43611255579D7004479E0 /* Info.plist */,
+				C2A4360B255579D7004479E0 /* Preview Content */,
+			);
+			path = EvidenceRoom;
+			sourceTree = "<group>";
+		};
+		C2A4360B255579D7004479E0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4360C255579D7004479E0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C2A43619255579D7004479E0 /* EvidenceRoomTests */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4361A255579D7004479E0 /* EvidenceRoomTests.swift */,
+				C2A4361C255579D7004479E0 /* Info.plist */,
+			);
+			path = EvidenceRoomTests;
+			sourceTree = "<group>";
+		};
+		C2A43624255579D7004479E0 /* EvidenceRoomUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C2A43625255579D7004479E0 /* EvidenceRoomUITests.swift */,
+				C2A43627255579D7004479E0 /* Info.plist */,
+			);
+			path = EvidenceRoomUITests;
+			sourceTree = "<group>";
+		};
+		C2A801C82583B6960072635A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C2A801BB258363C00072635A /* metro-df.ttf */,
+				C2A801C32583B68F0072635A /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C2FCCFCD25767A9C00790212 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4363A25557C14004479E0 /* MainView.swift */,
+				C2FCCFDF25767B9900790212 /* CameraView.swift */,
+				C2FCCFEE257691F000790212 /* CloudClient.swift */,
+				C2A4363F25557C4A004479E0 /* MainViewMenuItem.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EE49ACFCBE6ED3BF0A446865 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AFF3AEF4A8075760EC58F3F /* Pods-EvidenceRoom.debug.xcconfig */,
+				F886CA1A44C6FDBDF756C760 /* Pods-EvidenceRoom.release.xcconfig */,
+				59C15CE9FF79A861CC681E74 /* Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig */,
+				B54FA67BE7131E85E9C4F3AF /* Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig */,
+				85912F9BE65A5FEFAE74DE45 /* Pods-EvidenceRoomTests.debug.xcconfig */,
+				A1C64C2CA74C96E8EA36336A /* Pods-EvidenceRoomTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2A435FF255579D5004479E0 /* EvidenceRoom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A4362A255579D7004479E0 /* Build configuration list for PBXNativeTarget "EvidenceRoom" */;
+			buildPhases = (
+				0B649B8ECD6D9CE253F616DE /* [CP] Check Pods Manifest.lock */,
+				C2A435FC255579D5004479E0 /* Sources */,
+				C2A435FD255579D5004479E0 /* Frameworks */,
+				C2A435FE255579D5004479E0 /* Resources */,
+				C2116430257F8B8D00FC788F /* Generate Apollo GraphQL API */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EvidenceRoom;
+			packageProductDependencies = (
+				C2D95178255D46D3008ED51D /* OAuthSwift */,
+				C2116421257F892900FC788F /* Apollo */,
+				C2116446257FB6B900FC788F /* SwiftKeychainWrapper */,
+			);
+			productName = EvidenceRoom;
+			productReference = C2A43600255579D5004479E0 /* EvidenceRoom.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C2A43615255579D7004479E0 /* EvidenceRoomTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A4362D255579D7004479E0 /* Build configuration list for PBXNativeTarget "EvidenceRoomTests" */;
+			buildPhases = (
+				634B4A8583EDC517C098AD1F /* [CP] Check Pods Manifest.lock */,
+				C2A43612255579D7004479E0 /* Sources */,
+				C2A43613255579D7004479E0 /* Frameworks */,
+				C2A43614255579D7004479E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2A43618255579D7004479E0 /* PBXTargetDependency */,
+			);
+			name = EvidenceRoomTests;
+			productName = EvidenceRoomTests;
+			productReference = C2A43616255579D7004479E0 /* EvidenceRoomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C2A43620255579D7004479E0 /* EvidenceRoomUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A43630255579D7004479E0 /* Build configuration list for PBXNativeTarget "EvidenceRoomUITests" */;
+			buildPhases = (
+				139C01756EDAAF5B350A3F75 /* [CP] Check Pods Manifest.lock */,
+				C2A4361D255579D7004479E0 /* Sources */,
+				C2A4361E255579D7004479E0 /* Frameworks */,
+				C2A4361F255579D7004479E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2A43623255579D7004479E0 /* PBXTargetDependency */,
+			);
+			name = EvidenceRoomUITests;
+			productName = EvidenceRoomUITests;
+			productReference = C2A43621255579D7004479E0 /* EvidenceRoomUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2A435F8255579D5004479E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					C2A435FF255579D5004479E0 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					C2A43615255579D7004479E0 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = C2A435FF255579D5004479E0;
+					};
+					C2A43620255579D7004479E0 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = C2A435FF255579D5004479E0;
+					};
+				};
+			};
+			buildConfigurationList = C2A435FB255579D5004479E0 /* Build configuration list for PBXProject "EvidenceRoom" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2A435F7255579D5004479E0;
+			packageReferences = (
+				C2D95177255D46D3008ED51D /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+				C2116420257F892900FC788F /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				C2116445257FB6B900FC788F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
+			productRefGroup = C2A43601255579D5004479E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2A435FF255579D5004479E0 /* EvidenceRoom */,
+				C2A43615255579D7004479E0 /* EvidenceRoomTests */,
+				C2A43620255579D7004479E0 /* EvidenceRoomUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2A435FE255579D5004479E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A801BC258363C10072635A /* metro-df.ttf in Resources */,
+				C2A801C42583B68F0072635A /* Roboto-Regular.ttf in Resources */,
+				C2116427257F8A7500FC788F /* schema.json in Resources */,
+				C2A43610255579D7004479E0 /* LaunchScreen.storyboard in Resources */,
+				C2A4360D255579D7004479E0 /* Preview Assets.xcassets in Resources */,
+				C211642C257F8AF600FC788F /* CloudClient.graphql in Resources */,
+				C2A4360A255579D7004479E0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A43614255579D7004479E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4361F255579D7004479E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B649B8ECD6D9CE253F616DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EvidenceRoom-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		139C01756EDAAF5B350A3F75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EvidenceRoom-EvidenceRoomUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		634B4A8583EDC517C098AD1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EvidenceRoomTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2116430257F8B8D00FC788F /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2A435FC255579D5004479E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C24F6681257518DA00D6A62C /* AddCameraViewModel.swift in Sources */,
+				C2D95186255D647B008ED51D /* Camera.swift in Sources */,
+				C2FCCFE025767B9900790212 /* CameraView.swift in Sources */,
+				C285D075255D959200271787 /* AuthModels.swift in Sources */,
+				C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */,
+				C2D95181255D5228008ED51D /* AuthClient.swift in Sources */,
+				C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */,
+				C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */,
+				C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */,
+				C2AD01D5256F9B4600EC9533 /* AddCameraView.swift in Sources */,
+				C2A4363B25557C14004479E0 /* MainView.swift in Sources */,
+				C2A43606255579D5004479E0 /* SceneDelegate.swift in Sources */,
+				C211647D25824AD500FC788F /* File.swift in Sources */,
+				C2A43608255579D5004479E0 /* ContentView.swift in Sources */,
+				C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */,
+				C2A4364025557C4A004479E0 /* MainViewMenuItem.swift in Sources */,
+				C211648E258261BB00FC788F /* WebView.swift in Sources */,
+				C2116438257F92EE00FC788F /* API.swift in Sources */,
+				C2A678972577D3950022D16B /* RecordingModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A43612255579D7004479E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A4361B255579D7004479E0 /* EvidenceRoomTests.swift in Sources */,
+				C24F668D2575277D00D6A62C /* AddCameraViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4361D255579D7004479E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A43626255579D7004479E0 /* EvidenceRoomUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2A43618255579D7004479E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2A435FF255579D5004479E0 /* EvidenceRoom */;
+			targetProxy = C2A43617255579D7004479E0 /* PBXContainerItemProxy */;
+		};
+		C2A43623255579D7004479E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2A435FF255579D5004479E0 /* EvidenceRoom */;
+			targetProxy = C2A43622255579D7004479E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C2A4360E255579D7004479E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2A4360F255579D7004479E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2A43628255579D7004479E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C2A43629255579D7004479E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2A4362B255579D7004479E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AFF3AEF4A8075760EC58F3F /* Pods-EvidenceRoom.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EvidenceRoom/EvidenceRoom.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"EvidenceRoom/Preview Content\"";
+				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = EvidenceRoom/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.indicosys.EvidenceRoom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2A4362C255579D7004479E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F886CA1A44C6FDBDF756C760 /* Pods-EvidenceRoom.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EvidenceRoom/EvidenceRoom.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"EvidenceRoom/Preview Content\"";
+				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = EvidenceRoom/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.indicosys.EvidenceRoom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C2A4362E255579D7004479E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85912F9BE65A5FEFAE74DE45 /* Pods-EvidenceRoomTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				INFOPLIST_FILE = EvidenceRoomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.indicosys.EvidenceRoomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvidenceRoom.app/EvidenceRoom";
+			};
+			name = Debug;
+		};
+		C2A4362F255579D7004479E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1C64C2CA74C96E8EA36336A /* Pods-EvidenceRoomTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				INFOPLIST_FILE = EvidenceRoomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.indicosys.EvidenceRoomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvidenceRoom.app/EvidenceRoom";
+			};
+			name = Release;
+		};
+		C2A43631255579D7004479E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59C15CE9FF79A861CC681E74 /* Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				INFOPLIST_FILE = EvidenceRoomUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.indicosys.EvidenceRoomUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EvidenceRoom;
+			};
+			name = Debug;
+		};
+		C2A43632255579D7004479E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54FA67BE7131E85E9C4F3AF /* Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				INFOPLIST_FILE = EvidenceRoomUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.indicosys.EvidenceRoomUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EvidenceRoom;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2A435FB255579D5004479E0 /* Build configuration list for PBXProject "EvidenceRoom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A43628255579D7004479E0 /* Debug */,
+				C2A43629255579D7004479E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A4362A255579D7004479E0 /* Build configuration list for PBXNativeTarget "EvidenceRoom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A4362B255579D7004479E0 /* Debug */,
+				C2A4362C255579D7004479E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A4362D255579D7004479E0 /* Build configuration list for PBXNativeTarget "EvidenceRoomTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A4362E255579D7004479E0 /* Debug */,
+				C2A4362F255579D7004479E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A43630255579D7004479E0 /* Build configuration list for PBXNativeTarget "EvidenceRoomUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A43631255579D7004479E0 /* Debug */,
+				C2A43632255579D7004479E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C2116420257F892900FC788F /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.38.3;
+			};
+		};
+		C2116445257FB6B900FC788F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+		C2D95177255D46D3008ED51D /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C2116421257F892900FC788F /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2116420257F892900FC788F /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		C2116446257FB6B900FC788F /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2116445257FB6B900FC788F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+		C2D95178255D46D3008ED51D /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2D95177255D46D3008ED51D /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C2A435F8255579D5004479E0 /* Project object */;
+}
