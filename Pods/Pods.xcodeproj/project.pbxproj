@@ -6,20 +6,46 @@
 	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		DD6DBFB0950D5ACA7BBB5F25E1C1A342 /* MobileVLCKit */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1F5605C76E377A68DE52E25A53DF5480 /* Build configuration list for PBXAggregateTarget "MobileVLCKit" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = MobileVLCKit;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		03C3F99CB3C9446EF0696BA906193067 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		03DAFE855C1D5865FED03EC8D66E9A15 /* Pods-EvidenceRoomTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA54D81B20FE94C8526B28CD3499DDF2 /* Pods-EvidenceRoomTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A1E9BB2011F50E4B828E458231F5C4E /* Pods-EvidenceRoom-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6408A6C0745E2F1193472946B76B74B7 /* Pods-EvidenceRoom-dummy.m */; };
-		45383ED84478267B8C2EEC157A9451F2 /* Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E396132B433A974C59876E2D02F6131 /* Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F8CC4DFFD0A64D1268C6575B85D9AC4 /* Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E32C386DEEF086CEF1ECE7907D408FA6 /* Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m */; };
+		4585A919D8A869993EBF236EA4976D44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		45F254801712F93B1F80B0B244356C06 /* Pods-EvidenceRoomTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 797A7DD3CED60A121FFA4A7F642C6E58 /* Pods-EvidenceRoomTests-dummy.m */; };
-		4B07521B4E75A2139BE1199A7357D1B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5DD8B41AC9A3A8B14078D023141CD8C0 /* Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E32C386DEEF086CEF1ECE7907D408FA6 /* Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m */; };
+		51CD2283E8C3C8ABDD68F7CC21A59AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		62B1EEE350EC44C5F024A1602424E797 /* Pods-EvidenceRoom-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6408A6C0745E2F1193472946B76B74B7 /* Pods-EvidenceRoom-dummy.m */; };
+		66F99C89E00F34A308813571AF7D454A /* Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E396132B433A974C59876E2D02F6131 /* Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FC0B4BD0AF2A5B4D75CE68B91F1FD26 /* Pods-EvidenceRoom-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4AB8C3536D01A1DCC7B3FB02187D17 /* Pods-EvidenceRoom-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F64E0BB63D97078F9C4DA8A2613C26D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		FD2BCD469EA2C126C7DE1AE10FAE4360 /* Pods-EvidenceRoom-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4AB8C3536D01A1DCC7B3FB02187D17 /* Pods-EvidenceRoom-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C1A41A872383392103F2906F8608C268 /* PBXContainerItemProxy */ = {
+		88EA1BDA9F01A37C6C72A2870BA84C74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD6DBFB0950D5ACA7BBB5F25E1C1A342;
+			remoteInfo = MobileVLCKit;
+		};
+		ACD3C34B02F51147585E184D4DD44322 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD6DBFB0950D5ACA7BBB5F25E1C1A342;
+			remoteInfo = MobileVLCKit;
+		};
+		EE083C4F675980CC4A0215B6BE139501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -32,56 +58,73 @@
 		107B5B7BD7A6337C68D66B3CC0A76AE3 /* Pods-EvidenceRoomTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EvidenceRoomTests.modulemap"; sourceTree = "<group>"; };
 		1BE147758F504F87228FE5BAB303A290 /* Pods_EvidenceRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EvidenceRoom.framework; path = "Pods-EvidenceRoom.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C10355F280856BFB32BCC8860175A /* Pods-EvidenceRoomTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EvidenceRoomTests-Info.plist"; sourceTree = "<group>"; };
+		2DD0E35083696FF092E5209D22D62C8F /* VLCDialogProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCDialogProvider.h; path = MobileVLCKit.framework/Headers/VLCDialogProvider.h; sourceTree = "<group>"; };
+		31EA9F26F6706A9D8D3B1E7FBBDEF9AC /* MobileVLCKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MobileVLCKit.h; path = MobileVLCKit.framework/Headers/MobileVLCKit.h; sourceTree = "<group>"; };
 		34BE49EA74953AEC0A00689FDECD1BEA /* Pods-EvidenceRoom-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EvidenceRoom-Info.plist"; sourceTree = "<group>"; };
+		3644E6A94C5D896AF4ABFF0899C4E812 /* VLCTime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCTime.h; path = MobileVLCKit.framework/Headers/VLCTime.h; sourceTree = "<group>"; };
 		36C7A97FA0BBB5B057B7AA3551FA01B9 /* Pods-EvidenceRoomTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EvidenceRoomTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		43755351CD68D2B5C36624D064CC1170 /* Pods-EvidenceRoom-EvidenceRoomUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EvidenceRoom-EvidenceRoomUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		48835999D4D6BB42453EE8929D84710E /* Pods-EvidenceRoomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvidenceRoomTests.release.xcconfig"; sourceTree = "<group>"; };
 		49A0DE68302B47C3AF28F8C8CFC6FA0A /* Pods-EvidenceRoom-EvidenceRoomUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EvidenceRoom-EvidenceRoomUITests.modulemap"; sourceTree = "<group>"; };
+		5C52C9E0F241CB6E79AAF50160B7DE8C /* VLCTranscoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCTranscoder.h; path = MobileVLCKit.framework/Headers/VLCTranscoder.h; sourceTree = "<group>"; };
 		6408A6C0745E2F1193472946B76B74B7 /* Pods-EvidenceRoom-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EvidenceRoom-dummy.m"; sourceTree = "<group>"; };
 		65DAA8867FAE44B8C93ED7F8CC90F2D0 /* Pods-EvidenceRoom.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EvidenceRoom.modulemap"; sourceTree = "<group>"; };
 		69AAF91DCE7C95FF274CC28C8317ABB0 /* Pods-EvidenceRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvidenceRoom.release.xcconfig"; sourceTree = "<group>"; };
 		6B4AB8C3536D01A1DCC7B3FB02187D17 /* Pods-EvidenceRoom-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EvidenceRoom-umbrella.h"; sourceTree = "<group>"; };
 		6BAD2B7438BF30AD6C1CD60AC105E1A9 /* Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		70C5CC3813F199638986F007B5A50A29 /* Pods-EvidenceRoom-EvidenceRoomUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EvidenceRoom-EvidenceRoomUITests-Info.plist"; sourceTree = "<group>"; };
+		722EC639DD5A54EEABB4602151EBDEEB /* MobileVLCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MobileVLCKit.release.xcconfig; sourceTree = "<group>"; };
+		72924C05E843AE1B9D3162A855231617 /* VLCAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCAudio.h; path = MobileVLCKit.framework/Headers/VLCAudio.h; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		73F63D122AD7AD52E0FE6A57626927D3 /* MobileVLCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobileVLCKit.framework; sourceTree = "<group>"; };
 		75D5B1C8657745BCAFD6CDF158EE5142 /* Pods_EvidenceRoom_EvidenceRoomUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EvidenceRoom_EvidenceRoomUITests.framework; path = "Pods-EvidenceRoom-EvidenceRoomUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		797A7DD3CED60A121FFA4A7F642C6E58 /* Pods-EvidenceRoomTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EvidenceRoomTests-dummy.m"; sourceTree = "<group>"; };
+		7D133062E83CF1476FF35565F4AF1D02 /* VLCMediaListPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCMediaListPlayer.h; path = MobileVLCKit.framework/Headers/VLCMediaListPlayer.h; sourceTree = "<group>"; };
 		815327820E9B5B1920CC7A2D4E501C4A /* Pods_EvidenceRoomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EvidenceRoomTests.framework; path = "Pods-EvidenceRoomTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		822F4A9DD828F75D3D653CE00CB33A1C /* Pods-EvidenceRoomTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EvidenceRoomTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8B4AF9D6B5437641130883085594B453 /* Pods-EvidenceRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvidenceRoom.debug.xcconfig"; sourceTree = "<group>"; };
 		8E396132B433A974C59876E2D02F6131 /* Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h"; sourceTree = "<group>"; };
+		8E9152E7F27E91175DD1CC42F64D50DA /* VLCMediaDiscoverer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCMediaDiscoverer.h; path = MobileVLCKit.framework/Headers/VLCMediaDiscoverer.h; sourceTree = "<group>"; };
 		8F5B2A056ED408165070B2E4EFE0DA07 /* Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig"; sourceTree = "<group>"; };
+		92DBE4F0DDEF7CAFCE531E6FD78072EE /* VLCMedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCMedia.h; path = MobileVLCKit.framework/Headers/VLCMedia.h; sourceTree = "<group>"; };
+		94371D6CE6A2176FB0B8F3D793EDFB1E /* VLCMediaPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCMediaPlayer.h; path = MobileVLCKit.framework/Headers/VLCMediaPlayer.h; sourceTree = "<group>"; };
+		9478F1E490F2C339C7DEFA54FF3FD591 /* VLCRendererItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCRendererItem.h; path = MobileVLCKit.framework/Headers/VLCRendererItem.h; sourceTree = "<group>"; };
+		9A2FD948A3F0536683F2EED69ADCD35C /* VLCRendererDiscoverer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCRendererDiscoverer.h; path = MobileVLCKit.framework/Headers/VLCRendererDiscoverer.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE88AD27638C25433F02BC45D7C6F2D3 /* Pods-EvidenceRoomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvidenceRoomTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6E8307C438C80246A80E0FDEBB0E9E8 /* VLCMediaThumbnailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCMediaThumbnailer.h; path = MobileVLCKit.framework/Headers/VLCMediaThumbnailer.h; sourceTree = "<group>"; };
 		DD063D830D9206F9E1917C8A197D94F7 /* Pods-EvidenceRoom-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EvidenceRoom-acknowledgements.plist"; sourceTree = "<group>"; };
+		DD2393CCD08D99B2E56053E076D2FF5F /* MobileVLCKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MobileVLCKit.debug.xcconfig; sourceTree = "<group>"; };
+		DFDB3050A15DD0434D93436775D2D7F0 /* VLCLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCLibrary.h; path = MobileVLCKit.framework/Headers/VLCLibrary.h; sourceTree = "<group>"; };
 		E32C386DEEF086CEF1ECE7907D408FA6 /* Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m"; sourceTree = "<group>"; };
+		E9193B28684792B2E299C5A15F19C83D /* VLCMediaList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VLCMediaList.h; path = MobileVLCKit.framework/Headers/VLCMediaList.h; sourceTree = "<group>"; };
 		F28A905AC5AE7558C5E91F7FABE193DD /* Pods-EvidenceRoom-EvidenceRoomUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EvidenceRoom-EvidenceRoomUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F400DC96C6D7A89B0A17A0F6D654A693 /* Pods-EvidenceRoom-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EvidenceRoom-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FA54D81B20FE94C8526B28CD3499DDF2 /* Pods-EvidenceRoomTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EvidenceRoomTests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		286F7B32913A4C19CB29EEB444CE86BB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B07521B4E75A2139BE1199A7357D1B7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8DC2CE25A21FFC758FEF0EDA03CECFFE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				03C3F99CB3C9446EF0696BA906193067 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDC52C2DC95A0A2015F4ADD16E0C6256 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7F64E0BB63D97078F9C4DA8A2613C26D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5F4264113431F6742F507BB42760293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4585A919D8A869993EBF236EA4976D44 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9B0BB3EA7F225CE45B469595CE31DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51CD2283E8C3C8ABDD68F7CC21A59AD5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +147,54 @@
 			path = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests";
 			sourceTree = "<group>";
 		};
+		3CAD20FBA153346EF6AAAF05136F6140 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73F63D122AD7AD52E0FE6A57626927D3 /* MobileVLCKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		7AD68E852DF3D846F46CE738D7164C5A /* MobileVLCKit */ = {
+			isa = PBXGroup;
+			children = (
+				31EA9F26F6706A9D8D3B1E7FBBDEF9AC /* MobileVLCKit.h */,
+				72924C05E843AE1B9D3162A855231617 /* VLCAudio.h */,
+				2DD0E35083696FF092E5209D22D62C8F /* VLCDialogProvider.h */,
+				DFDB3050A15DD0434D93436775D2D7F0 /* VLCLibrary.h */,
+				92DBE4F0DDEF7CAFCE531E6FD78072EE /* VLCMedia.h */,
+				8E9152E7F27E91175DD1CC42F64D50DA /* VLCMediaDiscoverer.h */,
+				E9193B28684792B2E299C5A15F19C83D /* VLCMediaList.h */,
+				7D133062E83CF1476FF35565F4AF1D02 /* VLCMediaListPlayer.h */,
+				94371D6CE6A2176FB0B8F3D793EDFB1E /* VLCMediaPlayer.h */,
+				C6E8307C438C80246A80E0FDEBB0E9E8 /* VLCMediaThumbnailer.h */,
+				9A2FD948A3F0536683F2EED69ADCD35C /* VLCRendererDiscoverer.h */,
+				9478F1E490F2C339C7DEFA54FF3FD591 /* VLCRendererItem.h */,
+				3644E6A94C5D896AF4ABFF0899C4E812 /* VLCTime.h */,
+				5C52C9E0F241CB6E79AAF50160B7DE8C /* VLCTranscoder.h */,
+				3CAD20FBA153346EF6AAAF05136F6140 /* Frameworks */,
+				94C8122252359EEC394458F385596335 /* Support Files */,
+			);
+			name = MobileVLCKit;
+			path = MobileVLCKit;
+			sourceTree = "<group>";
+		};
+		94C8122252359EEC394458F385596335 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD2393CCD08D99B2E56053E076D2FF5F /* MobileVLCKit.debug.xcconfig */,
+				722EC639DD5A54EEABB4602151EBDEEB /* MobileVLCKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MobileVLCKit";
 			sourceTree = "<group>";
 		};
 		A99BEE9B5AED175189B35E790C2E5588 /* Products */ = {
@@ -159,6 +244,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				F7E31DC2ED372B8CB69B79D357245730 /* Pods */,
 				A99BEE9B5AED175189B35E790C2E5588 /* Products */,
 				FE7CBA8984B9712AFE72AF96EF2EB4A1 /* Targets Support Files */,
 			);
@@ -170,6 +256,14 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7E31DC2ED372B8CB69B79D357245730 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AD68E852DF3D846F46CE738D7164C5A /* MobileVLCKit */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		FE7CBA8984B9712AFE72AF96EF2EB4A1 /* Targets Support Files */ = {
@@ -185,14 +279,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3A4E9CFE7FE2C588DF12DD66F523F34F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD2BCD469EA2C126C7DE1AE10FAE4360 /* Pods-EvidenceRoom-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A9BE59E1F9FCB51E56616989581B3C4B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,11 +287,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4C601F1917699163CC55B8FC2B8CB52 /* Headers */ = {
+		C4FDD77F9B9844712141703B248C4415 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45383ED84478267B8C2EEC157A9451F2 /* Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h in Headers */,
+				66F99C89E00F34A308813571AF7D454A /* Pods-EvidenceRoom-EvidenceRoomUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8DDE81CFC287921ED9AF6121D13F0A6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FC0B4BD0AF2A5B4D75CE68B91F1FD26 /* Pods-EvidenceRoom-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +318,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6975B78512E422375673222A5BFA6C27 /* PBXTargetDependency */,
+				470A86FF7EFBFE786BF4158C6C4144B1 /* PBXTargetDependency */,
 			);
 			name = "Pods-EvidenceRoomTests";
 			productName = "Pods-EvidenceRoomTests";
@@ -233,16 +327,17 @@
 		};
 		CFBF768DDC1EBBF74B4FC89BA73B5875 /* Pods-EvidenceRoom-EvidenceRoomUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 247ABD6F0F9E7FEEA2DBE7C89D9DB50C /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom-EvidenceRoomUITests" */;
+			buildConfigurationList = 30A2D40BD41BD5293FC1B0865BCB508F /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom-EvidenceRoomUITests" */;
 			buildPhases = (
-				B4C601F1917699163CC55B8FC2B8CB52 /* Headers */,
-				3F8665F0F5388CC914B3D28693E95D8F /* Sources */,
-				286F7B32913A4C19CB29EEB444CE86BB /* Frameworks */,
-				4BE1A0309AB3EA9424CEB8378DF11832 /* Resources */,
+				C4FDD77F9B9844712141703B248C4415 /* Headers */,
+				6BCA3D6F1CE80CEC7BCBAAB284800BAD /* Sources */,
+				F5F4264113431F6742F507BB42760293 /* Frameworks */,
+				70217E3DE516BA4A648C194E73AA252D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				111F315DC5FCDE0BF4A5C35246FF37FE /* PBXTargetDependency */,
 			);
 			name = "Pods-EvidenceRoom-EvidenceRoomUITests";
 			productName = "Pods-EvidenceRoom-EvidenceRoomUITests";
@@ -251,16 +346,17 @@
 		};
 		F3DB964DA7962714224E6013E3D0D88B /* Pods-EvidenceRoom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30A3607AB823539D2481BF3CBE87B005 /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom" */;
+			buildConfigurationList = 244FD1ABD802485523F6BE08ADBAEC47 /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom" */;
 			buildPhases = (
-				3A4E9CFE7FE2C588DF12DD66F523F34F /* Headers */,
-				24477C81F2DD08892E49E26F8B6AA6A1 /* Sources */,
-				8DC2CE25A21FFC758FEF0EDA03CECFFE /* Frameworks */,
-				7CC984B7C469140ECB4DCB5D9C4B7812 /* Resources */,
+				D8DDE81CFC287921ED9AF6121D13F0A6 /* Headers */,
+				8C040951A6D4CCB03BBB84EEC9038D30 /* Sources */,
+				FF9B0BB3EA7F225CE45B469595CE31DE /* Frameworks */,
+				E8904AC794580EF076880BF0D73B8DA8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BE5852D7046AE58B954643D9F3D3E81A /* PBXTargetDependency */,
 			);
 			name = "Pods-EvidenceRoom";
 			productName = "Pods-EvidenceRoom";
@@ -289,6 +385,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				DD6DBFB0950D5ACA7BBB5F25E1C1A342 /* MobileVLCKit */,
 				F3DB964DA7962714224E6013E3D0D88B /* Pods-EvidenceRoom */,
 				CFBF768DDC1EBBF74B4FC89BA73B5875 /* Pods-EvidenceRoom-EvidenceRoomUITests */,
 				711584E14CE74EF1226D6377D77593DD /* Pods-EvidenceRoomTests */,
@@ -297,13 +394,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4BE1A0309AB3EA9424CEB8378DF11832 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		540FE8D6DC7F36075C7D18CB2DC2288D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,7 +401,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CC984B7C469140ECB4DCB5D9C4B7812 /* Resources */ = {
+		70217E3DE516BA4A648C194E73AA252D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8904AC794580EF076880BF0D73B8DA8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,14 +418,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		24477C81F2DD08892E49E26F8B6AA6A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A1E9BB2011F50E4B828E458231F5C4E /* Pods-EvidenceRoom-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2F4379ACA1767332949357BC84B11DFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,22 +426,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F8665F0F5388CC914B3D28693E95D8F /* Sources */ = {
+		6BCA3D6F1CE80CEC7BCBAAB284800BAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DD8B41AC9A3A8B14078D023141CD8C0 /* Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m in Sources */,
+				2F8CC4DFFD0A64D1268C6575B85D9AC4 /* Pods-EvidenceRoom-EvidenceRoomUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C040951A6D4CCB03BBB84EEC9038D30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62B1EEE350EC44C5F024A1602424E797 /* Pods-EvidenceRoom-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6975B78512E422375673222A5BFA6C27 /* PBXTargetDependency */ = {
+		111F315DC5FCDE0BF4A5C35246FF37FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MobileVLCKit;
+			target = DD6DBFB0950D5ACA7BBB5F25E1C1A342 /* MobileVLCKit */;
+			targetProxy = 88EA1BDA9F01A37C6C72A2870BA84C74 /* PBXContainerItemProxy */;
+		};
+		470A86FF7EFBFE786BF4158C6C4144B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-EvidenceRoom";
 			target = F3DB964DA7962714224E6013E3D0D88B /* Pods-EvidenceRoom */;
-			targetProxy = C1A41A872383392103F2906F8608C268 /* PBXContainerItemProxy */;
+			targetProxy = EE083C4F675980CC4A0215B6BE139501 /* PBXContainerItemProxy */;
+		};
+		BE5852D7046AE58B954643D9F3D3E81A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MobileVLCKit;
+			target = DD6DBFB0950D5ACA7BBB5F25E1C1A342 /* MobileVLCKit */;
+			targetProxy = ACD3C34B02F51147585E184D4DD44322 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -394,7 +503,7 @@
 			};
 			name = Debug;
 		};
-		3BFB12931121C8C2816DCF6B2A3FBAA3 /* Release */ = {
+		4C58B360F019C400E4C417E69330B958 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F5B2A056ED408165070B2E4EFE0DA07 /* Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig */;
 			buildSettings = {
@@ -431,43 +540,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		3EA55D3556D4B3EE039611A4780E2834 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B4AF9D6B5437641130883085594B453 /* Pods-EvidenceRoom.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		593F10BFFA94DAC7D6E17FB8A7F32D72 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -531,40 +603,19 @@
 			};
 			name = Release;
 		};
-		680B00720E4C9CA5882160457A9FA9A2 /* Debug */ = {
+		5DDEDECF747B9D2163FB0C9DF515ABEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BAD2B7438BF30AD6C1CD60AC105E1A9 /* Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig */;
+			baseConfigurationReference = DD2393CCD08D99B2E56053E076D2FF5F /* MobileVLCKit.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -634,6 +685,135 @@
 			};
 			name = Debug;
 		};
+		B5EDA6C58C46BC9EC18C0DCCA2189977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 722EC639DD5A54EEABB4602151EBDEEB /* MobileVLCKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B70BC0ABB336F0928D87BBD84D744A50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69AAF91DCE7C95FF274CC28C8317ABB0 /* Pods-EvidenceRoom.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C646D3E4F5C519F66175AD9D505C0A1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BAD2B7438BF30AD6C1CD60AC105E1A9 /* Pods-EvidenceRoom-EvidenceRoomUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF7A61FA9A180F91A3EEC828C13A140A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B4AF9D6B5437641130883085594B453 /* Pods-EvidenceRoom.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		DB5CD3994A4D394C768548D5E645A586 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48835999D4D6BB42453EE8929D84710E /* Pods-EvidenceRoomTests.release.xcconfig */;
@@ -672,47 +852,18 @@
 			};
 			name = Release;
 		};
-		F8CADFC362EBA82A03C77B20EC8E714F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69AAF91DCE7C95FF274CC28C8317ABB0 /* Pods-EvidenceRoom.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F5605C76E377A68DE52E25A53DF5480 /* Build configuration list for PBXAggregateTarget "MobileVLCKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDEDECF747B9D2163FB0C9DF515ABEC /* Debug */,
+				B5EDA6C58C46BC9EC18C0DCCA2189977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22CF4037844793C5403D857E146D8842 /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoomTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -722,20 +873,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		247ABD6F0F9E7FEEA2DBE7C89D9DB50C /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom-EvidenceRoomUITests" */ = {
+		244FD1ABD802485523F6BE08ADBAEC47 /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				680B00720E4C9CA5882160457A9FA9A2 /* Debug */,
-				3BFB12931121C8C2816DCF6B2A3FBAA3 /* Release */,
+				CF7A61FA9A180F91A3EEC828C13A140A /* Debug */,
+				B70BC0ABB336F0928D87BBD84D744A50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		30A3607AB823539D2481BF3CBE87B005 /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom" */ = {
+		30A2D40BD41BD5293FC1B0865BCB508F /* Build configuration list for PBXNativeTarget "Pods-EvidenceRoom-EvidenceRoomUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3EA55D3556D4B3EE039611A4780E2834 /* Debug */,
-				F8CADFC362EBA82A03C77B20EC8E714F /* Release */,
+				C646D3E4F5C519F66175AD9D505C0A1C /* Debug */,
+				4C58B360F019C400E4C417E69330B958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

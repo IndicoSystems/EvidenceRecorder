@@ -6,7 +6,7 @@ target 'EvidenceRoom' do
   use_frameworks!
 
   # Pods for EvidenceRoom
-# pod 'MobileVLCKit', '~>3.3.0'
+ pod 'MobileVLCKit', '~>3.3.0'
 
   target 'EvidenceRoomTests' do
     inherit! :search_paths
