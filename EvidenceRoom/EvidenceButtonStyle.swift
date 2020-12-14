@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct EvidenceButtonStyle: ButtonStyle {
-    var bgColor: Color
     
+    var bgColor: Color
     var clipShape: ClipShape
     
     enum ClipShape: Shape {
@@ -21,8 +21,8 @@ struct EvidenceButtonStyle: ButtonStyle {
         configuration.label
             .font(.custom("Roboto-Regular", size: 16, relativeTo: .headline))
             .foregroundColor(.white)
-            .padding(.horizontal, 48)
-            .padding(.vertical, 25)
+            .frame(height: 48)
+            .padding(.horizontal, 24)
             .background(bgColor)
             .clipShape(clipShape)
             .shadow(radius: 4)

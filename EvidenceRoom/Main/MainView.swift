@@ -48,7 +48,11 @@ struct MainView: View {
                     if viewModel.cameras.count > 0 {
                         ForEach(viewModel.cameraViewModels, id: \.camera.ip) { viewModel in
                             CameraView(viewModel: viewModel)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+                        )
                     } else {
                         Text("No cameras found")
                             .font(.caption)

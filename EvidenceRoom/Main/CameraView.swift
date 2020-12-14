@@ -66,13 +66,13 @@ struct CameraView: View {
         VStack {
             Text(viewModel.camera.name)
                 .font(.custom("Roboto-Regular", size: 20))
-                .fontWeight(.bold)
                 .foregroundColor(.text)
             if viewModel.isPreviewing || viewModel.isRecording {
                 WebView(url: "http://" + viewModel.camera.ip)
                     .frame(width: 400, height: 300)
             } else {
                 Image("camera")
+                    .foregroundColor(.text)
             }
             Button {
                 viewModel.isRecording ? viewModel.stopRecording() : viewModel.startRecording()
@@ -91,9 +91,6 @@ struct CameraView: View {
         }
         .frame(width: 500, height: 500)
         .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(viewModel.isRecording ? Color.red : Color.gray, lineWidth: viewModel.isRecording ? 4 : 1)
-        )
+        .background(Color.card)
     }
 }
