@@ -24,7 +24,6 @@ struct EvidenceButtonStyle: ButtonStyle {
             .padding(.horizontal, 48)
             .padding(.vertical, 25)
             .background(bgColor)
-//            .clipShape(RoundedRectangle(cornerRadius: 8))
             .clipShape(clipShape)
             .shadow(radius: 4)
     }
