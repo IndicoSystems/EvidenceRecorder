@@ -20,6 +20,7 @@
 		C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C216CC7F255BC22A00699CA5 /* LoginView.swift */; };
 		C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */; };
 		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
+		C24263902587AAE800BC3005 /* EvidenceTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */; };
 		C24F6681257518DA00D6A62C /* AddCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */; };
 		C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */; };
 		C24F668D2575277D00D6A62C /* AddCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */; };
@@ -80,6 +81,7 @@
 		C216CC7F255BC22A00699CA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceButtonStyle.swift; sourceTree = "<group>"; };
 		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceTextFieldStyle.swift; sourceTree = "<group>"; };
 		C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCameraViewModel.swift; sourceTree = "<group>"; };
 		C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNetworkingClient.swift; sourceTree = "<group>"; };
 		C285D074255D959200271787 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				C211648D258261BB00FC788F /* WebView.swift */,
 				C285D074255D959200271787 /* AuthModels.swift */,
 				C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */,
+				C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */,
 				C211647C25824AD500FC788F /* File.swift */,
 				C2A801B3258361BF0072635A /* ColorTheme.swift */,
 				C24F667F257518BF00D6A62C /* Camera */,
@@ -518,6 +521,7 @@
 				C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */,
 				C2D95181255D5228008ED51D /* AuthClient.swift in Sources */,
 				C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */,
+				C24263902587AAE800BC3005 /* EvidenceTextFieldStyle.swift in Sources */,
 				C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */,
 				C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */,
 				C2AD01D5256F9B4600EC9533 /* AddCameraView.swift in Sources */,
