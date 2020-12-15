@@ -142,8 +142,12 @@ class AuthClient: NSObject, ObservableObject {
                 print(error.localizedDescription)
                 break
             }
-        }                   
-        
+        }
+    }
+    
+    func signOut() {
+        KeychainWrapper.standard.set("", forKey: "refreshToken")
+        isSignedOut = true
     }
 }
 
