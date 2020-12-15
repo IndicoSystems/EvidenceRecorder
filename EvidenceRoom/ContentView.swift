@@ -9,15 +9,21 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color.background
-            VStack {
-                TitleView()
-                    .padding(.top)
+            HStack(spacing: 0) {
+                NavBarView()
                 Spacer()
-                MainView()
-                    .fullScreenCover(isPresented: $authClient.isSignedOut, content: LoginView.init)
+                VStack(alignment: .leading) {
+                    Text("Dashboard")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.text)
+                        .padding()
+                    MainView()
+                        .fullScreenCover(isPresented: $authClient.isSignedOut, content: LoginView.init)
+                }
                 Spacer()
             }
-        }.edgesIgnoringSafeArea(.all)
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 
