@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct NavBarView: View {
+    
+    @ObservedObject var authClient = AuthClient.shared
+    
+    
     var body: some View {
         VStack {
             Spacer()
             Button("TS") {
-                print("Sign out")
+                authClient.signOut()
             }
             .padding()
             .background(Color.pink)

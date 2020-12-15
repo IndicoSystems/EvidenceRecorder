@@ -51,7 +51,6 @@ struct LoginView: View {
                 .padding()
             }
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
