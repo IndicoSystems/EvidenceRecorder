@@ -23,7 +23,7 @@ struct ContentView: View {
                 }
                 Spacer()
             }
-        }.edgesIgnoringSafeArea(.top)
+        }
     }
 }
 
