@@ -82,11 +82,13 @@ struct CameraView: View {
                     .frame(width: 56, height: 56)
                     .foregroundColor(Color.red)
             }
+            .animation(.easeInOut)
             
             Button(viewModel.isPreviewing ? "Hide preview" : "Show preview") {
                 viewModel.isPreviewing.toggle()
             }
             .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
+            .animation(.easeInOut)
             
         }
         .frame(width: 500, height: 500)

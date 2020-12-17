@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import WebKit
-import MobileVLCKit
+//import MobileVLCKit
 
 struct WebView: UIViewRepresentable {
     
@@ -22,28 +22,28 @@ struct WebView: UIViewRepresentable {
 
 }
 
-struct VLCView: UIViewRepresentable {
-    
-    var url: String
-    
-    let vlcPlayer = VLCMediaPlayer()
-    
-    func makeUIView(context: Context) ->  UIView {
-        let view = UIView()
-        view.backgroundColor = .red
-        guard let url = URL(string: url) else {
-            return view
-        }
-        
-        vlcPlayer.drawable = view
-        
-        let media = VLCMedia(url: url)
-        vlcPlayer.media = media
-        vlcPlayer.play()
-        view.backgroundColor = .gray
-        
-        return view
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<VLCView>) {}
-}
+//struct VLCView: UIViewRepresentable {
+//    
+//    var url: String
+//    
+//    let vlcPlayer = VLCMediaPlayer()
+//    
+//    func makeUIView(context: Context) ->  UIView {
+//        let view = UIView()
+//        view.backgroundColor = .red
+//        guard let url = URL(string: url) else {
+//            return view
+//        }
+//        
+//        vlcPlayer.drawable = view
+//        
+//        let media = VLCMedia(url: url)
+//        vlcPlayer.media = media
+//        vlcPlayer.play()
+//        view.backgroundColor = .gray
+//        
+//        return view
+//    }
+//    
+//    func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<VLCView>) {}
+//}

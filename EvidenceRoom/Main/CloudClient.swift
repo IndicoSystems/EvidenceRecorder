@@ -74,7 +74,13 @@ class CloudClient {
     }
 
     func createApolloClient() {
-        guard let bearerToken = KeychainWrapper.standard.string(forKey: "oauthToken") else { return }
+        
+        #if targetEnvironment(macCatalyst)
+            guard let bearerToken = UserDefaults.standard.string(forKey: "oauthToken") else { return }
+        
+        #else
+            guard let bearerToken = KeychainWrapper.standard.string(forKey: "oauthToken") else { return }
+        #endif
         
         let authPayload = [
             "Authorization" : "Bearer \(bearerToken)",

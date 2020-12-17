@@ -41,7 +41,22 @@ class AuthClient: NSObject, ObservableObject {
         if host.isEmpty {
             isSignedOut = true
         } else {
-            authenticate()
+            
+            #if targetEnvironment(macCatalyst)
+            if UserDefaults.standard.string(forKey: "refreshToken") == nil {
+                isSignedOut = true
+            } else {
+                authenticate()
+            }
+            #else
+            if KeychainWrapper.standard.string(forKey: "refreshToken") == nil {
+                isSignedOut = true
+            } else {
+                authenticate()
+            }
+            #endif
+            
+            
         }
     }
     
@@ -95,11 +110,20 @@ class AuthClient: NSObject, ObservableObject {
                         switch result {
                         case .success(let (credential, _, parameters)):
                             CloudClient.shared.createApolloClient()
-                            KeychainWrapper.standard.set(credential.oauthToken, forKey: "oauthToken")
-                            KeychainWrapper.standard.set(credential.oauthRefreshToken, forKey: "refreshToken")
+                            
                             print("Credential: \(credential.oauthToken)")
                             
                             UserDefaults.standard.setValue(host, forKey: "host")
+                            
+                            #if targetEnvironment(macCatalyst)
+                                UserDefaults.standard.setValue(credential.oauthToken, forKey: "oauthToken")
+                                UserDefaults.standard.setValue(credential.oauthRefreshToken, forKey: "refreshToken")
+                            #else
+                                KeychainWrapper.standard.set(credential.oauthToken, forKey: "oauthToken")
+                                KeychainWrapper.standard.set(credential.oauthRefreshToken, forKey: "refreshToken")
+                            #endif
+                            
+                            CloudClient.shared.createApolloClient()
                             
                         case .failure(let error):
                             print(error.localizedDescription)
@@ -119,18 +143,31 @@ class AuthClient: NSObject, ObservableObject {
             switch result {
             case .success(let wellknown):
                 self.wellknown = wellknown
-                self.oauthswift = OAuth2Swift(consumerKey: self.clientId, consumerSecret: self.clientSecret, authorizeUrl: wellknown.authorizationEndpoint, accessTokenUrl: wellknown.tokenEndpoint, responseType: "", contentType: nil)
+                self.oauthswift = OAuth2Swift(consumerKey: self.clientId, consumerSecret: self.clientSecret, authorizeUrl: wellknown.authorizationEndpoint, accessTokenUrl: wellknown.tokenEndpoint, responseType: "code")
                 
                 guard let oauth = self.oauthswift else { return }
-                let refreshToken = KeychainWrapper.standard.string(forKey: "refreshToken")!
+                var refreshToken = ""
                 
+                #if targetEnvironment(macCatalyst)
+                    refreshToken = UserDefaults.standard.string(forKey: "refreshToken")!
+                
+                #else
+                    refreshToken = KeychainWrapper.standard.string(forKey: "refreshToken")!
+                #endif
                 
                 oauth.renewAccessToken(withRefreshToken: refreshToken) { result in
                     switch result {
                     case .success(let success):
                         print("AuthToken is expired: \(success.credential.isTokenExpired())")
                         print("AuthToken will expire: \(success.credential.oauthTokenExpiresAt)")
-                        KeychainWrapper.standard.set(success.credential.oauthRefreshToken, forKey: "refreshToken")
+                        
+                        #if targetEnvironment(macCatalyst)
+                            UserDefaults.standard.setValue(success.credential.oauthRefreshToken, forKey: "refreshToken")
+                            
+                        #else
+                            KeychainWrapper.standard.set(success.credential.oauthRefreshToken, forKey: "refreshToken")
+                        #endif
+                        
                     case .failure(let error):
                         print(error)
                     }
