@@ -2,16 +2,20 @@ import SwiftUI
 
 struct ContentView: View {
     
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     @ObservedObject var authClient = AuthClient.shared
     
     @State private var isLoginPresented = false
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topTrailing) {
             Color.background
             HStack(spacing: 0) {
-                NavBarView()
-                Spacer()
+//                NavBarView()
+//                Spacer()
                 VStack(alignment: .leading) {
                     Text("Dashboard")
                         .font(.largeTitle)
@@ -19,10 +23,22 @@ struct ContentView: View {
                         .foregroundColor(.text)
                         .padding()
                     MainView()
-                        .fullScreenCover(isPresented: $authClient.isSignedOut, content: LoginView.init)
+                        .padding()
+//                    FormsView()
+//                        .background(Color.card)
+//                        .padding()
+//                        .fullScreenCover(isPresented: $authClient.isSignedOut, content: LoginView.init)
                 }
-                Spacer()
+//                Spacer()
             }
+            Button {
+                authClient.signOut()
+            } label: {
+                Image(systemName: "icloud.and.arrow.down.fill")
+                    .resizable()
+                    .frame(width: 32, height: 32)
+            }
+            .padding()
         }
     }
 }

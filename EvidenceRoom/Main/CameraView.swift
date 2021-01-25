@@ -45,14 +45,21 @@ class CameraViewModel: ObservableObject {
         }
     }
     
-    func getUploadURL(recordingResponse: RecordingResponse) {        
-        CloudClient.shared.createFile(with: recordingResponse.id, size: recordingResponse.recordingInfo.fileSize) { result in
-            switch result {
-            case .success(let url):
-                let file = File(location: url, id: recordingResponse.id)
-                self.networkClient.upload(file: file, from: self.camera)
-            case .failure(let error):
-                print(error.localizedDescription)
+    func getUploadURL(recordingResponse: RecordingResponse) {
+        
+        DispatchQueue.global().async {
+            AuthClient.shared.authenticate()
+            
+            DispatchQueue.main.async {
+                CloudClient.shared.createFile(with: recordingResponse.id, size: recordingResponse.recordingInfo.fileSize) { result in
+                    switch result {
+                    case .success(let url):
+                        let file = File(location: url, id: recordingResponse.id)
+                        self.networkClient.upload(file: file, from: self.camera)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
             }
         }
     }
@@ -63,13 +70,14 @@ struct CameraView: View {
     @ObservedObject var viewModel: CameraViewModel
     
     var body: some View {
+        
         VStack {
             Text(viewModel.camera.name)
                 .font(.custom("Roboto-Regular", size: 20))
                 .foregroundColor(.text)
             if viewModel.isPreviewing || viewModel.isRecording {
                 WebView(url: "http://" + viewModel.camera.ip)
-                    .frame(width: 400, height: 300)
+                    .frame(width: 900, height: 600)
             } else {
                 Image("camera")
                     .foregroundColor(.text)
@@ -82,17 +90,13 @@ struct CameraView: View {
                     .frame(width: 56, height: 56)
                     .foregroundColor(Color.red)
             }
-            .animation(.easeInOut)
             
             Button(viewModel.isPreviewing ? "Hide preview" : "Show preview") {
                 viewModel.isPreviewing.toggle()
             }
             .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
-            .animation(.easeInOut)
             
         }
-        .frame(width: 500, height: 500)
         .padding()
-        .background(Color.card)
     }
 }

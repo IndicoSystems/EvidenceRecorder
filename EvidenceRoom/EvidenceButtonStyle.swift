@@ -26,5 +26,6 @@ struct EvidenceButtonStyle: ButtonStyle {
             .background(bgColor)
             .clipShape(clipShape)
             .shadow(radius: 4)
+            .opacity(configuration.isPressed ? 0.7 : 1)
     }
 }

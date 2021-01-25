@@ -10,6 +10,7 @@
 		2ED1269DED803A59285D83FA /* Pods_EvidenceRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47760F72D0C901320F71599E /* Pods_EvidenceRoom.framework */; };
 		54789189252A2F8D17BA251A /* Pods_EvidenceRoom_EvidenceRoomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E7FEE431D9C6D51239E4FD /* Pods_EvidenceRoom_EvidenceRoomUITests.framework */; };
 		596A79BFB793633835265F0B /* Pods_EvidenceRoomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548209EF05A24EEC9143C3AC /* Pods_EvidenceRoomTests.framework */; };
+		C200BCDB258B92A800BDFAD0 /* FormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200BCDA258B92A800BDFAD0 /* FormsView.swift */; };
 		C2116422257F892900FC788F /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = C2116421257F892900FC788F /* Apollo */; };
 		C2116427257F8A7500FC788F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = C2116426257F8A7500FC788F /* schema.json */; };
 		C211642C257F8AF600FC788F /* CloudClient.graphql in Resources */ = {isa = PBXBuildFile; fileRef = C211642B257F8AF600FC788F /* CloudClient.graphql */; };
@@ -18,6 +19,7 @@
 		C211647D25824AD500FC788F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211647C25824AD500FC788F /* File.swift */; };
 		C211648E258261BB00FC788F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211648D258261BB00FC788F /* WebView.swift */; };
 		C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C216CC7F255BC22A00699CA5 /* LoginView.swift */; };
+		C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23FE7AA25A85381009A1428 /* String+JWT.swift */; };
 		C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */; };
 		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
 		C24263902587AAE800BC3005 /* EvidenceTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */; };
@@ -74,12 +76,14 @@
 		85912F9BE65A5FEFAE74DE45 /* Pods-EvidenceRoomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoomTests.debug.xcconfig"; path = "Target Support Files/Pods-EvidenceRoomTests/Pods-EvidenceRoomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C64C2CA74C96E8EA36336A /* Pods-EvidenceRoomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoomTests.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoomTests/Pods-EvidenceRoomTests.release.xcconfig"; sourceTree = "<group>"; };
 		B54FA67BE7131E85E9C4F3AF /* Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C200BCDA258B92A800BDFAD0 /* FormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsView.swift; sourceTree = "<group>"; };
 		C2116426257F8A7500FC788F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		C211642B257F8AF600FC788F /* CloudClient.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CloudClient.graphql; sourceTree = "<group>"; };
 		C2116437257F92EE00FC788F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C211647C25824AD500FC788F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C211648D258261BB00FC788F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		C216CC7F255BC22A00699CA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C23FE7AA25A85381009A1428 /* String+JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JWT.swift"; sourceTree = "<group>"; };
 		C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceButtonStyle.swift; sourceTree = "<group>"; };
 		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceTextFieldStyle.swift; sourceTree = "<group>"; };
@@ -157,6 +161,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C200BCDF258B9C1C00BDFAD0 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				C200BCDA258B92A800BDFAD0 /* FormsView.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
 		C24F667F257518BF00D6A62C /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +220,11 @@
 				C285D074255D959200271787 /* AuthModels.swift */,
 				C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */,
 				C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */,
+				C200BCDF258B9C1C00BDFAD0 /* Forms */,
 				C211647C25824AD500FC788F /* File.swift */,
 				C24263942587AE1F00BC3005 /* NavBarView.swift */,
 				C2A801B3258361BF0072635A /* ColorTheme.swift */,
+				C23FE7AA25A85381009A1428 /* String+JWT.swift */,
 				C24F667F257518BF00D6A62C /* Camera */,
 				C2FCCFCD25767A9C00790212 /* Main */,
 				C2A43609255579D7004479E0 /* Assets.xcassets */,
@@ -507,7 +521,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --passthroughCustomScalars --localSchemaFile=\"schema.json\" API.swift\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -520,6 +534,7 @@
 				C2D95186255D647B008ED51D /* Camera.swift in Sources */,
 				C2FCCFE025767B9900790212 /* CameraView.swift in Sources */,
 				C285D075255D959200271787 /* AuthModels.swift in Sources */,
+				C200BCDB258B92A800BDFAD0 /* FormsView.swift in Sources */,
 				C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */,
 				C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */,
 				C2D95181255D5228008ED51D /* AuthClient.swift in Sources */,
@@ -527,6 +542,7 @@
 				C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */,
 				C24263902587AAE800BC3005 /* EvidenceTextFieldStyle.swift in Sources */,
 				C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */,
+				C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */,
 				C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */,
 				C2AD01D5256F9B4600EC9533 /* AddCameraView.swift in Sources */,
 				C2A4363B25557C14004479E0 /* MainView.swift in Sources */,

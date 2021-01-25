@@ -5,3 +5,17 @@ mutation CreateFile($data: FileCreateInput!) {
         storageKey
     }
 }
+
+query GetForms {
+  settings {
+    capture {
+      requiredForms {
+        forms {
+          formType {
+            displayName
+          }
+        }
+      }
+    }
+  }
+}
