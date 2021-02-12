@@ -6,18 +6,16 @@ struct FormsView: View {
     
     var body: some View {
         
-        VStack {
+        List {
             ForEach(cloudClient.forms, id: \.self) { form in
                 Button {
                     print(form)
                 } label: {
                     Text(form)
                 }
-
             }
-        }.onAppear {
-            cloudClient.getForms()
         }
+        .navigationTitle("Forms")
         
         
 //        GeometryReader { gr in

@@ -13,9 +13,11 @@ struct RecordingResponse: Codable {
 struct RecordingInfo: Codable {
     let id: String
     let fileSize: Int
+    let mimeType: String
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case fileSize = "file_size"
+        case mimeType = "mimeType"
     }
 }

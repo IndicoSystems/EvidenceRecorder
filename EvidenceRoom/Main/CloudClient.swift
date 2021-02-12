@@ -24,15 +24,17 @@ class CloudClient: ObservableObject {
     private let apolloStore = ApolloStore()
     
     @Published var forms = [String]()
+    @Published var rooms = [Room]()
+    @Published var cases = [GetCasesQuery.Data.Case]()
     
     func fetchCameras(from url: URL, completion: @escaping (Result<[AxisCamera], Error>) -> ()) {
         var cameras = [AxisCamera]()
 //        let camera1 = AxisCamera(ip: "10.0.0.83", port: 8089, name: "Cam 1")
-        let camera2 = AxisCamera(ip: "192.168.1.85", port: 8089, name: "Cam 2")
+//        let camera2 = AxisCamera(ip: "192.168.1.85", port: 8089, name: "Cam 2")
         
         cameras = [
 //            camera1,
-            camera2
+//            camera2
         ]
         
         completion(.success(cameras))
@@ -63,6 +65,38 @@ class CloudClient: ObservableObject {
 //                print(error.localizedDescription)
 //            }
 //        }.resume()
+    }
+    
+    func getCases() {
+        apolloClient.fetch(query: GetCasesQuery(), cachePolicy: .default, contextIdentifier: nil, queue: .main) { result in
+            switch result {
+            case .success(let data):
+                guard let d = data.data else { return }
+                
+                self.cases = d.cases
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getRooms() {
+        apolloClient.fetch(query: GetRoomsQuery(), cachePolicy: .default, contextIdentifier: nil, queue: .main) { result in
+            switch result {
+            case .success(let data):
+                guard let d = data.data else { return }
+                
+                var rooms = [Room]()
+                d.rooms.forEach({
+                    rooms.append(Room(apolloRoom: $0))
+                })
+                self.rooms = rooms
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
     
     func getForms() {

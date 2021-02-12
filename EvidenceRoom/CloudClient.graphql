@@ -19,3 +19,25 @@ query GetForms {
     }
   }
 }
+
+query GetRooms {
+  rooms {
+    id
+    name
+    description
+    cameras {
+      id
+      name
+      description
+      address
+    }
+  }
+}
+
+query GetCases {
+  cases {
+    id
+    name
+    description
+  }
+}

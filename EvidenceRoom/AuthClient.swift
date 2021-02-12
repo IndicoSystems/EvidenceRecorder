@@ -145,6 +145,7 @@ class AuthClient: NSObject, ObservableObject {
                             
                             CloudClient.shared.createApolloClient(withBearerToken: credential.oauthToken)
                             CloudClient.shared.getForms()
+                            CloudClient.shared.getRooms()
                             
                         case .failure(let error):
                             print(error.localizedDescription)
@@ -187,7 +188,8 @@ class AuthClient: NSObject, ObservableObject {
                 #endif
                 
                 CloudClient.shared.createApolloClient(withBearerToken: success.credential.oauthToken)
-            //                        CloudClient.shared.getForms()
+                CloudClient.shared.getForms()
+                CloudClient.shared.getRooms()
             
             case .failure(let error):
                 print(error)

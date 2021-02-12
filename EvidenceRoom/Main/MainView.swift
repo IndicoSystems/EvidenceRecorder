@@ -53,7 +53,7 @@ struct MainView: View {
             } else {
                 ScrollView {
                     LazyVGrid(columns: columns) {
-                        ForEach(viewModel.cameraViewModels, id: \.camera.ip) { viewModel in
+                        ForEach(viewModel.cameraViewModels, id: \.camera.id) { viewModel in
                             CameraView(viewModel: viewModel)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         }

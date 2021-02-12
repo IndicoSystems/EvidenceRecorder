@@ -34,7 +34,7 @@ class CameraViewModel: ObservableObject {
         networkClient.stopRecording(camera: camera) { [unowned self] result in
             switch result {
             case .success(let recordingResponse):
-                self.getUploadURL(recordingResponse: recordingResponse)
+                self.getUploadURL(recordingInfo: recordingResponse)
                 
                 DispatchQueue.main.async {
                     self.isRecording = false
@@ -45,16 +45,16 @@ class CameraViewModel: ObservableObject {
         }
     }
     
-    func getUploadURL(recordingResponse: RecordingResponse) {
+    func getUploadURL(recordingInfo: RecordingInfo) {
         
         DispatchQueue.global().async {
             AuthClient.shared.authenticate()
             
             DispatchQueue.main.async {
-                CloudClient.shared.createFile(with: recordingResponse.id, size: recordingResponse.recordingInfo.fileSize) { result in
+                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
                     switch result {
                     case .success(let url):
-                        let file = File(location: url, id: recordingResponse.id)
+                        let file = File(location: url, id: recordingInfo.id)
                         self.networkClient.upload(file: file, from: self.camera)
                     case .failure(let error):
                         print(error.localizedDescription)
@@ -76,7 +76,7 @@ struct CameraView: View {
                 .font(.custom("Roboto-Regular", size: 20))
                 .foregroundColor(.text)
             if viewModel.isPreviewing || viewModel.isRecording {
-                WebView(url: "http://" + viewModel.camera.ip)
+                WebView(url: viewModel.camera.url.string)
                     .frame(width: 900, height: 600)
             } else {
                 Image("camera")
