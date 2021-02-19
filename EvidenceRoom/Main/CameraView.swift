@@ -68,8 +68,8 @@ struct CameraView: View {
                 .font(.custom("Roboto-Regular", size: 20))
                 .foregroundColor(.text)
             if viewModel.isPreviewing || viewModel.isRecording {
-                WebView(url: "http://" + viewModel.camera.ip)
-                    .frame(width: 400, height: 300)
+                WebView(url: viewModel.camera.streamURL.string)
+                    .frame(width: 900, height: 600)
             } else {
                 Image("camera")
                     .foregroundColor(.text)

@@ -31,6 +31,16 @@ class Camera: Decodable {
         self.port = port
         self.name = name
     }
+    
+    var streamURL: URL {
+        return serverURL.appendingPathComponent("feed")
+    }
+    
+    init(apolloCam: GetRoomsQuery.Data.Room.Camera) {
+        self.id = apolloCam.id
+        self.name = apolloCam.name
+        self.address = apolloCam.address
+    }
 }
 
 class AxisCamera: Camera {
