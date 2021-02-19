@@ -37,7 +37,7 @@ public struct FileCreateInput: GraphQLMapConvertible {
   ///   - description
   ///   - inherit
   ///   - album
-  public init(caseId: Swift.Optional<String?> = nil, caseBatchId: Swift.Optional<String?> = nil, albumBatchId: Swift.Optional<String?> = nil, blurHash: Swift.Optional<String?> = nil, clientMediaId: Swift.Optional<String?> = nil, checksum: Swift.Optional<String?> = nil, checksumAddition: Swift.Optional<ChecksumCreateInput?> = nil, eventAddition: Swift.Optional<[BlobEventCreateInput]?> = nil, fileMetadata: Swift.Optional<String?> = nil, fileSize: String, duration: Swift.Optional<String?> = nil, width: Swift.Optional<String?> = nil, dpi: Swift.Optional<String?> = nil, height: Swift.Optional<String?> = nil, persons: Swift.Optional<PersonCreateManyInput?> = nil, bookmarks: Swift.Optional<[BookmarkCreateWithoutFileInput]?> = nil, captureStartedAt: String, clientIdentity: Swift.Optional<String?> = nil, longitude: Swift.Optional<String?> = nil, latitude: Swift.Optional<String?> = nil, postArea: Swift.Optional<String?> = nil, location: Swift.Optional<LocationInput?> = nil, mime: String, originBlob: Swift.Optional<GraphQLID?> = nil, metadata: Swift.Optional<[MetadataCreateWithoutFileInput]?> = nil, name: Swift.Optional<String?> = nil, description: Swift.Optional<String?> = nil, inherit: Swift.Optional<Bool?> = nil, album: Swift.Optional<AlbumWhereUniqueInputWithConnect?> = nil) {
+  public init(caseId: Swift.Optional<String?> = nil, caseBatchId: Swift.Optional<String?> = nil, albumBatchId: Swift.Optional<String?> = nil, blurHash: Swift.Optional<String?> = nil, clientMediaId: Swift.Optional<String?> = nil, checksum: Swift.Optional<String?> = nil, checksumAddition: Swift.Optional<ChecksumCreateInput?> = nil, eventAddition: Swift.Optional<[BlobEventCreateInput]?> = nil, fileMetadata: Swift.Optional<Json?> = nil, fileSize: PositiveNonZeroInt, duration: Swift.Optional<PositiveInt?> = nil, width: Swift.Optional<PositiveInt?> = nil, dpi: Swift.Optional<PositiveInt?> = nil, height: Swift.Optional<PositiveInt?> = nil, persons: Swift.Optional<PersonCreateManyInput?> = nil, bookmarks: Swift.Optional<[BookmarkCreateWithoutFileInput]?> = nil, captureStartedAt: DateTime, clientIdentity: Swift.Optional<String?> = nil, longitude: Swift.Optional<Longitude?> = nil, latitude: Swift.Optional<Latitude?> = nil, postArea: Swift.Optional<String?> = nil, location: Swift.Optional<LocationInput?> = nil, mime: MimeType, originBlob: Swift.Optional<GraphQLID?> = nil, metadata: Swift.Optional<[MetadataCreateWithoutFileInput]?> = nil, name: Swift.Optional<ShortString?> = nil, description: Swift.Optional<LongString?> = nil, inherit: Swift.Optional<Bool?> = nil, album: Swift.Optional<AlbumWhereUniqueInputWithConnect?> = nil) {
     graphQLMap = ["caseId": caseId, "caseBatchId": caseBatchId, "albumBatchId": albumBatchId, "blurHash": blurHash, "clientMediaId": clientMediaId, "checksum": checksum, "checksumAddition": checksumAddition, "eventAddition": eventAddition, "fileMetadata": fileMetadata, "fileSize": fileSize, "duration": duration, "width": width, "dpi": dpi, "height": height, "persons": persons, "bookmarks": bookmarks, "captureStartedAt": captureStartedAt, "clientIdentity": clientIdentity, "longitude": longitude, "latitude": latitude, "postArea": postArea, "location": location, "mime": mime, "originBlob": originBlob, "metadata": metadata, "name": name, "description": description, "inherit": inherit, "album": album]
   }
 
@@ -113,54 +113,54 @@ public struct FileCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var fileMetadata: Swift.Optional<String?> {
+  public var fileMetadata: Swift.Optional<Json?> {
     get {
-      return graphQLMap["fileMetadata"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["fileMetadata"] as? Swift.Optional<Json?> ?? Swift.Optional<Json?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "fileMetadata")
     }
   }
 
-  public var fileSize: String {
+  public var fileSize: PositiveNonZeroInt {
     get {
-      return graphQLMap["fileSize"] as! String
+      return graphQLMap["fileSize"] as! PositiveNonZeroInt
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "fileSize")
     }
   }
 
-  public var duration: Swift.Optional<String?> {
+  public var duration: Swift.Optional<PositiveInt?> {
     get {
-      return graphQLMap["duration"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["duration"] as? Swift.Optional<PositiveInt?> ?? Swift.Optional<PositiveInt?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "duration")
     }
   }
 
-  public var width: Swift.Optional<String?> {
+  public var width: Swift.Optional<PositiveInt?> {
     get {
-      return graphQLMap["width"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["width"] as? Swift.Optional<PositiveInt?> ?? Swift.Optional<PositiveInt?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "width")
     }
   }
 
-  public var dpi: Swift.Optional<String?> {
+  public var dpi: Swift.Optional<PositiveInt?> {
     get {
-      return graphQLMap["dpi"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["dpi"] as? Swift.Optional<PositiveInt?> ?? Swift.Optional<PositiveInt?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "dpi")
     }
   }
 
-  public var height: Swift.Optional<String?> {
+  public var height: Swift.Optional<PositiveInt?> {
     get {
-      return graphQLMap["height"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["height"] as? Swift.Optional<PositiveInt?> ?? Swift.Optional<PositiveInt?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "height")
@@ -185,9 +185,9 @@ public struct FileCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var captureStartedAt: String {
+  public var captureStartedAt: DateTime {
     get {
-      return graphQLMap["captureStartedAt"] as! String
+      return graphQLMap["captureStartedAt"] as! DateTime
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "captureStartedAt")
@@ -203,18 +203,18 @@ public struct FileCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var longitude: Swift.Optional<String?> {
+  public var longitude: Swift.Optional<Longitude?> {
     get {
-      return graphQLMap["longitude"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["longitude"] as? Swift.Optional<Longitude?> ?? Swift.Optional<Longitude?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "longitude")
     }
   }
 
-  public var latitude: Swift.Optional<String?> {
+  public var latitude: Swift.Optional<Latitude?> {
     get {
-      return graphQLMap["latitude"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["latitude"] as? Swift.Optional<Latitude?> ?? Swift.Optional<Latitude?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "latitude")
@@ -239,9 +239,9 @@ public struct FileCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var mime: String {
+  public var mime: MimeType {
     get {
-      return graphQLMap["mime"] as! String
+      return graphQLMap["mime"] as! MimeType
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "mime")
@@ -266,18 +266,18 @@ public struct FileCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var name: Swift.Optional<String?> {
+  public var name: Swift.Optional<ShortString?> {
     get {
-      return graphQLMap["name"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["name"] as? Swift.Optional<ShortString?> ?? Swift.Optional<ShortString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "name")
     }
   }
 
-  public var description: Swift.Optional<String?> {
+  public var description: Swift.Optional<LongString?> {
     get {
-      return graphQLMap["description"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["description"] as? Swift.Optional<LongString?> ?? Swift.Optional<LongString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "description")
@@ -309,7 +309,7 @@ public struct ChecksumCreateInput: GraphQLMapConvertible {
   /// - Parameters:
   ///   - type
   ///   - value
-  public init(type: CheckSumTypes, value: String) {
+  public init(type: CheckSumTypes, value: ShortReqString) {
     graphQLMap = ["type": type, "value": value]
   }
 
@@ -322,9 +322,9 @@ public struct ChecksumCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var value: String {
+  public var value: ShortReqString {
     get {
-      return graphQLMap["value"] as! String
+      return graphQLMap["value"] as! ShortReqString
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "value")
@@ -447,7 +447,7 @@ public struct BlobEventCreateInput: GraphQLMapConvertible {
   ///   - startFrame
   ///   - end
   ///   - endFrame
-  public init(id: Swift.Optional<GraphQLID?> = nil, type: BlobEventType, start: Swift.Optional<String?> = nil, startFrame: Swift.Optional<Int?> = nil, end: Swift.Optional<String?> = nil, endFrame: Swift.Optional<Int?> = nil) {
+  public init(id: Swift.Optional<GraphQLID?> = nil, type: BlobEventType, start: Swift.Optional<DateTime?> = nil, startFrame: Swift.Optional<Int?> = nil, end: Swift.Optional<DateTime?> = nil, endFrame: Swift.Optional<Int?> = nil) {
     graphQLMap = ["id": id, "type": type, "start": start, "startFrame": startFrame, "end": end, "endFrame": endFrame]
   }
 
@@ -469,9 +469,9 @@ public struct BlobEventCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var start: Swift.Optional<String?> {
+  public var start: Swift.Optional<DateTime?> {
     get {
-      return graphQLMap["start"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["start"] as? Swift.Optional<DateTime?> ?? Swift.Optional<DateTime?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "start")
@@ -487,9 +487,9 @@ public struct BlobEventCreateInput: GraphQLMapConvertible {
     }
   }
 
-  public var end: Swift.Optional<String?> {
+  public var end: Swift.Optional<DateTime?> {
     get {
-      return graphQLMap["end"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["end"] as? Swift.Optional<DateTime?> ?? Swift.Optional<DateTime?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "end")
@@ -628,130 +628,130 @@ public struct PersonCreateInput: GraphQLMapConvertible {
   ///   - zipCode
   ///   - postArea
   ///   - country
-  public init(personalId: Swift.Optional<String?> = nil, firstName: Swift.Optional<String?> = nil, lastName: Swift.Optional<String?> = nil, email: Swift.Optional<String?> = nil, phoneNumber: Swift.Optional<String?> = nil, gender: Swift.Optional<String?> = nil, dateOfBirth: Swift.Optional<String?> = nil, nationality: Swift.Optional<String?> = nil, workPlace: Swift.Optional<String?> = nil, address: Swift.Optional<String?> = nil, address2: Swift.Optional<String?> = nil, zipCode: Swift.Optional<String?> = nil, postArea: Swift.Optional<String?> = nil, country: Swift.Optional<String?> = nil) {
+  public init(personalId: Swift.Optional<ShortReqString?> = nil, firstName: Swift.Optional<ShortReqString?> = nil, lastName: Swift.Optional<ShortReqString?> = nil, email: Swift.Optional<Email?> = nil, phoneNumber: Swift.Optional<ShortReqString?> = nil, gender: Swift.Optional<ShortReqString?> = nil, dateOfBirth: Swift.Optional<DateTime?> = nil, nationality: Swift.Optional<ShortReqString?> = nil, workPlace: Swift.Optional<ShortReqString?> = nil, address: Swift.Optional<ShortReqString?> = nil, address2: Swift.Optional<ShortReqString?> = nil, zipCode: Swift.Optional<ShortReqString?> = nil, postArea: Swift.Optional<ShortReqString?> = nil, country: Swift.Optional<ShortReqString?> = nil) {
     graphQLMap = ["personalId": personalId, "firstName": firstName, "lastName": lastName, "email": email, "phoneNumber": phoneNumber, "gender": gender, "dateOfBirth": dateOfBirth, "nationality": nationality, "workPlace": workPlace, "address": address, "address2": address2, "zipCode": zipCode, "postArea": postArea, "country": country]
   }
 
-  public var personalId: Swift.Optional<String?> {
+  public var personalId: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["personalId"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["personalId"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "personalId")
     }
   }
 
-  public var firstName: Swift.Optional<String?> {
+  public var firstName: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["firstName"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["firstName"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "firstName")
     }
   }
 
-  public var lastName: Swift.Optional<String?> {
+  public var lastName: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["lastName"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["lastName"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "lastName")
     }
   }
 
-  public var email: Swift.Optional<String?> {
+  public var email: Swift.Optional<Email?> {
     get {
-      return graphQLMap["email"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["email"] as? Swift.Optional<Email?> ?? Swift.Optional<Email?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "email")
     }
   }
 
-  public var phoneNumber: Swift.Optional<String?> {
+  public var phoneNumber: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["phoneNumber"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["phoneNumber"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "phoneNumber")
     }
   }
 
-  public var gender: Swift.Optional<String?> {
+  public var gender: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["gender"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["gender"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "gender")
     }
   }
 
-  public var dateOfBirth: Swift.Optional<String?> {
+  public var dateOfBirth: Swift.Optional<DateTime?> {
     get {
-      return graphQLMap["dateOfBirth"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["dateOfBirth"] as? Swift.Optional<DateTime?> ?? Swift.Optional<DateTime?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "dateOfBirth")
     }
   }
 
-  public var nationality: Swift.Optional<String?> {
+  public var nationality: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["nationality"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["nationality"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "nationality")
     }
   }
 
-  public var workPlace: Swift.Optional<String?> {
+  public var workPlace: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["workPlace"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["workPlace"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "workPlace")
     }
   }
 
-  public var address: Swift.Optional<String?> {
+  public var address: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["address"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["address"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "address")
     }
   }
 
-  public var address2: Swift.Optional<String?> {
+  public var address2: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["address2"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["address2"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "address2")
     }
   }
 
-  public var zipCode: Swift.Optional<String?> {
+  public var zipCode: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["zipCode"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["zipCode"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "zipCode")
     }
   }
 
-  public var postArea: Swift.Optional<String?> {
+  public var postArea: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["postArea"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["postArea"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "postArea")
     }
   }
 
-  public var country: Swift.Optional<String?> {
+  public var country: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["country"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["country"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "country")
@@ -787,7 +787,7 @@ public struct BookmarkCreateWithoutFileInput: GraphQLMapConvertible {
   ///   - description
   ///   - x
   ///   - y
-  public init(style: Swift.Optional<Int?> = nil, title: Swift.Optional<String?> = nil, description: Swift.Optional<String?> = nil, x: Swift.Optional<Double?> = nil, y: Swift.Optional<Double?> = nil) {
+  public init(style: Swift.Optional<Int?> = nil, title: Swift.Optional<ShortReqString?> = nil, description: Swift.Optional<LongString?> = nil, x: Swift.Optional<Double?> = nil, y: Swift.Optional<Double?> = nil) {
     graphQLMap = ["style": style, "title": title, "description": description, "x": x, "y": y]
   }
 
@@ -800,18 +800,18 @@ public struct BookmarkCreateWithoutFileInput: GraphQLMapConvertible {
     }
   }
 
-  public var title: Swift.Optional<String?> {
+  public var title: Swift.Optional<ShortReqString?> {
     get {
-      return graphQLMap["title"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["title"] as? Swift.Optional<ShortReqString?> ?? Swift.Optional<ShortReqString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "title")
     }
   }
 
-  public var description: Swift.Optional<String?> {
+  public var description: Swift.Optional<LongString?> {
     get {
-      return graphQLMap["description"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["description"] as? Swift.Optional<LongString?> ?? Swift.Optional<LongString?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "description")
@@ -854,22 +854,22 @@ public struct LocationInput: GraphQLMapConvertible {
   ///   - area2
   ///   - area3
   ///   - area4
-  public init(longitude: Swift.Optional<String?> = nil, latitude: Swift.Optional<String?> = nil, horizontalAccuracy: Swift.Optional<Double?> = nil, verticalAccuracy: Swift.Optional<Double?> = nil, altitude: Swift.Optional<Double?> = nil, fullAddress: Swift.Optional<String?> = nil, streetAddress: Swift.Optional<String?> = nil, postalCode: Swift.Optional<String?> = nil, country: Swift.Optional<String?> = nil, area1: Swift.Optional<String?> = nil, area2: Swift.Optional<String?> = nil, area3: Swift.Optional<String?> = nil, area4: Swift.Optional<String?> = nil) {
+  public init(longitude: Swift.Optional<Longitude?> = nil, latitude: Swift.Optional<Latitude?> = nil, horizontalAccuracy: Swift.Optional<Double?> = nil, verticalAccuracy: Swift.Optional<Double?> = nil, altitude: Swift.Optional<Double?> = nil, fullAddress: Swift.Optional<String?> = nil, streetAddress: Swift.Optional<String?> = nil, postalCode: Swift.Optional<String?> = nil, country: Swift.Optional<String?> = nil, area1: Swift.Optional<String?> = nil, area2: Swift.Optional<String?> = nil, area3: Swift.Optional<String?> = nil, area4: Swift.Optional<String?> = nil) {
     graphQLMap = ["longitude": longitude, "latitude": latitude, "horizontalAccuracy": horizontalAccuracy, "verticalAccuracy": verticalAccuracy, "altitude": altitude, "fullAddress": fullAddress, "streetAddress": streetAddress, "postalCode": postalCode, "country": country, "area1": area1, "area2": area2, "area3": area3, "area4": area4]
   }
 
-  public var longitude: Swift.Optional<String?> {
+  public var longitude: Swift.Optional<Longitude?> {
     get {
-      return graphQLMap["longitude"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["longitude"] as? Swift.Optional<Longitude?> ?? Swift.Optional<Longitude?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "longitude")
     }
   }
 
-  public var latitude: Swift.Optional<String?> {
+  public var latitude: Swift.Optional<Latitude?> {
     get {
-      return graphQLMap["latitude"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["latitude"] as? Swift.Optional<Latitude?> ?? Swift.Optional<Latitude?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "latitude")
@@ -982,13 +982,13 @@ public struct MetadataCreateWithoutFileInput: GraphQLMapConvertible {
   /// - Parameters:
   ///   - value
   ///   - field
-  public init(value: String, field: MetadataWhereUniqueInput) {
+  public init(value: Json, field: MetadataWhereUniqueInput) {
     graphQLMap = ["value": value, "field": field]
   }
 
-  public var value: String {
+  public var value: Json {
     get {
-      return graphQLMap["value"] as! String
+      return graphQLMap["value"] as! Json
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "value")
@@ -1186,6 +1186,563 @@ public final class CreateFileMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "storageKey")
+        }
+      }
+    }
+  }
+}
+
+public final class GetFormsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query GetForms {
+      settings {
+        __typename
+        capture {
+          __typename
+          requiredForms {
+            __typename
+            forms {
+              __typename
+              formType {
+                __typename
+                displayName
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "GetForms"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("settings", type: .nonNull(.object(Setting.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(settings: Setting) {
+      self.init(unsafeResultMap: ["__typename": "Query", "settings": settings.resultMap])
+    }
+
+    public var settings: Setting {
+      get {
+        return Setting(unsafeResultMap: resultMap["settings"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "settings")
+      }
+    }
+
+    public struct Setting: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Settings"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("capture", type: .object(Capture.selections)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(capture: Capture? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Settings", "capture": capture.flatMap { (value: Capture) -> ResultMap in value.resultMap }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var capture: Capture? {
+        get {
+          return (resultMap["capture"] as? ResultMap).flatMap { Capture(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "capture")
+        }
+      }
+
+      public struct Capture: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["CaptureSettings"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("requiredForms", type: .object(RequiredForm.selections)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(requiredForms: RequiredForm? = nil) {
+          self.init(unsafeResultMap: ["__typename": "CaptureSettings", "requiredForms": requiredForms.flatMap { (value: RequiredForm) -> ResultMap in value.resultMap }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// Any forms that should be used. Each entry will result in a seperate button in the app.
+        public var requiredForms: RequiredForm? {
+          get {
+            return (resultMap["requiredForms"] as? ResultMap).flatMap { RequiredForm(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "requiredForms")
+          }
+        }
+
+        public struct RequiredForm: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["RequiredFormSetting"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("forms", type: .nonNull(.list(.nonNull(.object(Form.selections))))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(forms: [Form]) {
+            self.init(unsafeResultMap: ["__typename": "RequiredFormSetting", "forms": forms.map { (value: Form) -> ResultMap in value.resultMap }])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var forms: [Form] {
+            get {
+              return (resultMap["forms"] as! [ResultMap]).map { (value: ResultMap) -> Form in Form(unsafeResultMap: value) }
+            }
+            set {
+              resultMap.updateValue(newValue.map { (value: Form) -> ResultMap in value.resultMap }, forKey: "forms")
+            }
+          }
+
+          public struct Form: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["RequiredFormSettings"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("formType", type: .nonNull(.object(FormType.selections))),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(formType: FormType) {
+              self.init(unsafeResultMap: ["__typename": "RequiredFormSettings", "formType": formType.resultMap])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var formType: FormType {
+              get {
+                return FormType(unsafeResultMap: resultMap["formType"]! as! ResultMap)
+              }
+              set {
+                resultMap.updateValue(newValue.resultMap, forKey: "formType")
+              }
+            }
+
+            public struct FormType: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["FormType"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("displayName", type: .nonNull(.scalar(Json.self))),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(displayName: Json) {
+                self.init(unsafeResultMap: ["__typename": "FormType", "displayName": displayName])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              public var displayName: Json {
+                get {
+                  return resultMap["displayName"]! as! Json
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "displayName")
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class GetRoomsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query GetRooms {
+      rooms {
+        __typename
+        id
+        name
+        description
+        cameras {
+          __typename
+          id
+          name
+          description
+          address
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "GetRooms"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("rooms", type: .nonNull(.list(.nonNull(.object(Room.selections))))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(rooms: [Room]) {
+      self.init(unsafeResultMap: ["__typename": "Query", "rooms": rooms.map { (value: Room) -> ResultMap in value.resultMap }])
+    }
+
+    public var rooms: [Room] {
+      get {
+        return (resultMap["rooms"] as! [ResultMap]).map { (value: ResultMap) -> Room in Room(unsafeResultMap: value) }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: Room) -> ResultMap in value.resultMap }, forKey: "rooms")
+      }
+    }
+
+    public struct Room: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Room"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("description", type: .scalar(LongString.self)),
+          GraphQLField("cameras", type: .list(.nonNull(.object(Camera.selections)))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID, name: String, description: LongString? = nil, cameras: [Camera]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Room", "id": id, "name": name, "description": description, "cameras": cameras.flatMap { (value: [Camera]) -> [ResultMap] in value.map { (value: Camera) -> ResultMap in value.resultMap } }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return resultMap["id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String {
+        get {
+          return resultMap["name"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var description: LongString? {
+        get {
+          return resultMap["description"] as? LongString
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "description")
+        }
+      }
+
+      public var cameras: [Camera]? {
+        get {
+          return (resultMap["cameras"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Camera] in value.map { (value: ResultMap) -> Camera in Camera(unsafeResultMap: value) } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Camera]) -> [ResultMap] in value.map { (value: Camera) -> ResultMap in value.resultMap } }, forKey: "cameras")
+        }
+      }
+
+      public struct Camera: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Camera"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            GraphQLField("description", type: .scalar(LongString.self)),
+            GraphQLField("address", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, name: String, description: LongString? = nil, address: String) {
+          self.init(unsafeResultMap: ["__typename": "Camera", "id": id, "name": name, "description": description, "address": address])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String {
+          get {
+            return resultMap["name"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var description: LongString? {
+          get {
+            return resultMap["description"] as? LongString
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "description")
+          }
+        }
+
+        public var address: String {
+          get {
+            return resultMap["address"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "address")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class GetCasesQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query GetCases {
+      cases {
+        __typename
+        id
+        name
+        description
+      }
+    }
+    """
+
+  public let operationName: String = "GetCases"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("cases", type: .nonNull(.list(.nonNull(.object(Case.selections))))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(cases: [Case]) {
+      self.init(unsafeResultMap: ["__typename": "Query", "cases": cases.map { (value: Case) -> ResultMap in value.resultMap }])
+    }
+
+    public var cases: [Case] {
+      get {
+        return (resultMap["cases"] as! [ResultMap]).map { (value: ResultMap) -> Case in Case(unsafeResultMap: value) }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: Case) -> ResultMap in value.resultMap }, forKey: "cases")
+      }
+    }
+
+    public struct Case: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Case"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("description", type: .scalar(LongString.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID, name: String, description: LongString? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Case", "id": id, "name": name, "description": description])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return resultMap["id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String {
+        get {
+          return resultMap["name"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var description: LongString? {
+        get {
+          return resultMap["description"] as? LongString
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "description")
         }
       }
     }

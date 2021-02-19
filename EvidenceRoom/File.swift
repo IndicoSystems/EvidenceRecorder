@@ -5,7 +5,7 @@ struct File: Codable {
     let id: String
     
     enum CodingKeys: String, CodingKey {
-        case location = "UrlString"
-        case id = "VapixId"
+        case location = "url"
+        case id = "id"
     }
 }

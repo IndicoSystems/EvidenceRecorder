@@ -1,35 +1,42 @@
 import Foundation
 
-struct Room: Decodable {
+struct Room {
+    let id: String
     let name: String
     let cameras: [Camera]
     
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case cameras = "cameras"
+    init(apolloRoom: GetRoomsQuery.Data.Room) {
+        self.id = apolloRoom.id
+        self.name = apolloRoom.name
+        
+        var cams = [Camera]()
+        apolloRoom.cameras?.forEach({
+            let camera = Camera(apolloCam: $0)
+            cams.append(camera)
+        })
+        self.cameras = cams
     }
 }
 
-class Camera: Decodable {
+class Camera {
     
-    enum CodingKeys: String, CodingKey {
-        case ip = "IP"
-        case port = "port"
-        case name = "name"
-    }
-    
-    let ip: String
-    let port: Int
+    let id: String
     let name: String
+    let address: String
     
     var url: URL {
-        return URL(string: "http://\(ip):\(port)")!
+        let ip = address.split(separator: ":").first!
+        return URL(string: "http://\(ip)")!
     }
     
-    init(ip: String, port: Int, name: String) {
-        self.ip = ip
-        self.port = port
-        self.name = name
+    var serverURL: URL {
+        return URL(string: "http://\(address)")!
+    }
+    
+    init(apolloCam: GetRoomsQuery.Data.Room.Camera) {
+        self.id = apolloCam.id
+        self.name = apolloCam.name
+        self.address = apolloCam.address
     }
     
     var streamURL: URL {
@@ -51,6 +58,6 @@ class AxisCamera: Camera {
     }
     
     var stream: URL {
-        return URL(string: "rtsp://\(ip)/axis-media/media.amp")!
+        return URL(string: "rtsp://\(address)/axis-media/media.amp")!
     }
 }

@@ -39,25 +39,31 @@ struct MainView: View {
     
     @State var isRecordingFromAllCameras = false
     
+    let columns = [
+        GridItem(.flexible()),
+//        GridItem(.flexible())
+    ]
+    
     var body: some View {
+        
         VStack {
-            HStack {
-                if viewModel.isLoadingCameras {
-                    ProgressView()
-                } else {
-                    if viewModel.cameras.count > 0 {
-                        ForEach(viewModel.cameraViewModels, id: \.camera.ip) { viewModel in
+            Spacer()
+            if viewModel.isLoadingCameras {
+                ProgressView()
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: columns) {
+                        ForEach(viewModel.cameraViewModels, id: \.camera.id) { viewModel in
                             CameraView(viewModel: viewModel)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
                         .overlay(RoundedRectangle(cornerRadius: 8)
                                     .stroke(Color.gray.opacity(0.2), lineWidth: 1)
                         )
-                    } else {
-                        Text("No cameras found")
-                            .font(.caption)
                     }
+                    .padding()
                 }
+                
             }
             
             Button(isRecordingFromAllCameras ? "Stop all cameras" : "Start all cameras") {
@@ -68,6 +74,7 @@ struct MainView: View {
                 isRecordingFromAllCameras.toggle()
             }
             .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .roundedRect))
+            Spacer()
         }
     }
 }
