@@ -7,11 +7,8 @@ enum CameraNetworkingClientError: Error {
 
 class CameraNetworkingClient {
     
-    let localURL = URL(string: "http://10.0.0.25:8089")!
-    
     func startRecording(camera: Camera, completion: @escaping (Result<Bool, Error>) -> ()) {
-        var request = URLRequest(url: localURL.appendingPathComponent("record/start"))
-//        var request = URLRequest(url: camera.serverURL.appendingPathComponent("record/start"))
+        var request = URLRequest(url: camera.serverURL.appendingPathComponent("record/start"))
         request.httpMethod = "POST"
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -35,8 +32,7 @@ class CameraNetworkingClient {
     }
     
     func stopRecording(camera: Camera, completion: @escaping (Result<RecordingInfo, Error>) -> ()) {
-        var request = URLRequest(url: localURL.appendingPathComponent("record/stop"))
-//        var request = URLRequest(url: camera.serverURL.appendingPathComponent("record/stop"))
+        var request = URLRequest(url: camera.serverURL.appendingPathComponent("record/stop"))
         request.httpMethod = "POST"
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -67,8 +63,7 @@ class CameraNetworkingClient {
     }
     
     func upload(file: File, from camera: Camera) {
-        var request = URLRequest(url: localURL.appendingPathComponent("file"))
-//        var request = URLRequest(url: camera.serverURL.appendingPathComponent("upload"))
+        var request = URLRequest(url: camera.serverURL.appendingPathComponent("upload"))
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = [
             "Content-Type" : "application/json-header"
