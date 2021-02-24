@@ -26,9 +26,9 @@ class AuthClient: NSObject, ObservableObject {
     
     var oauthswift: OAuth2Swift?
     
-    let clientId = "test-evidenceroom"
+    let clientId = "evidencerecorder"
     let clientSecret = "c887b8e7bfa14e649353b360d4fc1895"
-    let redirectURL = "indicoevidenceroom"
+    let redirectURL = "indicoevidencerecorder"
     
     var wellknown: Wellknown!
     
