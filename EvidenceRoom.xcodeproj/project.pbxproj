@@ -28,6 +28,7 @@
 		C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */; };
 		C24F668D2575277D00D6A62C /* AddCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */; };
 		C25833A825D5488200DBD2EA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25833A725D5488200DBD2EA /* RoomView.swift */; };
+		C26BEF6C25E6D18A004010F4 /* RoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BEF6A25E6D18A004010F4 /* RoomTests.swift */; };
 		C285D075255D959200271787 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C285D074255D959200271787 /* AuthModels.swift */; };
 		C293202925D3C82B00521277 /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293202825D3C82B00521277 /* RoomsView.swift */; };
 		C293203225D420F800521277 /* CasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293203125D420F800521277 /* CasesView.swift */; };
@@ -93,6 +94,7 @@
 		C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCameraViewModel.swift; sourceTree = "<group>"; };
 		C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNetworkingClient.swift; sourceTree = "<group>"; };
 		C25833A725D5488200DBD2EA /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		C26BEF6A25E6D18A004010F4 /* RoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTests.swift; sourceTree = "<group>"; };
 		C285D074255D959200271787 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
 		C293202825D3C82B00521277 /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
 		C293203125D420F800521277 /* CasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesView.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A4361A255579D7004479E0 /* EvidenceRoomTests.swift */,
+				C26BEF6A25E6D18A004010F4 /* RoomTests.swift */,
 				C2A4361C255579D7004479E0 /* Info.plist */,
 			);
 			path = EvidenceRoomTests;
@@ -587,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A4361B255579D7004479E0 /* EvidenceRoomTests.swift in Sources */,
+				C26BEF6C25E6D18A004010F4 /* RoomTests.swift in Sources */,
 				C24F668D2575277D00D6A62C /* AddCameraViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +758,7 @@
 				DEVELOPMENT_TEAM = D9KXQYVY9X;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = EvidenceRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -806,6 +811,7 @@
 				DEVELOPMENT_TEAM = D9KXQYVY9X;
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = EvidenceRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -854,6 +860,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = EvidenceRoomTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -903,6 +910,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9KXQYVY9X;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = EvidenceRoomTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
