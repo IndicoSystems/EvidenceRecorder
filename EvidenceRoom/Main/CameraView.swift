@@ -3,8 +3,6 @@ import SwiftKeychainWrapper
 
 class CameraViewModel: ObservableObject {
     
-    var networkClient = CameraNetworkingClient()
-    
     var camera: Camera
     
     @Published var isRecording = false
@@ -15,11 +13,13 @@ class CameraViewModel: ObservableObject {
     }
     
     func startRecording() {
-        networkClient.startRecording(camera: camera) { [unowned self] result in
+        camera.startRecording() { [unowned self] result in
             switch result {
             case .success(let success):
-                DispatchQueue.main.async {
-                    self.isRecording = true
+                if success {
+                    DispatchQueue.main.async {
+                        self.isRecording = true
+                    }
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -31,7 +31,7 @@ class CameraViewModel: ObservableObject {
     }
     
     func stopRecording() {
-        networkClient.stopRecording(camera: camera) { [unowned self] result in
+        camera.stopRecording() { [unowned self] result in
             switch result {
             case .success(let recordingResponse):
                 self.getUploadURL(recordingInfo: recordingResponse)
@@ -55,7 +55,7 @@ class CameraViewModel: ObservableObject {
                     switch result {
                     case .success(let url):
                         let file = File(location: url, id: recordingInfo.id)
-                        self.networkClient.upload(file: file, from: self.camera)
+//                        self.camera.upload(file: file)
                     case .failure(let error):
                         print(error.localizedDescription)
                     }

@@ -22,7 +22,7 @@ extension Uploader where Self: Camera {
             
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 200 {
-                    print(String(data: data!, encoding: .utf8))
+                    print(String(data: data!, encoding: .utf8) ?? "No data")
                 } else {
                     print("ERROR! \(response.statusCode)")
                 }
