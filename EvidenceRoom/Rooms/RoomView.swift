@@ -13,8 +13,9 @@ struct RoomView: View {
     }
 }
 
-//struct RoomView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RoomView()
-//    }
-//}
+struct RoomView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        RoomView(room: Room(apolloRoom: GetRoomsQuery.Data.Room(id: "1234", name: "Mock")))
+    }
+}
