@@ -49,6 +49,7 @@
 		C2D95179255D46D3008ED51D /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C2D95178255D46D3008ED51D /* OAuthSwift */; };
 		C2D95181255D5228008ED51D /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95180255D5228008ED51D /* AuthClient.swift */; };
 		C2D95186255D647B008ED51D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95185255D647B008ED51D /* Camera.swift */; };
+		C2E6B8EE25E7846000D0FA7C /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6B8ED25E7846000D0FA7C /* Uploader.swift */; };
 		C2FCCFE025767B9900790212 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCFDF25767B9900790212 /* CameraView.swift */; };
 		C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCFEE257691F000790212 /* CloudClient.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		C2AD01D4256F9B4600EC9533 /* AddCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCameraView.swift; sourceTree = "<group>"; };
 		C2D95180255D5228008ED51D /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		C2D95185255D647B008ED51D /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		C2E6B8ED25E7846000D0FA7C /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
 		C2FCCFDF25767B9900790212 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		C2FCCFEE257691F000790212 /* CloudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudClient.swift; sourceTree = "<group>"; };
 		F886CA1A44C6FDBDF756C760 /* Pods-EvidenceRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				C2A678962577D3950022D16B /* RecordingModel.swift */,
 				C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */,
 				C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */,
+				C2E6B8ED25E7846000D0FA7C /* Uploader.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */,
 				C242638B2587935900BC3005 /* TitleView.swift in Sources */,
 				C211648E258261BB00FC788F /* WebView.swift in Sources */,
+				C2E6B8EE25E7846000D0FA7C /* Uploader.swift in Sources */,
 				C2116438257F92EE00FC788F /* API.swift in Sources */,
 				C2A678972577D3950022D16B /* RecordingModel.swift in Sources */,
 			);
