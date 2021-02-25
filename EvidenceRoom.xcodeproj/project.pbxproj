@@ -188,6 +188,7 @@
 			children = (
 				C2AD01D4256F9B4600EC9533 /* AddCameraView.swift */,
 				C2D95185255D647B008ED51D /* Camera.swift */,
+				C2FCCFDF25767B9900790212 /* CameraView.swift */,
 				C2A678962577D3950022D16B /* RecordingModel.swift */,
 				C24F6680257518DA00D6A62C /* AddCameraViewModel.swift */,
 				C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */,
@@ -313,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				C2A4363A25557C14004479E0 /* MainView.swift */,
-				C2FCCFDF25767B9900790212 /* CameraView.swift */,
 				C2FCCFEE257691F000790212 /* CloudClient.swift */,
 			);
 			path = Main;
