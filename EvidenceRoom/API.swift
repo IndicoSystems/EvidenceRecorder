@@ -1073,6 +1073,41 @@ public struct IDID: GraphQLMapConvertible {
   }
 }
 
+public enum CameraType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case axis
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "Axis": self = .axis
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .axis: return "Axis"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: CameraType, rhs: CameraType) -> Bool {
+    switch (lhs, rhs) {
+      case (.axis, .axis): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [CameraType] {
+    return [
+      .axis,
+    ]
+  }
+}
+
 public final class CreateFileMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -1463,6 +1498,7 @@ public final class GetRoomsQuery: GraphQLQuery {
           name
           description
           address
+          type
         }
       }
     }
@@ -1579,6 +1615,7 @@ public final class GetRoomsQuery: GraphQLQuery {
             GraphQLField("name", type: .nonNull(.scalar(String.self))),
             GraphQLField("description", type: .scalar(LongString.self)),
             GraphQLField("address", type: .nonNull(.scalar(String.self))),
+            GraphQLField("type", type: .nonNull(.scalar(CameraType.self))),
           ]
         }
 
@@ -1588,8 +1625,8 @@ public final class GetRoomsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID, name: String, description: LongString? = nil, address: String) {
-          self.init(unsafeResultMap: ["__typename": "Camera", "id": id, "name": name, "description": description, "address": address])
+        public init(id: GraphQLID, name: String, description: LongString? = nil, address: String, type: CameraType) {
+          self.init(unsafeResultMap: ["__typename": "Camera", "id": id, "name": name, "description": description, "address": address, "type": type])
         }
 
         public var __typename: String {
@@ -1634,6 +1671,15 @@ public final class GetRoomsQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "address")
+          }
+        }
+
+        public var type: CameraType {
+          get {
+            return resultMap["type"]! as! CameraType
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "type")
           }
         }
       }

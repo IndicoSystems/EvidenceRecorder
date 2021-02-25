@@ -30,6 +30,7 @@ query GetRooms {
       name
       description
       address
+      type
     }
   }
 }

@@ -12,11 +12,12 @@ struct Room {
         var cams = [Camera]()
         apolloRoom.cameras?.forEach({
                         
-            switch $0.__typename {
-            case "Axis":
+            switch $0.type {
+            case .axis:
                 let camera = Axis(apolloCam: $0)
                 cams.append(camera)
             default:
+                print($0.type)
                 break
             }
         })
