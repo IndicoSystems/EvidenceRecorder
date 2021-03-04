@@ -49,6 +49,7 @@ struct LoginView: View {
                 .background(Color.card)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding()
+                .frame(width: UIScreen.main.bounds.width / 2)
             }
         }
     }
