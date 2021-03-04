@@ -90,8 +90,15 @@ class AuthClient: NSObject, ObservableObject {
                 completionHandler(.failure(.fetchEndpointsError))
             }
             
-            if let resp = response {
-                print(resp)
+            if let resp = response as? HTTPURLResponse {
+                switch resp.statusCode {
+                case 400...999:
+                    print(resp.statusCode)
+                    completionHandler(.failure(.fetchEndpointsError))
+                    return
+                default:
+                    break
+                }
             }
             
             if let data = data {
