@@ -19,7 +19,7 @@ class RoomTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         
-        apolloCam = GetRoomsQuery.Data.Room.Camera(id: UUID().uuidString, name: "Mock Camera", address: "10.0.0.83:8089")
+        apolloCam = GetRoomsQuery.Data.Room.Camera(id: UUID().uuidString, name: "Mock Camera", address: "10.0.0.83:8089", type: .axis)
         apolloCam.__typename = "Axis"
         apolloRoom = GetRoomsQuery.Data.Room(id: UUID().uuidString, name: "Mock Room", cameras: [apolloCam])
         room = Room(apolloRoom: apolloRoom)

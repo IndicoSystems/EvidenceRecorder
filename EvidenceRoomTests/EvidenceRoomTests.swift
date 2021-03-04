@@ -16,7 +16,7 @@ class CameraTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        sut = Axis(apolloCam: GetRoomsQuery.Data.Room.Camera(id: UUID().uuidString, name: "Mock Camera", address: "10.0.0.83:8089"))
+        sut = Axis(apolloCam: GetRoomsQuery.Data.Room.Camera(id: UUID().uuidString, name: "Mock Camera", address: "10.0.0.83:8089", type: .axis))
     }
     
     override func tearDown() {
@@ -40,29 +40,4 @@ class CameraTests: XCTestCase {
 //        
 //        XCTAssertEqual(sut.isRecording, false)
     }
-}
-
-class CameraNetworkingClientTests: XCTestCase {
-    
-    var url: URL!
-    
-    var sut: CameraNetworkingClient!
-    
-    override func setUp() {
-        super.setUp()
-        
-        url = URL(string: "https://10.0.0.83")
-        sut = CameraNetworkingClient()
-    }
-    
-    override func tearDown() {
-        url = nil
-        sut = nil
-        
-        super.tearDown()
-    }
-    
-    func testInitCameraNetworkingClient_setsUpCameraNetworkingClient() {
-        XCTAssertNotNil(sut)
-    }    
 }
