@@ -210,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C293203125D420F800521277 /* CasesView.swift */,
+				C2AE270D25ED19870047A927 /* CaseView.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
