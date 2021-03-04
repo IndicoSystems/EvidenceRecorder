@@ -26,6 +26,8 @@
 		C24263952587AE1F00BC3005 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24263942587AE1F00BC3005 /* NavBarView.swift */; };
 		C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */; };
 		C25833A825D5488200DBD2EA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25833A725D5488200DBD2EA /* RoomView.swift */; };
+		C25AD19525E005C000BC4C1A /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25AD19425E005C000BC4C1A /* FormView.swift */; };
+		C25AD19A25E006B500BC4C1A /* ERForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25AD19925E006B500BC4C1A /* ERForm.swift */; };
 		C26BEF6C25E6D18A004010F4 /* RoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BEF6A25E6D18A004010F4 /* RoomTests.swift */; };
 		C285D075255D959200271787 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C285D074255D959200271787 /* AuthModels.swift */; };
 		C293202925D3C82B00521277 /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293202825D3C82B00521277 /* RoomsView.swift */; };
@@ -44,6 +46,7 @@
 		C2A801BC258363C10072635A /* metro-df.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801BB258363C00072635A /* metro-df.ttf */; };
 		C2A801C42583B68F0072635A /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801C32583B68F0072635A /* Roboto-Regular.ttf */; };
 		C2AE270E25ED19870047A927 /* CaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE270D25ED19870047A927 /* CaseView.swift */; };
+		C2AE271325ED19AD0047A927 /* ERCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE271225ED19AD0047A927 /* ERCase.swift */; };
 		C2BCC32C25F0F5B300A1EF35 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BCC32B25F0F5B300A1EF35 /* ReportView.swift */; };
 		C2D95179255D46D3008ED51D /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C2D95178255D46D3008ED51D /* OAuthSwift */; };
 		C2D95181255D5228008ED51D /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95180255D5228008ED51D /* AuthClient.swift */; };
@@ -96,6 +99,8 @@
 		C24263942587AE1F00BC3005 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNetworkingClient.swift; sourceTree = "<group>"; };
 		C25833A725D5488200DBD2EA /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		C25AD19425E005C000BC4C1A /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		C25AD19925E006B500BC4C1A /* ERForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERForm.swift; sourceTree = "<group>"; };
 		C26BEF6A25E6D18A004010F4 /* RoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTests.swift; sourceTree = "<group>"; };
 		C285D074255D959200271787 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
 		C293202825D3C82B00521277 /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		C2A801BB258363C00072635A /* metro-df.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "metro-df.ttf"; sourceTree = "<group>"; };
 		C2A801C32583B68F0072635A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		C2AE270D25ED19870047A927 /* CaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseView.swift; sourceTree = "<group>"; };
+		C2AE271225ED19AD0047A927 /* ERCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERCase.swift; sourceTree = "<group>"; };
 		C2BCC32B25F0F5B300A1EF35 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		C2D95180255D5228008ED51D /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		C2D95185255D647B008ED51D /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
@@ -178,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				C200BCDA258B92A800BDFAD0 /* FormsView.swift */,
+				C25AD19425E005C000BC4C1A /* FormView.swift */,
+				C25AD19925E006B500BC4C1A /* ERForm.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 			children = (
 				C293203125D420F800521277 /* CasesView.swift */,
 				C2AE270D25ED19870047A927 /* CaseView.swift */,
+				C2AE271225ED19AD0047A927 /* ERCase.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -585,6 +594,8 @@
 				C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */,
 				C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */,
 				C2AE270E25ED19870047A927 /* CaseView.swift in Sources */,
+				C25AD19525E005C000BC4C1A /* FormView.swift in Sources */,
+				C25AD19A25E006B500BC4C1A /* ERForm.swift in Sources */,
 				C293203225D420F800521277 /* CasesView.swift in Sources */,
 				C25833A825D5488200DBD2EA /* RoomView.swift in Sources */,
 				C2A4363B25557C14004479E0 /* MainView.swift in Sources */,
