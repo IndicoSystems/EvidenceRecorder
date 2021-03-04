@@ -2,7 +2,7 @@ import SwiftUI
 
 class MainViewModel: ObservableObject {
     
-    @Published var cameras = [AxisCamera]()
+    @Published var cameras = [Camera]()
     @Published var isLoadingCameras = false
     
     @Published var cameraViewModels = [CameraViewModel]()
