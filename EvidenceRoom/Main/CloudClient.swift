@@ -23,12 +23,12 @@ class CloudClient: ObservableObject {
     
     private let apolloStore = ApolloStore()
     
-    @Published var forms = [String]()
+    @Published var forms = [ERForm]()
     @Published var rooms = [Room]()
-    @Published var cases = [GetCasesQuery.Data.Case]()
+    @Published var cases = [ERCase]()
     
-    func fetchCameras(from url: URL, completion: @escaping (Result<[AxisCamera], Error>) -> ()) {
-        var cameras = [AxisCamera]()
+    func fetchCameras(from url: URL, completion: @escaping (Result<[Camera], Error>) -> ()) {
+        var cameras = [Camera]()
 //        let camera1 = AxisCamera(ip: "10.0.0.83", port: 8089, name: "Cam 1")
 //        let camera2 = AxisCamera(ip: "192.168.1.85", port: 8089, name: "Cam 2")
         
@@ -73,7 +73,11 @@ class CloudClient: ObservableObject {
             case .success(let data):
                 guard let d = data.data else { return }
                 
-                self.cases = d.cases
+                var cases = [ERCase]()
+                d.cases.forEach({
+                    cases.append(ERCase(papiCase: $0))
+                })
+                self.cases = cases
                 
             case .failure(let err):
                 print(err.localizedDescription)
@@ -111,8 +115,8 @@ class CloudClient: ObservableObject {
                 
                 for form in requiredForms.forms {
                     
-                    let name = form.formType.displayName.first!.value as! String
-                    self.forms.append(name)
+                    let erForm = ERForm(form: form)
+                    self.forms.append(erForm)
                 }
             case .failure(let err):
                 print(err.localizedDescription)
