@@ -1073,6 +1073,311 @@ public struct IDID: GraphQLMapConvertible {
   }
 }
 
+public enum ViewPriorityEnum: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case headline
+  case shortSummary
+  case fullSummary
+  case `none`
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "Headline": self = .headline
+      case "ShortSummary": self = .shortSummary
+      case "FullSummary": self = .fullSummary
+      case "None": self = .none
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .headline: return "Headline"
+      case .shortSummary: return "ShortSummary"
+      case .fullSummary: return "FullSummary"
+      case .none: return "None"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: ViewPriorityEnum, rhs: ViewPriorityEnum) -> Bool {
+    switch (lhs, rhs) {
+      case (.headline, .headline): return true
+      case (.shortSummary, .shortSummary): return true
+      case (.fullSummary, .fullSummary): return true
+      case (.none, .none): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [ViewPriorityEnum] {
+    return [
+      .headline,
+      .shortSummary,
+      .fullSummary,
+      .none,
+    ]
+  }
+}
+
+public enum ValueType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case int
+  case string
+  case float
+  case date
+  case dateTime
+  case time
+  case month
+  case week
+  case email
+  case phone
+  case url
+  case file
+  case null
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "Int": self = .int
+      case "String": self = .string
+      case "Float": self = .float
+      case "Date": self = .date
+      case "DateTime": self = .dateTime
+      case "Time": self = .time
+      case "Month": self = .month
+      case "Week": self = .week
+      case "Email": self = .email
+      case "Phone": self = .phone
+      case "Url": self = .url
+      case "File": self = .file
+      case "Null": self = .null
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .int: return "Int"
+      case .string: return "String"
+      case .float: return "Float"
+      case .date: return "Date"
+      case .dateTime: return "DateTime"
+      case .time: return "Time"
+      case .month: return "Month"
+      case .week: return "Week"
+      case .email: return "Email"
+      case .phone: return "Phone"
+      case .url: return "Url"
+      case .file: return "File"
+      case .null: return "Null"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: ValueType, rhs: ValueType) -> Bool {
+    switch (lhs, rhs) {
+      case (.int, .int): return true
+      case (.string, .string): return true
+      case (.float, .float): return true
+      case (.date, .date): return true
+      case (.dateTime, .dateTime): return true
+      case (.time, .time): return true
+      case (.month, .month): return true
+      case (.week, .week): return true
+      case (.email, .email): return true
+      case (.phone, .phone): return true
+      case (.url, .url): return true
+      case (.file, .file): return true
+      case (.null, .null): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [ValueType] {
+    return [
+      .int,
+      .string,
+      .float,
+      .date,
+      .dateTime,
+      .time,
+      .month,
+      .week,
+      .email,
+      .phone,
+      .url,
+      .file,
+      .null,
+    ]
+  }
+}
+
+public enum InputHint: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case radio
+  case input
+  case textarea
+  case checkbox
+  case dropdown
+  case divider
+  case sectionHeader
+  case pageBreak
+  case slider
+  case `switch`
+  case confirm
+  case videoOrAudio
+  case capture
+  case file
+  case person
+  case time
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "Radio": self = .radio
+      case "Input": self = .input
+      case "Textarea": self = .textarea
+      case "Checkbox": self = .checkbox
+      case "Dropdown": self = .dropdown
+      case "Divider": self = .divider
+      case "SectionHeader": self = .sectionHeader
+      case "PageBreak": self = .pageBreak
+      case "Slider": self = .slider
+      case "Switch": self = .switch
+      case "Confirm": self = .confirm
+      case "VideoOrAudio": self = .videoOrAudio
+      case "Capture": self = .capture
+      case "File": self = .file
+      case "Person": self = .person
+      case "Time": self = .time
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .radio: return "Radio"
+      case .input: return "Input"
+      case .textarea: return "Textarea"
+      case .checkbox: return "Checkbox"
+      case .dropdown: return "Dropdown"
+      case .divider: return "Divider"
+      case .sectionHeader: return "SectionHeader"
+      case .pageBreak: return "PageBreak"
+      case .slider: return "Slider"
+      case .switch: return "Switch"
+      case .confirm: return "Confirm"
+      case .videoOrAudio: return "VideoOrAudio"
+      case .capture: return "Capture"
+      case .file: return "File"
+      case .person: return "Person"
+      case .time: return "Time"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: InputHint, rhs: InputHint) -> Bool {
+    switch (lhs, rhs) {
+      case (.radio, .radio): return true
+      case (.input, .input): return true
+      case (.textarea, .textarea): return true
+      case (.checkbox, .checkbox): return true
+      case (.dropdown, .dropdown): return true
+      case (.divider, .divider): return true
+      case (.sectionHeader, .sectionHeader): return true
+      case (.pageBreak, .pageBreak): return true
+      case (.slider, .slider): return true
+      case (.switch, .switch): return true
+      case (.confirm, .confirm): return true
+      case (.videoOrAudio, .videoOrAudio): return true
+      case (.capture, .capture): return true
+      case (.file, .file): return true
+      case (.person, .person): return true
+      case (.time, .time): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [InputHint] {
+    return [
+      .radio,
+      .input,
+      .textarea,
+      .checkbox,
+      .dropdown,
+      .divider,
+      .sectionHeader,
+      .pageBreak,
+      .slider,
+      .switch,
+      .confirm,
+      .videoOrAudio,
+      .capture,
+      .file,
+      .person,
+      .time,
+    ]
+  }
+}
+
+public enum FieldFeature: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case ocr
+  case faceDetection
+  case singleSession
+  case discardable
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "OCR": self = .ocr
+      case "FaceDetection": self = .faceDetection
+      case "SingleSession": self = .singleSession
+      case "Discardable": self = .discardable
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .ocr: return "OCR"
+      case .faceDetection: return "FaceDetection"
+      case .singleSession: return "SingleSession"
+      case .discardable: return "Discardable"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: FieldFeature, rhs: FieldFeature) -> Bool {
+    switch (lhs, rhs) {
+      case (.ocr, .ocr): return true
+      case (.faceDetection, .faceDetection): return true
+      case (.singleSession, .singleSession): return true
+      case (.discardable, .discardable): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [FieldFeature] {
+    return [
+      .ocr,
+      .faceDetection,
+      .singleSession,
+      .discardable,
+    ]
+  }
+}
+
 public enum CameraType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case axis
@@ -1105,6 +1410,171 @@ public enum CameraType: RawRepresentable, Equatable, Hashable, CaseIterable, Apo
     return [
       .axis,
     ]
+  }
+}
+
+public struct SubmitFormInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - final
+  ///   - files
+  ///   - fields
+  public init(`final`: Swift.Optional<Bool?> = nil, files: WhereIDin, fields: [SubmitFormFieldInput]) {
+    graphQLMap = ["final": `final`, "files": files, "fields": fields]
+  }
+
+  public var `final`: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["final"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "final")
+    }
+  }
+
+  public var files: WhereIDin {
+    get {
+      return graphQLMap["files"] as! WhereIDin
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "files")
+    }
+  }
+
+  public var fields: [SubmitFormFieldInput] {
+    get {
+      return graphQLMap["fields"] as! [SubmitFormFieldInput]
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "fields")
+    }
+  }
+}
+
+public struct WhereIDin: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - idIn
+  public init(idIn: Swift.Optional<[GraphQLID]?> = nil) {
+    graphQLMap = ["id_in": idIn]
+  }
+
+  public var idIn: Swift.Optional<[GraphQLID]?> {
+    get {
+      return graphQLMap["id_in"] as? Swift.Optional<[GraphQLID]?> ?? Swift.Optional<[GraphQLID]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id_in")
+    }
+  }
+}
+
+public struct SubmitFormFieldInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - id
+  ///   - value
+  ///   - listValue
+  ///   - files
+  ///   - persons
+  public init(id: GraphQLID, value: Swift.Optional<String?> = nil, listValue: Swift.Optional<[String]?> = nil, files: Swift.Optional<[FileWhereUniqueInput]?> = nil, persons: Swift.Optional<[PersonWithStatusWhereUniqueInput]?> = nil) {
+    graphQLMap = ["id": id, "value": value, "listValue": listValue, "files": files, "persons": persons]
+  }
+
+  public var id: GraphQLID {
+    get {
+      return graphQLMap["id"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var value: Swift.Optional<String?> {
+    get {
+      return graphQLMap["value"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "value")
+    }
+  }
+
+  public var listValue: Swift.Optional<[String]?> {
+    get {
+      return graphQLMap["listValue"] as? Swift.Optional<[String]?> ?? Swift.Optional<[String]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "listValue")
+    }
+  }
+
+  public var files: Swift.Optional<[FileWhereUniqueInput]?> {
+    get {
+      return graphQLMap["files"] as? Swift.Optional<[FileWhereUniqueInput]?> ?? Swift.Optional<[FileWhereUniqueInput]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "files")
+    }
+  }
+
+  public var persons: Swift.Optional<[PersonWithStatusWhereUniqueInput]?> {
+    get {
+      return graphQLMap["persons"] as? Swift.Optional<[PersonWithStatusWhereUniqueInput]?> ?? Swift.Optional<[PersonWithStatusWhereUniqueInput]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "persons")
+    }
+  }
+}
+
+public struct FileWhereUniqueInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - id
+  ///   - clientMediaId
+  public init(id: Swift.Optional<GraphQLID?> = nil, clientMediaId: Swift.Optional<String?> = nil) {
+    graphQLMap = ["id": id, "clientMediaId": clientMediaId]
+  }
+
+  public var id: Swift.Optional<GraphQLID?> {
+    get {
+      return graphQLMap["id"] as? Swift.Optional<GraphQLID?> ?? Swift.Optional<GraphQLID?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var clientMediaId: Swift.Optional<String?> {
+    get {
+      return graphQLMap["clientMediaId"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "clientMediaId")
+    }
+  }
+}
+
+public struct PersonWithStatusWhereUniqueInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - id
+  public init(id: Swift.Optional<GraphQLID?> = nil) {
+    graphQLMap = ["id": id]
+  }
+
+  public var id: Swift.Optional<GraphQLID?> {
+    get {
+      return graphQLMap["id"] as? Swift.Optional<GraphQLID?> ?? Swift.Optional<GraphQLID?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
   }
 }
 
@@ -1242,7 +1712,46 @@ public final class GetFormsQuery: GraphQLQuery {
               __typename
               formType {
                 __typename
-                displayName
+                displayName(ietf: true)
+              }
+              form {
+                __typename
+                id
+                allowIncomplete
+                fields(orderBy: order_ASC) {
+                  __typename
+                  id
+                  personCategories {
+                    __typename
+                    key
+                    localizations {
+                      __typename
+                      language
+                      value
+                    }
+                  }
+                  title(ietf: true)
+                  placeholder(ietf: true)
+                  description(ietf: true)
+                  editable
+                  required
+                  viewPriority
+                  valueType
+                  inputHint
+                  features
+                  min
+                  max
+                  minCount
+                  maxCount
+                  step
+                  pattern
+                  listValues {
+                    __typename
+                    value
+                    defaultSelected
+                    displayName(ietf: true)
+                  }
+                }
               }
             }
           }
@@ -1406,6 +1915,7 @@ public final class GetFormsQuery: GraphQLQuery {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
                 GraphQLField("formType", type: .nonNull(.object(FormType.selections))),
+                GraphQLField("form", type: .nonNull(.object(Form.selections))),
               ]
             }
 
@@ -1415,8 +1925,8 @@ public final class GetFormsQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(formType: FormType) {
-              self.init(unsafeResultMap: ["__typename": "RequiredFormSettings", "formType": formType.resultMap])
+            public init(formType: FormType, form: Form) {
+              self.init(unsafeResultMap: ["__typename": "RequiredFormSettings", "formType": formType.resultMap, "form": form.resultMap])
             }
 
             public var __typename: String {
@@ -1437,13 +1947,22 @@ public final class GetFormsQuery: GraphQLQuery {
               }
             }
 
+            public var form: Form {
+              get {
+                return Form(unsafeResultMap: resultMap["form"]! as! ResultMap)
+              }
+              set {
+                resultMap.updateValue(newValue.resultMap, forKey: "form")
+              }
+            }
+
             public struct FormType: GraphQLSelectionSet {
               public static let possibleTypes: [String] = ["FormType"]
 
               public static var selections: [GraphQLSelection] {
                 return [
                   GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                  GraphQLField("displayName", type: .nonNull(.scalar(Json.self))),
+                  GraphQLField("displayName", arguments: ["ietf": true], type: .nonNull(.scalar(Json.self))),
                 ]
               }
 
@@ -1472,6 +1991,431 @@ public final class GetFormsQuery: GraphQLQuery {
                 }
                 set {
                   resultMap.updateValue(newValue, forKey: "displayName")
+                }
+              }
+            }
+
+            public struct Form: GraphQLSelectionSet {
+              public static let possibleTypes: [String] = ["Form"]
+
+              public static var selections: [GraphQLSelection] {
+                return [
+                  GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+                  GraphQLField("allowIncomplete", type: .nonNull(.scalar(Bool.self))),
+                  GraphQLField("fields", arguments: ["orderBy": "order_ASC"], type: .list(.nonNull(.object(Field.selections)))),
+                ]
+              }
+
+              public private(set) var resultMap: ResultMap
+
+              public init(unsafeResultMap: ResultMap) {
+                self.resultMap = unsafeResultMap
+              }
+
+              public init(id: GraphQLID, allowIncomplete: Bool, fields: [Field]? = nil) {
+                self.init(unsafeResultMap: ["__typename": "Form", "id": id, "allowIncomplete": allowIncomplete, "fields": fields.flatMap { (value: [Field]) -> [ResultMap] in value.map { (value: Field) -> ResultMap in value.resultMap } }])
+              }
+
+              public var __typename: String {
+                get {
+                  return resultMap["__typename"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "__typename")
+                }
+              }
+
+              public var id: GraphQLID {
+                get {
+                  return resultMap["id"]! as! GraphQLID
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "id")
+                }
+              }
+
+              public var allowIncomplete: Bool {
+                get {
+                  return resultMap["allowIncomplete"]! as! Bool
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "allowIncomplete")
+                }
+              }
+
+              public var fields: [Field]? {
+                get {
+                  return (resultMap["fields"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Field] in value.map { (value: ResultMap) -> Field in Field(unsafeResultMap: value) } }
+                }
+                set {
+                  resultMap.updateValue(newValue.flatMap { (value: [Field]) -> [ResultMap] in value.map { (value: Field) -> ResultMap in value.resultMap } }, forKey: "fields")
+                }
+              }
+
+              public struct Field: GraphQLSelectionSet {
+                public static let possibleTypes: [String] = ["FormField"]
+
+                public static var selections: [GraphQLSelection] {
+                  return [
+                    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                    GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+                    GraphQLField("personCategories", type: .nonNull(.list(.nonNull(.object(PersonCategory.selections))))),
+                    GraphQLField("title", arguments: ["ietf": true], type: .nonNull(.scalar(Json.self))),
+                    GraphQLField("placeholder", arguments: ["ietf": true], type: .nonNull(.scalar(Json.self))),
+                    GraphQLField("description", arguments: ["ietf": true], type: .nonNull(.scalar(Json.self))),
+                    GraphQLField("editable", type: .nonNull(.scalar(Bool.self))),
+                    GraphQLField("required", type: .nonNull(.scalar(Bool.self))),
+                    GraphQLField("viewPriority", type: .scalar(ViewPriorityEnum.self)),
+                    GraphQLField("valueType", type: .nonNull(.scalar(ValueType.self))),
+                    GraphQLField("inputHint", type: .nonNull(.scalar(InputHint.self))),
+                    GraphQLField("features", type: .list(.nonNull(.scalar(FieldFeature.self)))),
+                    GraphQLField("min", type: .scalar(Double.self)),
+                    GraphQLField("max", type: .scalar(Double.self)),
+                    GraphQLField("minCount", type: .scalar(Int.self)),
+                    GraphQLField("maxCount", type: .scalar(Int.self)),
+                    GraphQLField("step", type: .scalar(Int.self)),
+                    GraphQLField("pattern", type: .scalar(String.self)),
+                    GraphQLField("listValues", type: .nonNull(.list(.nonNull(.object(ListValue.selections))))),
+                  ]
+                }
+
+                public private(set) var resultMap: ResultMap
+
+                public init(unsafeResultMap: ResultMap) {
+                  self.resultMap = unsafeResultMap
+                }
+
+                public init(id: GraphQLID, personCategories: [PersonCategory], title: Json, placeholder: Json, description: Json, editable: Bool, `required`: Bool, viewPriority: ViewPriorityEnum? = nil, valueType: ValueType, inputHint: InputHint, features: [FieldFeature]? = nil, min: Double? = nil, max: Double? = nil, minCount: Int? = nil, maxCount: Int? = nil, step: Int? = nil, pattern: String? = nil, listValues: [ListValue]) {
+                  self.init(unsafeResultMap: ["__typename": "FormField", "id": id, "personCategories": personCategories.map { (value: PersonCategory) -> ResultMap in value.resultMap }, "title": title, "placeholder": placeholder, "description": description, "editable": editable, "required": `required`, "viewPriority": viewPriority, "valueType": valueType, "inputHint": inputHint, "features": features, "min": min, "max": max, "minCount": minCount, "maxCount": maxCount, "step": step, "pattern": pattern, "listValues": listValues.map { (value: ListValue) -> ResultMap in value.resultMap }])
+                }
+
+                public var __typename: String {
+                  get {
+                    return resultMap["__typename"]! as! String
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "__typename")
+                  }
+                }
+
+                public var id: GraphQLID {
+                  get {
+                    return resultMap["id"]! as! GraphQLID
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "id")
+                  }
+                }
+
+                public var personCategories: [PersonCategory] {
+                  get {
+                    return (resultMap["personCategories"] as! [ResultMap]).map { (value: ResultMap) -> PersonCategory in PersonCategory(unsafeResultMap: value) }
+                  }
+                  set {
+                    resultMap.updateValue(newValue.map { (value: PersonCategory) -> ResultMap in value.resultMap }, forKey: "personCategories")
+                  }
+                }
+
+                public var title: Json {
+                  get {
+                    return resultMap["title"]! as! Json
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "title")
+                  }
+                }
+
+                public var placeholder: Json {
+                  get {
+                    return resultMap["placeholder"]! as! Json
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "placeholder")
+                  }
+                }
+
+                public var description: Json {
+                  get {
+                    return resultMap["description"]! as! Json
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "description")
+                  }
+                }
+
+                public var editable: Bool {
+                  get {
+                    return resultMap["editable"]! as! Bool
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "editable")
+                  }
+                }
+
+                public var `required`: Bool {
+                  get {
+                    return resultMap["required"]! as! Bool
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "required")
+                  }
+                }
+
+                public var viewPriority: ViewPriorityEnum? {
+                  get {
+                    return resultMap["viewPriority"] as? ViewPriorityEnum
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "viewPriority")
+                  }
+                }
+
+                public var valueType: ValueType {
+                  get {
+                    return resultMap["valueType"]! as! ValueType
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "valueType")
+                  }
+                }
+
+                public var inputHint: InputHint {
+                  get {
+                    return resultMap["inputHint"]! as! InputHint
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "inputHint")
+                  }
+                }
+
+                public var features: [FieldFeature]? {
+                  get {
+                    return resultMap["features"] as? [FieldFeature]
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "features")
+                  }
+                }
+
+                public var min: Double? {
+                  get {
+                    return resultMap["min"] as? Double
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "min")
+                  }
+                }
+
+                public var max: Double? {
+                  get {
+                    return resultMap["max"] as? Double
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "max")
+                  }
+                }
+
+                public var minCount: Int? {
+                  get {
+                    return resultMap["minCount"] as? Int
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "minCount")
+                  }
+                }
+
+                public var maxCount: Int? {
+                  get {
+                    return resultMap["maxCount"] as? Int
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "maxCount")
+                  }
+                }
+
+                public var step: Int? {
+                  get {
+                    return resultMap["step"] as? Int
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "step")
+                  }
+                }
+
+                public var pattern: String? {
+                  get {
+                    return resultMap["pattern"] as? String
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "pattern")
+                  }
+                }
+
+                public var listValues: [ListValue] {
+                  get {
+                    return (resultMap["listValues"] as! [ResultMap]).map { (value: ResultMap) -> ListValue in ListValue(unsafeResultMap: value) }
+                  }
+                  set {
+                    resultMap.updateValue(newValue.map { (value: ListValue) -> ResultMap in value.resultMap }, forKey: "listValues")
+                  }
+                }
+
+                public struct PersonCategory: GraphQLSelectionSet {
+                  public static let possibleTypes: [String] = ["Status"]
+
+                  public static var selections: [GraphQLSelection] {
+                    return [
+                      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                      GraphQLField("key", type: .nonNull(.scalar(String.self))),
+                      GraphQLField("localizations", type: .list(.nonNull(.object(Localization.selections)))),
+                    ]
+                  }
+
+                  public private(set) var resultMap: ResultMap
+
+                  public init(unsafeResultMap: ResultMap) {
+                    self.resultMap = unsafeResultMap
+                  }
+
+                  public init(key: String, localizations: [Localization]? = nil) {
+                    self.init(unsafeResultMap: ["__typename": "Status", "key": key, "localizations": localizations.flatMap { (value: [Localization]) -> [ResultMap] in value.map { (value: Localization) -> ResultMap in value.resultMap } }])
+                  }
+
+                  public var __typename: String {
+                    get {
+                      return resultMap["__typename"]! as! String
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "__typename")
+                    }
+                  }
+
+                  public var key: String {
+                    get {
+                      return resultMap["key"]! as! String
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "key")
+                    }
+                  }
+
+                  public var localizations: [Localization]? {
+                    get {
+                      return (resultMap["localizations"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Localization] in value.map { (value: ResultMap) -> Localization in Localization(unsafeResultMap: value) } }
+                    }
+                    set {
+                      resultMap.updateValue(newValue.flatMap { (value: [Localization]) -> [ResultMap] in value.map { (value: Localization) -> ResultMap in value.resultMap } }, forKey: "localizations")
+                    }
+                  }
+
+                  public struct Localization: GraphQLSelectionSet {
+                    public static let possibleTypes: [String] = ["Localization"]
+
+                    public static var selections: [GraphQLSelection] {
+                      return [
+                        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                        GraphQLField("language", type: .nonNull(.scalar(String.self))),
+                        GraphQLField("value", type: .nonNull(.scalar(String.self))),
+                      ]
+                    }
+
+                    public private(set) var resultMap: ResultMap
+
+                    public init(unsafeResultMap: ResultMap) {
+                      self.resultMap = unsafeResultMap
+                    }
+
+                    public init(language: String, value: String) {
+                      self.init(unsafeResultMap: ["__typename": "Localization", "language": language, "value": value])
+                    }
+
+                    public var __typename: String {
+                      get {
+                        return resultMap["__typename"]! as! String
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "__typename")
+                      }
+                    }
+
+                    public var language: String {
+                      get {
+                        return resultMap["language"]! as! String
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "language")
+                      }
+                    }
+
+                    public var value: String {
+                      get {
+                        return resultMap["value"]! as! String
+                      }
+                      set {
+                        resultMap.updateValue(newValue, forKey: "value")
+                      }
+                    }
+                  }
+                }
+
+                public struct ListValue: GraphQLSelectionSet {
+                  public static let possibleTypes: [String] = ["ListValue"]
+
+                  public static var selections: [GraphQLSelection] {
+                    return [
+                      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                      GraphQLField("value", type: .nonNull(.scalar(String.self))),
+                      GraphQLField("defaultSelected", type: .nonNull(.scalar(Bool.self))),
+                      GraphQLField("displayName", arguments: ["ietf": true], type: .nonNull(.scalar(Json.self))),
+                    ]
+                  }
+
+                  public private(set) var resultMap: ResultMap
+
+                  public init(unsafeResultMap: ResultMap) {
+                    self.resultMap = unsafeResultMap
+                  }
+
+                  public init(value: String, defaultSelected: Bool, displayName: Json) {
+                    self.init(unsafeResultMap: ["__typename": "ListValue", "value": value, "defaultSelected": defaultSelected, "displayName": displayName])
+                  }
+
+                  public var __typename: String {
+                    get {
+                      return resultMap["__typename"]! as! String
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "__typename")
+                    }
+                  }
+
+                  public var value: String {
+                    get {
+                      return resultMap["value"]! as! String
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "value")
+                    }
+                  }
+
+                  public var defaultSelected: Bool {
+                    get {
+                      return resultMap["defaultSelected"]! as! Bool
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "defaultSelected")
+                    }
+                  }
+
+                  public var displayName: Json {
+                    get {
+                      return resultMap["displayName"]! as! Json
+                    }
+                    set {
+                      resultMap.updateValue(newValue, forKey: "displayName")
+                    }
+                  }
                 }
               }
             }
@@ -1697,6 +2641,19 @@ public final class GetCasesQuery: GraphQLQuery {
         id
         name
         description
+        reports(first: 50) {
+          __typename
+          id
+          name
+          persons {
+            __typename
+            person {
+              __typename
+              firstName
+              lastName
+            }
+          }
+        }
       }
     }
     """
@@ -1743,6 +2700,7 @@ public final class GetCasesQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
           GraphQLField("description", type: .scalar(LongString.self)),
+          GraphQLField("reports", arguments: ["first": 50], type: .list(.nonNull(.object(Report.selections)))),
         ]
       }
 
@@ -1752,8 +2710,8 @@ public final class GetCasesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, name: String, description: LongString? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Case", "id": id, "name": name, "description": description])
+      public init(id: GraphQLID, name: String, description: LongString? = nil, reports: [Report]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Case", "id": id, "name": name, "description": description, "reports": reports.flatMap { (value: [Report]) -> [ResultMap] in value.map { (value: Report) -> ResultMap in value.resultMap } }])
       }
 
       public var __typename: String {
@@ -1789,6 +2747,351 @@ public final class GetCasesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "description")
+        }
+      }
+
+      public var reports: [Report]? {
+        get {
+          return (resultMap["reports"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Report] in value.map { (value: ResultMap) -> Report in Report(unsafeResultMap: value) } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Report]) -> [ResultMap] in value.map { (value: Report) -> ResultMap in value.resultMap } }, forKey: "reports")
+        }
+      }
+
+      public struct Report: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Report"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("name", type: .nonNull(.scalar(String.self))),
+            GraphQLField("persons", type: .list(.nonNull(.object(Person.selections)))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, name: String, persons: [Person]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Report", "id": id, "name": name, "persons": persons.flatMap { (value: [Person]) -> [ResultMap] in value.map { (value: Person) -> ResultMap in value.resultMap } }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String {
+          get {
+            return resultMap["name"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var persons: [Person]? {
+          get {
+            return (resultMap["persons"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Person] in value.map { (value: ResultMap) -> Person in Person(unsafeResultMap: value) } }
+          }
+          set {
+            resultMap.updateValue(newValue.flatMap { (value: [Person]) -> [ResultMap] in value.map { (value: Person) -> ResultMap in value.resultMap } }, forKey: "persons")
+          }
+        }
+
+        public struct Person: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["PersonWithStatus"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("person", type: .nonNull(.object(Person.selections))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(person: Person) {
+            self.init(unsafeResultMap: ["__typename": "PersonWithStatus", "person": person.resultMap])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var person: Person {
+            get {
+              return Person(unsafeResultMap: resultMap["person"]! as! ResultMap)
+            }
+            set {
+              resultMap.updateValue(newValue.resultMap, forKey: "person")
+            }
+          }
+
+          public struct Person: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["Person"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("firstName", type: .scalar(String.self)),
+                GraphQLField("lastName", type: .scalar(String.self)),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(firstName: String? = nil, lastName: String? = nil) {
+              self.init(unsafeResultMap: ["__typename": "Person", "firstName": firstName, "lastName": lastName])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var firstName: String? {
+              get {
+                return resultMap["firstName"] as? String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "firstName")
+              }
+            }
+
+            public var lastName: String? {
+              get {
+                return resultMap["lastName"] as? String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "lastName")
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class SubmitFormMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SubmitForm($formInput: SubmitFormInput!) {
+      submitForm(input: $formInput) {
+        __typename
+        ok
+      }
+    }
+    """
+
+  public let operationName: String = "SubmitForm"
+
+  public var formInput: SubmitFormInput
+
+  public init(formInput: SubmitFormInput) {
+    self.formInput = formInput
+  }
+
+  public var variables: GraphQLMap? {
+    return ["formInput": formInput]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("submitForm", arguments: ["input": GraphQLVariable("formInput")], type: .nonNull(.object(SubmitForm.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(submitForm: SubmitForm) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "submitForm": submitForm.resultMap])
+    }
+
+    /// Apply form-fields to multiple files
+    public var submitForm: SubmitForm {
+      get {
+        return SubmitForm(unsafeResultMap: resultMap["submitForm"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "submitForm")
+      }
+    }
+
+    public struct SubmitForm: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["SubmitFormResult"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("ok", type: .nonNull(.scalar(Bool.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(ok: Bool) {
+        self.init(unsafeResultMap: ["__typename": "SubmitFormResult", "ok": ok])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var ok: Bool {
+        get {
+          return resultMap["ok"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "ok")
+        }
+      }
+    }
+  }
+}
+
+public final class CreatePersonMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation CreatePerson($person: PersonCreateInput!, $statuses: [String!]) {
+      createPerson(input: {person: {create: $person}, statuses: $statuses}) {
+        __typename
+        id
+      }
+    }
+    """
+
+  public let operationName: String = "CreatePerson"
+
+  public var person: PersonCreateInput
+  public var statuses: [String]?
+
+  public init(person: PersonCreateInput, statuses: [String]?) {
+    self.person = person
+    self.statuses = statuses
+  }
+
+  public var variables: GraphQLMap? {
+    return ["person": person, "statuses": statuses]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("createPerson", arguments: ["input": ["person": ["create": GraphQLVariable("person")], "statuses": GraphQLVariable("statuses")]], type: .nonNull(.object(CreatePerson.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(createPerson: CreatePerson) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "createPerson": createPerson.resultMap])
+    }
+
+    public var createPerson: CreatePerson {
+      get {
+        return CreatePerson(unsafeResultMap: resultMap["createPerson"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "createPerson")
+      }
+    }
+
+    public struct CreatePerson: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["PersonWithStatus"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID) {
+        self.init(unsafeResultMap: ["__typename": "PersonWithStatus", "id": id])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return resultMap["id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
         }
       }
     }

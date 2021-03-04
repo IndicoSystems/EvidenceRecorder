@@ -11,8 +11,37 @@ query GetForms {
     capture {
       requiredForms {
         forms {
-          formType {
-            displayName
+          formType { displayName(ietf:true)}
+          form {
+              id
+              allowIncomplete
+              fields(orderBy: order_ASC) {
+                  id
+                  personCategories {
+                      key
+                      localizations { language value }
+                  }
+                  title(ietf: true)
+                  placeholder(ietf: true)
+                  description(ietf: true)
+                  editable
+                  required
+                  viewPriority
+                  valueType
+                  inputHint
+                  features
+                  min
+                  max
+                  minCount
+                  maxCount
+                  step
+                  pattern
+                  listValues {
+                      value
+                      defaultSelected
+                      displayName(ietf: true)
+                  }
+              }
           }
         }
       }
@@ -40,5 +69,29 @@ query GetCases {
     id
     name
     description
+    reports(first: 50) {
+      id
+      name
+      persons {
+        person {
+          firstName
+          lastName
+        }
+      }
+    }
   }
+}
+
+mutation SubmitForm($formInput: SubmitFormInput!) {
+    submitForm(input: $formInput) { ok }
+}
+
+mutation CreatePerson($person: PersonCreateInput!, $statuses: [String!]) {
+    createPerson(
+        input: {
+            person: { create: $person }
+            statuses: $statuses
+        }
+    )
+    { id }
 }
