@@ -55,7 +55,7 @@ class CameraViewModel: ObservableObject {
                     switch result {
                     case .success(let url):
                         let file = File(location: url, id: recordingInfo.id)
-//                        self.camera.upload(file: file)
+                        self.camera.upload(file: file)
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -70,33 +70,39 @@ struct CameraView: View {
     @ObservedObject var viewModel: CameraViewModel
     
     var body: some View {
-        
-        VStack {
-            Text(viewModel.camera.name)
-                .font(.custom("Roboto-Regular", size: 20))
-                .foregroundColor(.text)
-            if viewModel.isPreviewing || viewModel.isRecording {
-                WebView(url: viewModel.camera.streamURL.string)
-                    .frame(width: 900, height: 600)
-            } else {
-                Image("camera")
-                    .foregroundColor(.text)
-            }
-            Button {
-                viewModel.isRecording ? viewModel.stopRecording() : viewModel.startRecording()
-            } label: {
-                Image(viewModel.isRecording ? "stop" : "record")
-                    .resizable()
-                    .frame(width: 56, height: 56)
-                    .foregroundColor(Color.red)
-            }
-            
-            Button(viewModel.isPreviewing ? "Hide preview" : "Show preview") {
-                viewModel.isPreviewing.toggle()
-            }
-            .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
-            
-        }
-        .padding()
+//        ZStack {
+//                Rectangle()
+//                    .foregroundColor(Color.gray.opacity(0.2))
+//        GeometryReader { gr in
+                VStack {
+//                    GeometryReader { gr in
+                    Text(viewModel.camera.name)
+                        .font(.custom("Roboto-Regular", size: 20))
+                        .foregroundColor(.text)
+//                    if viewModel.isPreviewing || viewModel.isRecording {
+                        WebView(url: viewModel.camera.streamURL.string)
+                            .frame(width: 400, height: 400 / (16/9))
+//                    } else {
+//                        Image("camera")
+////                            .resizable()
+////                            .scaledToFit()
+//                            .foregroundColor(.text)
+//                    }
+                    Button {
+                        viewModel.isRecording ? viewModel.stopRecording() : viewModel.startRecording()
+                    } label: {
+                        Image(viewModel.isRecording ? "stop" : "record")
+                            .resizable()
+                            .frame(width: 56, height: 56)
+                            .foregroundColor(Color.red)
+                    }
+                    
+//                    Button(viewModel.isPreviewing ? "Hide preview" : "Show preview") {
+//                        viewModel.isPreviewing.toggle()
+//                    }
+//                    .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
+                    
+                }.padding()
+//        }
     }
 }
