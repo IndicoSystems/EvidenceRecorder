@@ -13,7 +13,8 @@ class CameraViewModel: ObservableObject {
     }
     
     func startRecording() {
-        camera.startRecording() { [unowned self] result in
+        camera.startRecording() { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let success):
                 if success {
@@ -46,16 +47,18 @@ class CameraViewModel: ObservableObject {
     }
     
     func getUploadURL(recordingInfo: RecordingInfo) {
-        
+
         DispatchQueue.global().async {
             AuthClient.shared.authenticate()
-            
+
             DispatchQueue.main.async {
                 CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
                     switch result {
                     case .success(let url):
                         let file = File(location: url, id: recordingInfo.id)
-                        self.camera.upload(file: file)
+                        if let axisCam = self.camera as? Axis {
+                            axisCam.upload(file: file)
+                        }
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -68,6 +71,8 @@ class CameraViewModel: ObservableObject {
 struct CameraView: View {
     
     @ObservedObject var viewModel: CameraViewModel
+    
+    @State private var isRecording = false
     
     var body: some View {
 //        ZStack {
@@ -90,8 +95,9 @@ struct CameraView: View {
 //                    }
                     Button {
                         viewModel.isRecording ? viewModel.stopRecording() : viewModel.startRecording()
+                        isRecording.toggle()
                     } label: {
-                        Image(viewModel.isRecording ? "stop" : "record")
+                        Image(isRecording ? "stop" : "record")
                             .resizable()
                             .frame(width: 56, height: 56)
                             .foregroundColor(Color.red)

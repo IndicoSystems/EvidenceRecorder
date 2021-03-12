@@ -7,9 +7,13 @@ protocol Camera {
     var url: URL { get }
     var serverURL: URL { get }
     var streamURL: URL { get }
+    var isRecording: Bool { get }
     
     func startRecording(completion: @escaping (Result<Bool, Error>) -> ())
     func stopRecording(completion: @escaping (Result<RecordingInfo, Error>) -> ())
+    
+    func upload(file: File)
+    func getUploadURL(recordingInfo: RecordingInfo)
 }
 
 extension Camera {
@@ -81,6 +85,27 @@ extension Camera {
                 }
             }
         }.resume()
+    }
+}
+
+extension Camera {
+    func getUploadURL(recordingInfo: RecordingInfo) {
+
+        DispatchQueue.global().async {
+            AuthClient.shared.authenticate()
+
+            DispatchQueue.main.async {
+                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
+                    switch result {
+                    case .success(let url):
+                        let file = File(location: url, id: recordingInfo.id)
+                        upload(file: file)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
     
     func upload(file: File) {

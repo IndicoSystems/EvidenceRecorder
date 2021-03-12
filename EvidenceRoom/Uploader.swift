@@ -2,31 +2,27 @@ import Foundation
 
 protocol Uploader {
     func upload(file: File)
+    
+    func getUploadURL(recordingInfo: RecordingInfo)
 }
 
-extension Uploader where Self: Camera {
-    func upload(file: File) {
-        var request = URLRequest(url: serverURL.appendingPathComponent("upload"))
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = [
-            "Content-Type" : "application/json-header"
-        ]
-
-        let fileData = try! JSONEncoder().encode(file)
-        request.httpBody = fileData
+extension Uploader {
+    func getUploadURL(recordingInfo: RecordingInfo) {
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let err = error  {
-                print(err.localizedDescription)
-            }
+        DispatchQueue.global().async {
+            AuthClient.shared.authenticate()
             
-            if let response = response as? HTTPURLResponse {
-                if response.statusCode == 200 {
-                    print(String(data: data!, encoding: .utf8) ?? "No data")
-                } else {
-                    print("ERROR! \(response.statusCode)")
+            DispatchQueue.main.async {
+                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
+                    switch result {
+                    case .success(let url):
+                        let file = File(location: url, id: recordingInfo.id)
+                        upload(file: file)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
                 }
             }
-        }.resume()
+        }
     }
 }
