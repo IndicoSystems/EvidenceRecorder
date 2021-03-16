@@ -38,6 +38,8 @@ class CloudClient: ObservableObject {
     @Published var cameras = [Camera]()
     @Published var cases = [ERCase]()
     
+    @Published var isSignedOut = true
+    
     func fetchCameras(from url: URL, completion: @escaping (Result<[Camera], Error>) -> ()) {
         var cameras = [Camera]()
 //        let camera1 = AxisCamera(ip: "10.0.0.83", port: 8089, name: "Cam 1")
@@ -96,7 +98,7 @@ class CloudClient: ObservableObject {
         }
     }
     
-    private func phpRequest(method: HTTPMethod, endpoint: Endpoint, payload: [String : Any]? = nil, completion: @escaping ((Int, Data))->()) {
+    private func phpRequest(method: HTTPMethod, endpoint: Endpoint, payload: [String : Any]? = nil, completion: @escaping (Result<FT4Response, Error>)->()) {
         let host = UserDefaults.standard.string(forKey: "host")!
         let url = URL(string: "https://\(host)/")!
         var request = URLRequest(url: url.appendingPathComponent(endpoint.rawValue))
@@ -119,7 +121,9 @@ class CloudClient: ObservableObject {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
                 print(err.localizedDescription)
-                completion((0, err.localizedDescription.data(using: .utf8)!))
+//                completion((0, err.localizedDescription.data(using: .utf8)!))
+                let ft4Response = FT4Response(statusCode: 0, body: err.localizedDescription.data(using: .utf8)!)
+                completion(.success(ft4Response))
             }
             
             var statusCode = 0
@@ -128,36 +132,56 @@ class CloudClient: ObservableObject {
                 statusCode = response.statusCode
             }
             
-            var result = (statusCode, Data())
-            
             if let d = data {
-                result.1 = d
-                completion(result)
+                let ft4Response = FT4Response(statusCode: statusCode, body: d)
+                completion(.success(ft4Response))
             }
         }.resume()
     }
     
     func getCameras() {
-        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_cameras"]) { data in
-            let cams = try! JSONDecoder().decode([Axis].self, from: data.1)
-            self.cameras = cams
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_cameras"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                let cams = try! JSONDecoder().decode([Axis].self, from: ft4Response.body)
+                self.cameras = cams
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
     
     func getRooms() {
-        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_rooms"]) { data in
-            let rooms = try! JSONDecoder().decode([Room].self, from: data.1)
-            self.rooms = rooms
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_rooms"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                let rooms = try! JSONDecoder().decode([Room].self, from: ft4Response.body)
+                self.rooms = rooms
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
     
     func signIn(username: String, password: String) {
-        phpRequest(method: .post, endpoint: .auth, payload: ["action" : "sign_in", "username" : username, "password" : password]) { data in
-            print(String(data: data.1, encoding: .utf8)!)
-            let json = try! JSONSerialization.jsonObject(with: data.1) as! [String : Any]
-            guard let token = json["access_token"] as? String else { return }
-            UserDefaults.standard.setValue(token, forKey: "token")
+        phpRequest(method: .post, endpoint: .auth, payload: ["action" : "sign_in", "username" : username, "password" : password]) { result in
+            switch result {
+            case .success(let ft4Response):
+                let json = try! JSONSerialization.jsonObject(with: ft4Response.body) as! [String : Any]
+                guard let token = json["access_token"] as? String else { return }
+                UserDefaults.standard.setValue(token, forKey: "token")
+                
+                DispatchQueue.main.async {
+                    self.isSignedOut = false
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
+    }
+    
+    func signOut() {
+        isSignedOut = true
     }
     
     func getForms() {
@@ -237,5 +261,5 @@ extension Date {
 
 struct FT4Response {
     let statusCode: Int
-    let body: String
+    let body: Data
 }
