@@ -156,7 +156,9 @@ class CloudClient: ObservableObject {
             switch result {
             case .success(let ft4Response):
                 let rooms = try! JSONDecoder().decode([Room].self, from: ft4Response.body)
-                self.rooms = rooms
+                DispatchQueue.main.async {
+                    self.rooms = rooms
+                }
             case .failure(let err):
                 print(err.localizedDescription)
             }
