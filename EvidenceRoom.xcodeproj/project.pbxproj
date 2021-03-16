@@ -40,15 +40,14 @@
 		C2A43610255579D7004479E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A4360E255579D7004479E0 /* LaunchScreen.storyboard */; };
 		C2A4361B255579D7004479E0 /* EvidenceRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4361A255579D7004479E0 /* EvidenceRoomTests.swift */; };
 		C2A43626255579D7004479E0 /* EvidenceRoomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43625255579D7004479E0 /* EvidenceRoomUITests.swift */; };
-		C2A4363B25557C14004479E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4363A25557C14004479E0 /* MainView.swift */; };
 		C2A678972577D3950022D16B /* RecordingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A678962577D3950022D16B /* RecordingModel.swift */; };
 		C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A801B3258361BF0072635A /* ColorTheme.swift */; };
 		C2A801BC258363C10072635A /* metro-df.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801BB258363C00072635A /* metro-df.ttf */; };
 		C2A801C42583B68F0072635A /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801C32583B68F0072635A /* Roboto-Regular.ttf */; };
 		C2AE270E25ED19870047A927 /* CaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE270D25ED19870047A927 /* CaseView.swift */; };
-		C2AE271325ED19AD0047A927 /* ERCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE271225ED19AD0047A927 /* ERCase.swift */; };
 		C2BCC32C25F0F5B300A1EF35 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BCC32B25F0F5B300A1EF35 /* ReportView.swift */; };
 		C2D025AD2600A3E5003A0D14 /* FT4Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D025AC2600A3E5003A0D14 /* FT4Client.swift */; };
+		C2D025BB2600E4D3003A0D14 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D025BA2600E4D3003A0D14 /* Project.swift */; };
 		C2D95179255D46D3008ED51D /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C2D95178255D46D3008ED51D /* OAuthSwift */; };
 		C2D95186255D647B008ED51D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95185255D647B008ED51D /* Camera.swift */; };
 		C2E6B8EE25E7846000D0FA7C /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6B8ED25E7846000D0FA7C /* Uploader.swift */; };
@@ -120,15 +119,14 @@
 		C2A43625255579D7004479E0 /* EvidenceRoomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceRoomUITests.swift; sourceTree = "<group>"; };
 		C2A43627255579D7004479E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2A4363625557B98004479E0 /* EvidenceRoom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EvidenceRoom.entitlements; sourceTree = "<group>"; };
-		C2A4363A25557C14004479E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C2A678962577D3950022D16B /* RecordingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModel.swift; sourceTree = "<group>"; };
 		C2A801B3258361BF0072635A /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		C2A801BB258363C00072635A /* metro-df.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "metro-df.ttf"; sourceTree = "<group>"; };
 		C2A801C32583B68F0072635A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		C2AE270D25ED19870047A927 /* CaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseView.swift; sourceTree = "<group>"; };
-		C2AE271225ED19AD0047A927 /* ERCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERCase.swift; sourceTree = "<group>"; };
 		C2BCC32B25F0F5B300A1EF35 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		C2D025AC2600A3E5003A0D14 /* FT4Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FT4Client.swift; sourceTree = "<group>"; };
+		C2D025BA2600E4D3003A0D14 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		C2D95185255D647B008ED51D /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		C2E6B8ED25E7846000D0FA7C /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
 		C2E6B8F225E785E400D0FA7C /* MockCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCamera.swift; sourceTree = "<group>"; };
@@ -219,7 +217,7 @@
 			children = (
 				C293203125D420F800521277 /* CasesView.swift */,
 				C2AE270D25ED19870047A927 /* CaseView.swift */,
-				C2AE271225ED19AD0047A927 /* ERCase.swift */,
+				C2D025BA2600E4D3003A0D14 /* Project.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -321,7 +319,6 @@
 		C2FCCFCD25767A9C00790212 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C2A4363A25557C14004479E0 /* MainView.swift */,
 				C2FCCFEE257691F000790212 /* CloudClient.swift */,
 			);
 			path = Main;
@@ -575,7 +572,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2AE271325ED19AD0047A927 /* ERCase.swift in Sources */,
 				C2D95186255D647B008ED51D /* Camera.swift in Sources */,
 				C2E6B8F825E787BB00D0FA7C /* Room.swift in Sources */,
 				C2FCCFE025767B9900790212 /* CameraView.swift in Sources */,
@@ -598,7 +594,6 @@
 				C293203225D420F800521277 /* CasesView.swift in Sources */,
 				C2D025AD2600A3E5003A0D14 /* FT4Client.swift in Sources */,
 				C25833A825D5488200DBD2EA /* RoomView.swift in Sources */,
-				C2A4363B25557C14004479E0 /* MainView.swift in Sources */,
 				C2E6B8F325E785E400D0FA7C /* MockCamera.swift in Sources */,
 				C2A43606255579D5004479E0 /* SceneDelegate.swift in Sources */,
 				C211647D25824AD500FC788F /* File.swift in Sources */,
@@ -607,6 +602,7 @@
 				C242638B2587935900BC3005 /* TitleView.swift in Sources */,
 				C211648E258261BB00FC788F /* WebView.swift in Sources */,
 				C2E6B8EE25E7846000D0FA7C /* Uploader.swift in Sources */,
+				C2D025BB2600E4D3003A0D14 /* Project.swift in Sources */,
 				C2116438257F92EE00FC788F /* API.swift in Sources */,
 				C2A678972577D3950022D16B /* RecordingModel.swift in Sources */,
 			);
