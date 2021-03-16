@@ -3,9 +3,10 @@ import OAuthSwift
 
 struct LoginView: View {
     
-    @ObservedObject var authClient = AuthClient.shared
+    @ObservedObject var authClient = CloudClient.shared
     
     @State private var host = ""
+    @State private var isUserPassViewPresented = false
     
     var body: some View {
         
@@ -29,7 +30,8 @@ struct LoginView: View {
                         TextField("Host", text: $host) { changed in
                             
                         } onCommit: {
-                            authClient.signIn(withHost: host)
+                            UserDefaults.standard.setValue(host, forKey: "host")
+                            isUserPassViewPresented = true
                         }
                         .textFieldStyle(EvidenceTextFieldStyle())
                         .autocapitalization(.none)
@@ -40,7 +42,9 @@ struct LoginView: View {
                         Spacer()
                         
                         Button("Sign in") {
-                            authClient.signIn(withHost: host)
+//                            authClient.signIn(withHost: host)
+                            UserDefaults.standard.setValue(host, forKey: "host")
+                            isUserPassViewPresented = true
                         }
                         .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
                         .padding()
@@ -51,6 +55,9 @@ struct LoginView: View {
                 .padding()
                 .frame(width: UIScreen.main.bounds.width / 2)
             }
+        }
+        .sheet(isPresented: $isUserPassViewPresented) {
+            UserPasswordView()
         }
     }
 }

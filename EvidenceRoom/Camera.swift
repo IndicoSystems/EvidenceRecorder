@@ -2,6 +2,7 @@ import Foundation
 
 protocol Camera {
     var id: String { get }
+    var roomId: String? { get }
     var name: String { get }
     var address: String { get }
     var url: URL { get }

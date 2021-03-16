@@ -24,6 +24,7 @@
 		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
 		C24263902587AAE800BC3005 /* EvidenceTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */; };
 		C24263952587AE1F00BC3005 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24263942587AE1F00BC3005 /* NavBarView.swift */; };
+		C2442E6325FB8C57002CA0B3 /* UserPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */; };
 		C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */; };
 		C25833A825D5488200DBD2EA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25833A725D5488200DBD2EA /* RoomView.swift */; };
 		C25AD19525E005C000BC4C1A /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25AD19425E005C000BC4C1A /* FormView.swift */; };
@@ -48,6 +49,7 @@
 		C2AE270E25ED19870047A927 /* CaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE270D25ED19870047A927 /* CaseView.swift */; };
 		C2AE271325ED19AD0047A927 /* ERCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE271225ED19AD0047A927 /* ERCase.swift */; };
 		C2BCC32C25F0F5B300A1EF35 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BCC32B25F0F5B300A1EF35 /* ReportView.swift */; };
+		C2D025AD2600A3E5003A0D14 /* FT4Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D025AC2600A3E5003A0D14 /* FT4Client.swift */; };
 		C2D95179255D46D3008ED51D /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C2D95178255D46D3008ED51D /* OAuthSwift */; };
 		C2D95181255D5228008ED51D /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95180255D5228008ED51D /* AuthClient.swift */; };
 		C2D95186255D647B008ED51D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D95185255D647B008ED51D /* Camera.swift */; };
@@ -97,6 +99,7 @@
 		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceTextFieldStyle.swift; sourceTree = "<group>"; };
 		C24263942587AE1F00BC3005 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPasswordView.swift; sourceTree = "<group>"; };
 		C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNetworkingClient.swift; sourceTree = "<group>"; };
 		C25833A725D5488200DBD2EA /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		C25AD19425E005C000BC4C1A /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		C2AE270D25ED19870047A927 /* CaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseView.swift; sourceTree = "<group>"; };
 		C2AE271225ED19AD0047A927 /* ERCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERCase.swift; sourceTree = "<group>"; };
 		C2BCC32B25F0F5B300A1EF35 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		C2D025AC2600A3E5003A0D14 /* FT4Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FT4Client.swift; sourceTree = "<group>"; };
 		C2D95180255D5228008ED51D /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		C2D95185255D647B008ED51D /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		C2E6B8ED25E7846000D0FA7C /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
@@ -257,8 +261,10 @@
 				C2116437257F92EE00FC788F /* API.swift */,
 				C2116426257F8A7500FC788F /* schema.json */,
 				C216CC7F255BC22A00699CA5 /* LoginView.swift */,
+				C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */,
 				C211642B257F8AF600FC788F /* CloudClient.graphql */,
 				C2D95180255D5228008ED51D /* AuthClient.swift */,
+				C2D025AC2600A3E5003A0D14 /* FT4Client.swift */,
 				C293203625D4211300521277 /* Cases */,
 				C211648D258261BB00FC788F /* WebView.swift */,
 				C2BCC32B25F0F5B300A1EF35 /* ReportView.swift */,
@@ -586,6 +592,7 @@
 				C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */,
 				C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */,
 				C2D95181255D5228008ED51D /* AuthClient.swift in Sources */,
+				C2442E6325FB8C57002CA0B3 /* UserPasswordView.swift in Sources */,
 				C24263952587AE1F00BC3005 /* NavBarView.swift in Sources */,
 				C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */,
 				C2BCC32C25F0F5B300A1EF35 /* ReportView.swift in Sources */,
@@ -597,6 +604,7 @@
 				C25AD19525E005C000BC4C1A /* FormView.swift in Sources */,
 				C25AD19A25E006B500BC4C1A /* ERForm.swift in Sources */,
 				C293203225D420F800521277 /* CasesView.swift in Sources */,
+				C2D025AD2600A3E5003A0D14 /* FT4Client.swift in Sources */,
 				C25833A825D5488200DBD2EA /* RoomView.swift in Sources */,
 				C2A4363B25557C14004479E0 /* MainView.swift in Sources */,
 				C2E6B8F325E785E400D0FA7C /* MockCamera.swift in Sources */,

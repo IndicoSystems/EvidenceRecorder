@@ -1,14 +1,16 @@
 import Foundation
 
-struct Axis: Camera {
-    var id: String
-    var name: String
-    var address: String
+struct Axis: Camera, Codable {
+    let id: String
+    let roomId: String?
+    let name: String
+    let address: String
     var isRecording: Bool { return false }
     
-    init(apolloCam: GetRoomsQuery.Data.Room.Camera) {
-        self.id = apolloCam.id
-        self.name = apolloCam.name
-        self.address = apolloCam.address
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case roomId = "room_id"
+        case name = "name"
+        case address = "address"
     }
 }

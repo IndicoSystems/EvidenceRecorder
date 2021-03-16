@@ -17,6 +17,16 @@ public typealias Json = [String : Any?]
 
 class CloudClient: ObservableObject {
     
+    enum HTTPMethod: String {
+        case get = "GET"
+        case post = "POST"
+    }
+    
+    enum Endpoint: String {
+        case api = "api/"
+        case auth = "auth/"
+    }
+    
     static let shared = CloudClient()
     
     var apolloClient: ApolloClient!
@@ -25,6 +35,7 @@ class CloudClient: ObservableObject {
     
     @Published var forms = [ERForm]()
     @Published var rooms = [Room]()
+    @Published var cameras = [Camera]()
     @Published var cases = [ERCase]()
     
     func fetchCameras(from url: URL, completion: @escaping (Result<[Camera], Error>) -> ()) {
@@ -85,21 +96,67 @@ class CloudClient: ObservableObject {
         }
     }
     
-    func getRooms() {
-        apolloClient.fetch(query: GetRoomsQuery(), cachePolicy: .default, contextIdentifier: nil, queue: .main) { result in
-            switch result {
-            case .success(let data):
-                guard let d = data.data else { return }
-                
-                var rooms = [Room]()
-                d.rooms.forEach({
-                    rooms.append(Room(apolloRoom: $0))
-                })
-                self.rooms = rooms
-                
-            case .failure(let err):
-                print(err.localizedDescription)
+    private func phpRequest(method: HTTPMethod, endpoint: Endpoint, payload: [String : Any]? = nil, completion: @escaping ((Int, Data))->()) {
+        let host = UserDefaults.standard.string(forKey: "host")!
+        let url = URL(string: "https://\(host)/")!
+        var request = URLRequest(url: url.appendingPathComponent(endpoint.rawValue))
+        request.httpMethod = method.rawValue
+        
+        if let token = UserDefaults.standard.string(forKey: "token") {
+            request.allHTTPHeaderFields = ["indico-access-token" : token]
+        }
+        
+        switch method {
+        case .post:
+            if let payload = payload {
+                let json = try! JSONSerialization.data(withJSONObject: payload)
+                request.httpBody = json
             }
+        default:
+            break
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let err = error {
+                print(err.localizedDescription)
+                completion((0, err.localizedDescription.data(using: .utf8)!))
+            }
+            
+            var statusCode = 0
+            
+            if let response = response as? HTTPURLResponse {
+                statusCode = response.statusCode
+            }
+            
+            var result = (statusCode, Data())
+            
+            if let d = data {
+                result.1 = d
+                completion(result)
+            }
+        }.resume()
+    }
+    
+    func getCameras() {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_cameras"]) { data in
+            let cams = try! JSONDecoder().decode([Axis].self, from: data.1)
+            self.cameras = cams
+        }
+    }
+    
+    func getRooms() {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_rooms"]) { data in
+            let rooms = try! JSONDecoder().decode([Room].self, from: data.1)
+            self.rooms = rooms
+        }
+    }
+    
+    func signIn(username: String, password: String) {
+        phpRequest(method: .post, endpoint: .auth, payload: ["action" : "sign_in", "username" : username, "password" : password]) { data in
+            print(String(data: data.1, encoding: .utf8)!)
+            let json = try! JSONSerialization.jsonObject(with: data.1) as! [String : Any]
+            guard let token = json["access_token"] as? String else { return }
+            UserDefaults.standard.setValue(token, forKey: "token")
         }
     }
     
@@ -176,4 +233,9 @@ extension Date {
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter.string(from: self)
     }
+}
+
+struct FT4Response {
+    let statusCode: Int
+    let body: String
 }
