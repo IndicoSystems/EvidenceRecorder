@@ -4,10 +4,9 @@ protocol Camera {
     var id: String { get }
     var roomId: String? { get }
     var name: String { get }
-    var address: String { get }
-    var url: URL { get }
-    var serverURL: URL { get }
-    var streamURL: URL { get }
+    var address: String? { get }
+    var serverURL: URL? { get }
+    var streamURL: URL? { get }
     var isRecording: Bool { get }
     
     func startRecording(completion: @escaping (Result<Bool, Error>) -> ())
@@ -18,23 +17,19 @@ protocol Camera {
 }
 
 extension Camera {
-    var url: URL {
-        let ip = address.split(separator: ":").first!
-        return URL(string: "http://\(ip)")!
+    
+    var serverURL: URL? {
+        return URL(string: "http://\(address ?? "")")
     }
     
-    var serverURL: URL {
-        return URL(string: "http://\(address)")!
-    }
-    
-    var streamURL: URL {
-        return serverURL.appendingPathComponent("feed")
+    var streamURL: URL? {
+        return serverURL?.appendingPathComponent("feed")
     }
 }
 
 extension Camera {
     func startRecording(completion: @escaping (Result<Bool, Error>) -> ()) {
-        var request = URLRequest(url: serverURL.appendingPathComponent("record/start"))
+        var request = URLRequest(url: serverURL!.appendingPathComponent("record/start"))
         request.httpMethod = "POST"
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -58,7 +53,7 @@ extension Camera {
     }
     
     func stopRecording(completion: @escaping (Result<RecordingInfo, Error>) -> ()) {
-        var request = URLRequest(url: serverURL.appendingPathComponent("record/stop"))
+        var request = URLRequest(url: serverURL!.appendingPathComponent("record/stop"))
         request.httpMethod = "POST"
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -92,25 +87,25 @@ extension Camera {
 extension Camera {
     func getUploadURL(recordingInfo: RecordingInfo) {
 
-        DispatchQueue.global().async {
-            AuthClient.shared.authenticate()
-
-            DispatchQueue.main.async {
-                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
-                    switch result {
-                    case .success(let url):
-                        let file = File(location: url, id: recordingInfo.id)
-                        upload(file: file)
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
+//        DispatchQueue.global().async {
+//            AuthClient.shared.authenticate()
+//
+//            DispatchQueue.main.async {
+//                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
+//                    switch result {
+//                    case .success(let url):
+//                        let file = File(location: url, id: recordingInfo.id)
+//                        upload(file: file)
+//                    case .failure(let error):
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }
+//        }
     }
     
     func upload(file: File) {
-        var request = URLRequest(url: serverURL.appendingPathComponent("file"))
+        var request = URLRequest(url: serverURL!.appendingPathComponent("file"))
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = [
             "Content-Type" : "application/json-header"

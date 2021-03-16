@@ -4,7 +4,7 @@ struct Axis: Camera, Codable {
     let id: String
     let roomId: String?
     let name: String
-    let address: String
+    let address: String?
     var isRecording: Bool { return false }
     
     enum CodingKeys: String, CodingKey {
