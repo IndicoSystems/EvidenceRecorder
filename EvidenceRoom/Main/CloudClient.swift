@@ -1,6 +1,5 @@
 import Foundation
 import SwiftUI
-import Apollo
 import SwiftKeychainWrapper
 
 public typealias Email = String
@@ -29,73 +28,15 @@ class CloudClient: ObservableObject {
     
     static let shared = CloudClient()
     
-    var apolloClient: ApolloClient!
-    
-    private let apolloStore = ApolloStore()
-    
     @Published var forms = [ERForm]()
     @Published var rooms = [Room]()
     @Published var cameras = [Camera]()
-    @Published var cases = [ERCase]()
+    @Published var projects = [Project]()
     
     @Published var isSignedOut = true
     
-    func fetchCameras(from url: URL, completion: @escaping (Result<[Camera], Error>) -> ()) {
-        var cameras = [Camera]()
-//        let camera1 = AxisCamera(ip: "10.0.0.83", port: 8089, name: "Cam 1")
-//        let camera2 = AxisCamera(ip: "192.168.1.85", port: 8089, name: "Cam 2")
-        
-        cameras = [
-//            camera1,
-//            camera2
-        ]
-        
-        completion(.success(cameras))
-        
-//        let request = URLRequest(url: url)
-//
-//        let _ = URLSession.shared.dataTask(with: request) { data, response, error in
-//            if let err = error {
-//                let camera1 = AxisCamera(ip: "192.168.1.50", port: 8089, name: "Cam 1")
-//                let camera2 = AxisCamera(ip: "192.168.1.85", port: 8089, name: "Cam 2")
-//                cameras = [camera1, camera2]
-//                completion(.success(cameras))
-//            }
-//
-//            guard let data = data else { return }
-//
-//            do {
-//                let rooms = try JSONDecoder().decode([Room].self, from: data)
-//
-//                for room in rooms {
-//                    for camera in room.cameras {
-//                        let cam = AxisCamera(ip: camera.ip, port: camera.port, name: camera.name)
-//                        cameras.append(cam)
-//                    }
-//                    completion(.success(cameras))
-//                }
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }.resume()
-    }
-    
-    func getCases() {
-        apolloClient.fetch(query: GetCasesQuery(), cachePolicy: .default, contextIdentifier: nil, queue: .main) { result in
-            switch result {
-            case .success(let data):
-                guard let d = data.data else { return }
-                
-                var cases = [ERCase]()
-                d.cases.forEach({
-                    cases.append(ERCase(papiCase: $0))
-                })
-                self.cases = cases
-                
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
+    private init() {
+        authenticate()
     }
     
     private func phpRequest(method: HTTPMethod, endpoint: Endpoint, payload: [String : Any]? = nil, completion: @escaping (Result<FT4Response, Error>)->()) {
@@ -143,8 +84,15 @@ class CloudClient: ObservableObject {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_cameras"]) { result in
             switch result {
             case .success(let ft4Response):
-                let cams = try! JSONDecoder().decode([Axis].self, from: ft4Response.body)
-                self.cameras = cams
+                
+                do {
+                    let cams = try JSONDecoder().decode([Axis].self, from: ft4Response.body)
+                    DispatchQueue.main.async {
+                        self.cameras = cams
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
             case .failure(let err):
                 print(err.localizedDescription)
             }
@@ -165,6 +113,22 @@ class CloudClient: ObservableObject {
         }
     }
     
+    func getCases() {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_projects"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                print(ft4Response.statusCode)
+                
+                let projects = try! JSONDecoder().decode([Project].self, from: ft4Response.body)
+                DispatchQueue.main.async {
+                    self.projects = projects
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func signIn(username: String, password: String) {
         phpRequest(method: .post, endpoint: .auth, payload: ["action" : "sign_in", "username" : username, "password" : password]) { result in
             switch result {
@@ -172,6 +136,9 @@ class CloudClient: ObservableObject {
                 let json = try! JSONSerialization.jsonObject(with: ft4Response.body) as! [String : Any]
                 guard let token = json["access_token"] as? String else { return }
                 UserDefaults.standard.setValue(token, forKey: "token")
+                
+                self.getRooms()
+                self.getCameras()
                 
                 DispatchQueue.main.async {
                     self.isSignedOut = false
@@ -183,73 +150,113 @@ class CloudClient: ObservableObject {
     }
     
     func signOut() {
-        isSignedOut = true
+        
+        phpRequest(method: .post, endpoint: .auth, payload: ["action" : "sign_out"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                switch ft4Response.statusCode {
+                case 200:
+                    DispatchQueue.main.async {
+                        self.isSignedOut = true
+                    }
+                    
+                    UserDefaults.standard.setValue(nil, forKey: "token")
+                default:
+                    break
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func authenticate() {
+        guard let _ = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        
+        isSignedOut = false
+        
+        getRooms()
+        getCameras()
+        getCases()
     }
     
     func getForms() {
-        apolloClient.fetch(query: GetFormsQuery(), cachePolicy: .default, contextIdentifier: nil, queue: .main) { result in
-            switch result {
-            case .success(let data):
-                self.forms.removeAll()
-                
-                guard let d = data.data,
-                      let capture = d.settings.capture,
-                      let requiredForms = capture.requiredForms else { return }
-                
-                for form in requiredForms.forms {
-                    
-                    let erForm = ERForm(form: form)
-                    self.forms.append(erForm)
-                }
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
+//        apolloClient.fetch(query: GetFormsQuery(), cachePolicy: .default, contextIdentifier: nil, queue: .main) { result in
+//            switch result {
+//            case .success(let data):
+//                self.forms.removeAll()
+//
+//                guard let d = data.data,
+//                      let capture = d.settings.capture,
+//                      let requiredForms = capture.requiredForms else { return }
+//
+//                for form in requiredForms.forms {
+//
+//                    let erForm = ERForm(form: form)
+//                    self.forms.append(erForm)
+//                }
+//            case .failure(let err):
+//                print(err.localizedDescription)
+//            }
+//        }
     }
     
     func createFile(with clientMediaId: String, size: Int, completion: @escaping (Result<String, Error>) -> ()) {
         
-        let fileCreateInput = FileCreateInput(clientMediaId: clientMediaId, fileSize: PositiveNonZeroInt(size), captureStartedAt: Date().iso8601, mime: "video/x-matroska")
-        apolloClient.perform(mutation: CreateFileMutation(data: fileCreateInput)) { result in
+//        let fileCreateInput = FileCreateInput(clientMediaId: clientMediaId, fileSize: PositiveNonZeroInt(size), captureStartedAt: Date().iso8601, mime: "video/x-matroska")
+//        apolloClient.perform(mutation: CreateFileMutation(data: fileCreateInput)) { result in
+//            switch result {
+//            case .success(let data):
+//
+//                if let errors = data.errors, let error = errors.first {
+//                    completion(.failure(error))
+//                    return
+//                }
+//
+//                guard let d = data.data else {
+//                    print("No data!")
+//                    return
+//                }
+//                completion(.success(d.createFile.uploadPath))
+//
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
+//        }
+    }
+    
+    func createExhibit() {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "create_exhibit", "id" : UUID().uuidString]) { result in
             switch result {
-            case .success(let data):
-                
-                if let errors = data.errors, let error = errors.first {
-                    completion(.failure(error))
-                    return
-                }
-                
-                guard let d = data.data else {
-                    print("No data!")
-                    return
-                }
-                completion(.success(d.createFile.uploadPath))
-                
+            case .success(let ft4Response):
+                print(ft4Response.statusCode)
             case .failure(let error):
-                completion(.failure(error))
+                print(error.localizedDescription)
             }
         }
     }
-
-    func createApolloClient(withBearerToken bearerToken: String) {
-        
-        let authPayload = [
-            "Authorization" : "Bearer \(bearerToken)",
-            "client-version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "-")"
-        ]
-        
-        let host = UserDefaults.standard.string(forKey: "host") ?? ""
-        
-        let sessionConfiguration = URLSessionConfiguration.default
-        sessionConfiguration.httpAdditionalHeaders = authPayload
-        let urlSessionClient = URLSessionClient(sessionConfiguration: sessionConfiguration, callbackQueue: nil)
-        let interceptorProvidor = LegacyInterceptorProvider(client: urlSessionClient, shouldInvalidateClientOnDeinit: true, store: apolloStore)
-        let networkTransport = RequestChainNetworkTransport(interceptorProvider: interceptorProvidor, endpointURL: URL(string: "https://\(host)/papi/")!)
-        let apolloClient = ApolloClient(networkTransport: networkTransport, store: apolloStore)
-        
-        self.apolloClient = apolloClient
-        
-    }
+//
+//    func createApolloClient(withBearerToken bearerToken: String) {
+//        
+//        let authPayload = [
+//            "Authorization" : "Bearer \(bearerToken)",
+//            "client-version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "-")"
+//        ]
+//        
+//        let host = UserDefaults.standard.string(forKey: "host") ?? ""
+//        
+//        let sessionConfiguration = URLSessionConfiguration.default
+//        sessionConfiguration.httpAdditionalHeaders = authPayload
+//        let urlSessionClient = URLSessionClient(sessionConfiguration: sessionConfiguration, callbackQueue: nil)
+//        let interceptorProvidor = LegacyInterceptorProvider(client: urlSessionClient, shouldInvalidateClientOnDeinit: true, store: apolloStore)
+//        let networkTransport = RequestChainNetworkTransport(interceptorProvider: interceptorProvidor, endpointURL: URL(string: "https://\(host)/papi/")!)
+//        let apolloClient = ApolloClient(networkTransport: networkTransport, store: apolloStore)
+//        
+//        self.apolloClient = apolloClient
+//        
+//    }
 }
 
 extension Date {

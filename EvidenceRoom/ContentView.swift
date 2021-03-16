@@ -12,11 +12,6 @@ struct ContentView: View {
         
         NavigationView {
             VStack(spacing: 16) {
-//                NavigationLink(destination: MainView()) {
-//                    Text("Main")
-//                }
-//                Divider()
-//                    .padding()
 //                NavigationLink(destination: FormsView()) {
 //                    Text("Forms")
 //                }

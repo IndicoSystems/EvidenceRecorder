@@ -35,7 +35,8 @@ class CameraViewModel: ObservableObject {
         camera.stopRecording() { [unowned self] result in
             switch result {
             case .success(let recordingResponse):
-                self.getUploadURL(recordingInfo: recordingResponse)
+//                self.getUploadURL(recordingInfo: recordingResponse)
+                CloudClient.shared.createExhibit()
                 
                 DispatchQueue.main.async {
                     self.isRecording = false
@@ -48,23 +49,23 @@ class CameraViewModel: ObservableObject {
     
     func getUploadURL(recordingInfo: RecordingInfo) {
 
-        DispatchQueue.global().async {
-            AuthClient.shared.authenticate()
-
-            DispatchQueue.main.async {
-                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
-                    switch result {
-                    case .success(let url):
-                        let file = File(location: url, id: recordingInfo.id)
-                        if let axisCam = self.camera as? Axis {
-                            axisCam.upload(file: file)
-                        }
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
+//        DispatchQueue.global().async {
+//            AuthClient.shared.authenticate()
+//
+//            DispatchQueue.main.async {
+//                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
+//                    switch result {
+//                    case .success(let url):
+//                        let file = File(location: url, id: recordingInfo.id)
+//                        if let axisCam = self.camera as? Axis {
+//                            axisCam.upload(file: file)
+//                        }
+//                    case .failure(let error):
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }
+//        }
     }
 }
 
@@ -85,7 +86,7 @@ struct CameraView: View {
                         .font(.custom("Roboto-Regular", size: 20))
                         .foregroundColor(.text)
 //                    if viewModel.isPreviewing || viewModel.isRecording {
-                        WebView(url: viewModel.camera.streamURL.string)
+                        WebView(url: viewModel.camera.streamURL!.string)
                             .frame(width: 400, height: 400 / (16/9))
 //                    } else {
 //                        Image("camera")

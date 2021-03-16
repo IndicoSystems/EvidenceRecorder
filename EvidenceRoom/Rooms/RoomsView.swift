@@ -17,7 +17,6 @@ struct RoomsView: View {
                 }
             }
         }
-        .onAppear(perform: cloudClient.getRooms)
         .navigationTitle("Rooms")
     }
 }

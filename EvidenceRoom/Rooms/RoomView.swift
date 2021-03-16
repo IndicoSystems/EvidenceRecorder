@@ -4,9 +4,11 @@ struct RoomView: View {
     
     let room: Room
     
-    var cameras: [Camera] {
-        CloudClient.shared.cameras.filter({$0.roomId == room.id})
-    }
+    @State private var cameras = [Camera]()
+    
+//    var cameras: [Camera] {
+//        CloudClient.shared.cameras.filter({$0.roomId == room.id})
+//    }
     
     let columns: [GridItem] = [
 //        GridItem(.adaptive(minimum: 500, maximum: .infinity), alignment: .center)
@@ -35,6 +37,8 @@ struct RoomView: View {
                 toggleAllCameras()
             })
             .padding()
+        }.onAppear {
+            cameras = CloudClient.shared.cameras.filter({$0.roomId == room.id})
         }
     }
     

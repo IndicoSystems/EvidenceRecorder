@@ -57,32 +57,32 @@ struct ReportView: View {
                     let personCreateInput = PersonCreateInput(firstName: firstName, lastName: lastName)
                     let createPersonMutation = CreatePersonMutation(person: personCreateInput, statuses: [])
                     
-                    CloudClient.shared.apolloClient.perform(mutation: createPersonMutation) { result in
-                        switch result {
-                        case .success(let data):
-                            if let errors = data.errors {
-                                errors.forEach({ print($0) })
-                            }
-                            
-                            guard let data = data.data else { return }
-                            print(data.createPerson)
-                            let person = PersonWithStatusWhereUniqueInput(id: data.createPerson.id)
-                            let submitFormFieldInput = SubmitFormFieldInput(id: UUID().uuidString, persons: [person])
-                            let submitFormInput = SubmitFormInput(files: WhereIDin(idIn: [""]), fields: [submitFormFieldInput])
-                            let submitForm = SubmitFormMutation(formInput: submitFormInput)
-                            CloudClient.shared.apolloClient.perform(mutation: submitForm) { result in
-                                switch result {
-                                case .success(let data):
-                                    print(data)
-                                case .failure(let error):
-                                    print(error.localizedDescription)
-                                }
-                            }
-                                                        
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                    }
+//                    CloudClient.shared.apolloClient.perform(mutation: createPersonMutation) { result in
+//                        switch result {
+//                        case .success(let data):
+//                            if let errors = data.errors {
+//                                errors.forEach({ print($0) })
+//                            }
+//                            
+//                            guard let data = data.data else { return }
+//                            print(data.createPerson)
+//                            let person = PersonWithStatusWhereUniqueInput(id: data.createPerson.id)
+//                            let submitFormFieldInput = SubmitFormFieldInput(id: UUID().uuidString, persons: [person])
+//                            let submitFormInput = SubmitFormInput(files: WhereIDin(idIn: [""]), fields: [submitFormFieldInput])
+//                            let submitForm = SubmitFormMutation(formInput: submitFormInput)
+//                            CloudClient.shared.apolloClient.perform(mutation: submitForm) { result in
+//                                switch result {
+//                                case .success(let data):
+//                                    print(data)
+//                                case .failure(let error):
+//                                    print(error.localizedDescription)
+//                                }
+//                            }
+//                                                        
+//                        case .failure(let error):
+//                            print(error.localizedDescription)
+//                        }
+//                    }
                     
 //                    let person = PapiCase.Report.Person(person: GetCasesQuery.Data.Case.Report.Person.Person(firstName: firstName, lastName: lastName))
 //                    PapiCase.Report(id: reportID, name: title, persons: [person])
