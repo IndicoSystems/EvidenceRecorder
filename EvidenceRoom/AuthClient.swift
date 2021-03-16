@@ -167,12 +167,13 @@ class AuthClient: NSObject, ObservableObject {
     }
     
     func authenticate() {
-        
+        return
 //        fetchEndpoints(fromHost: host) { result in
 //            switch result {
 //            case .success(let wellknown):
 //                self.wellknown = wellknown
         
+                
         if !isAccessTokenExpired() {
             return
         }
