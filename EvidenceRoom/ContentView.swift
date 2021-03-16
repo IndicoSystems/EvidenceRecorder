@@ -6,9 +6,7 @@ struct ContentView: View {
         UITableView.appearance().backgroundColor = .clear
     }
     
-    @ObservedObject var authClient = AuthClient.shared
-    
-    @State private var isLoginPresented = false
+    @ObservedObject var authClient = CloudClient.shared
     
     var body: some View {
         
