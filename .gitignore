@@ -4,3 +4,5 @@ Pods/
 EvidenceRoom.xcworkspace/xcuserdata/thomas-indico.xcuserdatad/UserInterfaceState.xcuserstate
 
 EvidenceRoom.xcworkspace/xcuserdata/thomas-indico.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.xcbkptlist
