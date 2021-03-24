@@ -19,7 +19,6 @@ struct UserPasswordView: View {
                 .padding()
             
             Button("Sign in") {
-                print("Sign in")
                 CloudClient.shared.signIn(username: username, password: password)
                 presentationMode.wrappedValue.dismiss()
             }
