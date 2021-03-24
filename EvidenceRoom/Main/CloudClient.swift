@@ -32,6 +32,13 @@ class CloudClient: ObservableObject {
     @Published var rooms = [Room]()
     @Published var cameras = [Camera]()
     @Published var projects = [Project]()
+    @Published var tasks = [Task]()
+    
+//    @Published var assignedRoomId = UserDefaults.standard.string(forKey: "assignedRoomID")
+    var assignedRoom: Room? {
+        let assignedRoomId = UserDefaults.standard.string(forKey: "assignedRoomId")
+        return rooms.first(where: {$0.id == assignedRoomId })
+    }
     
     @Published var isSignedOut = true
     
@@ -40,7 +47,12 @@ class CloudClient: ObservableObject {
     }
     
     private func phpRequest(method: HTTPMethod, endpoint: Endpoint, payload: [String : Any]? = nil, completion: @escaping (Result<FT4Response, Error>)->()) {
-        let host = UserDefaults.standard.string(forKey: "host")!
+        
+        if endpoint == .api && isSignedOut {
+            return
+        }
+        
+        let host = UserDefaults.standard.string(forKey: "host") ?? ""
         let url = URL(string: "https://\(host)/")!
         var request = URLRequest(url: url.appendingPathComponent(endpoint.rawValue))
         request.httpMethod = method.rawValue
@@ -61,16 +73,33 @@ class CloudClient: ObservableObject {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
-                print(err.localizedDescription)
 //                completion((0, err.localizedDescription.data(using: .utf8)!))
-                let ft4Response = FT4Response(statusCode: 0, body: err.localizedDescription.data(using: .utf8)!)
-                completion(.success(ft4Response))
+//                let ft4Response = FT4Response(statusCode: 0, body: err.localizedDescription.data(using: .utf8)!)
+//                completion(.success(ft4Response))
+                DispatchQueue.main.async {
+                    CloudClient.shared.isSignedOut = true
+                }
+                completion(.failure(err))
+                return
             }
             
             var statusCode = 0
             
             if let response = response as? HTTPURLResponse {
                 statusCode = response.statusCode
+                
+                switch statusCode {
+                case 0, 400..<600:
+                    DispatchQueue.main.async {
+                        CloudClient.shared.isSignedOut = true
+                    }
+                    return
+                default:
+                    DispatchQueue.main.async {
+                        CloudClient.shared.isSignedOut = false
+                    }
+                    break
+                }
             }
             
             if let d = data {
@@ -113,16 +142,67 @@ class CloudClient: ObservableObject {
         }
     }
     
-    func getCases() {
+    func getProjects() {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_projects"]) { result in
             switch result {
             case .success(let ft4Response):
-                print(ft4Response.statusCode)
-                
                 let projects = try! JSONDecoder().decode([Project].self, from: ft4Response.body)
                 DispatchQueue.main.async {
                     self.projects = projects
                 }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getTasks(inProjectWithID id: String) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_tasks_in_project", "project_id" : id]) { result in
+            switch result {
+            case .success(let ft4Response):
+                let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
+                DispatchQueue.main.async {
+                    self.tasks = tasks
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getIncompleteTasks() {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_pending_tasks"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
+                DispatchQueue.main.async {
+                    self.tasks = tasks
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAllTasks() {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_tasks"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
+                DispatchQueue.main.async {
+                    self.tasks = tasks
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func submitTask(withId id: String, fields: [String : Any]) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "submit_task", "task_id" : id, "fields" : [fields]]) { result in
+            switch result {
+            case .success(let ft4Response):
+                print(ft4Response.statusCode)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -179,84 +259,25 @@ class CloudClient: ObservableObject {
         
         getRooms()
         getCameras()
-        getCases()
+        getProjects()
     }
     
     func getForms() {
-//        apolloClient.fetch(query: GetFormsQuery(), cachePolicy: .default, contextIdentifier: nil, queue: .main) { result in
-//            switch result {
-//            case .success(let data):
-//                self.forms.removeAll()
-//
-//                guard let d = data.data,
-//                      let capture = d.settings.capture,
-//                      let requiredForms = capture.requiredForms else { return }
-//
-//                for form in requiredForms.forms {
-//
-//                    let erForm = ERForm(form: form)
-//                    self.forms.append(erForm)
-//                }
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//            }
-//        }
     }
     
     func createFile(with clientMediaId: String, size: Int, completion: @escaping (Result<String, Error>) -> ()) {
-        
-//        let fileCreateInput = FileCreateInput(clientMediaId: clientMediaId, fileSize: PositiveNonZeroInt(size), captureStartedAt: Date().iso8601, mime: "video/x-matroska")
-//        apolloClient.perform(mutation: CreateFileMutation(data: fileCreateInput)) { result in
-//            switch result {
-//            case .success(let data):
-//
-//                if let errors = data.errors, let error = errors.first {
-//                    completion(.failure(error))
-//                    return
-//                }
-//
-//                guard let d = data.data else {
-//                    print("No data!")
-//                    return
-//                }
-//                completion(.success(d.createFile.uploadPath))
-//
-//            case .failure(let error):
-//                completion(.failure(error))
-//            }
-//        }
     }
     
-    func createExhibit() {
-        phpRequest(method: .post, endpoint: .api, payload: ["action" : "create_exhibit", "id" : UUID().uuidString]) { result in
+    func createExhibit(taskFieldId: String, completion: @escaping (Int)->()) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "create_exhibit", "id" : UUID().uuidString, "taskfield_id" : taskFieldId]) { result in
             switch result {
             case .success(let ft4Response):
-                print(ft4Response.statusCode)
+                completion(ft4Response.statusCode)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-//
-//    func createApolloClient(withBearerToken bearerToken: String) {
-//        
-//        let authPayload = [
-//            "Authorization" : "Bearer \(bearerToken)",
-//            "client-version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "-")"
-//        ]
-//        
-//        let host = UserDefaults.standard.string(forKey: "host") ?? ""
-//        
-//        let sessionConfiguration = URLSessionConfiguration.default
-//        sessionConfiguration.httpAdditionalHeaders = authPayload
-//        let urlSessionClient = URLSessionClient(sessionConfiguration: sessionConfiguration, callbackQueue: nil)
-//        let interceptorProvidor = LegacyInterceptorProvider(client: urlSessionClient, shouldInvalidateClientOnDeinit: true, store: apolloStore)
-//        let networkTransport = RequestChainNetworkTransport(interceptorProvider: interceptorProvidor, endpointURL: URL(string: "https://\(host)/papi/")!)
-//        let apolloClient = ApolloClient(networkTransport: networkTransport, store: apolloStore)
-//        
-//        self.apolloClient = apolloClient
-//        
-//    }
 }
 
 extension Date {
