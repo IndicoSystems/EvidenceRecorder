@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ReportView: View {
+struct TaskView: View {
     
     @Binding var report: ERForm?
     
@@ -63,7 +63,7 @@ struct ReportView: View {
 //                            if let errors = data.errors {
 //                                errors.forEach({ print($0) })
 //                            }
-//                            
+//
 //                            guard let data = data.data else { return }
 //                            print(data.createPerson)
 //                            let person = PersonWithStatusWhereUniqueInput(id: data.createPerson.id)
@@ -78,7 +78,7 @@ struct ReportView: View {
 //                                    print(error.localizedDescription)
 //                                }
 //                            }
-//                                                        
+//
 //                        case .failure(let error):
 //                            print(error.localizedDescription)
 //                        }
