@@ -12,18 +12,23 @@ struct ContentView: View {
         
         NavigationView {
             VStack(spacing: 16) {
-//                NavigationLink(destination: FormsView()) {
-//                    Text("Forms")
-//                }
-//                Divider()
-//                    .padding()
+                NavigationLink(destination: TodayView()) {
+                    Text("Today")
+                }
+                Divider()
+                    .padding()
                 NavigationLink(destination: RoomsView()) {
                     Text("Rooms")
                 }
                 Divider()
                     .padding()
-                NavigationLink(destination: CasesView()) {
-                    Text("Cases")
+//                NavigationLink(destination: CasesView()) {
+//                    Text("Cases")
+//                }
+//                Divider()
+//                    .padding()
+                NavigationLink(destination: SettingsView()) {
+                    Text("Settings")
                 }
             }
             .navigationTitle("Evidence")
@@ -34,6 +39,8 @@ struct ContentView: View {
                     Image(systemName: "icloud.and.arrow.down.fill")
                 }
             )
+            
+            TodayView()
         }.fullScreenCover(isPresented: $authClient.isSignedOut, content: LoginView.init)
     }
 }
