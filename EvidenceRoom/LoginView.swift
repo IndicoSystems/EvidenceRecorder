@@ -3,8 +3,6 @@ import OAuthSwift
 
 struct LoginView: View {
     
-    @ObservedObject var authClient = CloudClient.shared
-    
     @State private var host = ""
     @State private var isUserPassViewPresented = false
     
