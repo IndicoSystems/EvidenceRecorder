@@ -24,4 +24,17 @@ struct Room: Codable {
             }
         }
     }
+    
+    func stopAllCameras() {
+        for camera in cameras {
+            camera.stopRecording { result in
+                switch result {
+                case .success(let recordingInfo):
+                    print(recordingInfo.fileSize)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 }
