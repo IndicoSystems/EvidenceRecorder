@@ -35,6 +35,7 @@ struct TaskView: View {
                                             case 200:
                                                 print("Yay-time for \(camera.name)")
                                             default:
+                                                print("Failed to create exhibit for \(camera.name)")
                                                 allCamerasReady = false
                                             }
                                         }
