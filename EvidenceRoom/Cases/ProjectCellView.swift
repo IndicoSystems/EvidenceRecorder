@@ -1,20 +1,36 @@
-//
-//  ProjectCellView.swift
-//  EvidenceRoom
-//
-//  Created by Thomas Swatland on 19/03/2021.
-//
-
 import SwiftUI
 
 struct ProjectCellView: View {
+    
+    let project: Project
+    
+    @State private var imageName = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text(project.name)
+                    .font(.title)
+                Spacer()
+                switch project.permission {
+                case .read:
+                    Image(systemName: "lock.fill")
+                        .foregroundColor(.black)
+                case .write:
+                    Image(systemName: "lock.open.fill")
+                        .foregroundColor(.black)
+                default:
+                    EmptyView()
+                }
+            }
+        }
+        .padding()
     }
 }
 
 struct ProjectCellView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ProjectCellView()
+        ProjectCellView(project: Project(id: UUID().uuidString, name: "Pelikansaken", permission: .write))
     }
 }
