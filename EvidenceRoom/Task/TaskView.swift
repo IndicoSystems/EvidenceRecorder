@@ -2,6 +2,65 @@ import SwiftUI
 
 struct TaskView: View {
     
+    let task: Task
+    
+    var body: some View {
+        
+        if let fields = task.fields {
+            if fields.count > 0 {
+                Form {
+                    ForEach(fields, id: \.id) { field in
+                        Text(field.title.extract(fromKey: "no") ?? "")
+                        switch field.type {
+                        case "text":
+                            Text(field.answer ?? "")
+                        case "person":
+                            Text("Person")
+                        case "capture":
+                            Button("Start opptak") {
+                                
+                                if let assignedRoom = CloudClient.shared.assignedRoom {
+                                    var successes = 0
+                                    let totalCams = assignedRoom.cameras.count
+                                    var fails = 0
+                                    for _ in assignedRoom.cameras {
+                                        CloudClient.shared.createExhibit(taskFieldId: field.id) { statusCode in
+                                            switch statusCode {
+                                            case 200:
+                                                print("Yay-time")
+                                                successes += 1
+                                                break
+                                            default:
+                                                fails += 1
+                                            }
+                                            if successes + fails == totalCams {
+                                                if fails == 0 {
+                                                    assignedRoom.startAllCameras()
+                                                } else {
+                                                    // shit went south
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        default:
+                            EmptyView()
+                        }
+                    }
+                }.navigationTitle(Text(task.name))
+            } else {
+                Text("No content")
+                    .font(.title2)
+                    .foregroundColor(.gray)
+                    .navigationTitle(Text(task.name))
+            }
+        }
+    }
+}
+
+struct TaskView2: View {
+    
     @Binding var report: ERForm?
     
     @State private var title = ""
