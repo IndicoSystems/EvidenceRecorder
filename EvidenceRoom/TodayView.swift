@@ -1,15 +1,31 @@
-//
-//  TodayView.swift
-//  EvidenceRoom
-//
-//  Created by Thomas Swatland on 18/03/2021.
-//
-
 import SwiftUI
 
 struct TodayView: View {
+    
+    @ObservedObject var cloudClient = CloudClient.shared
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(alignment: .leading, spacing: 16) {
+            if cloudClient.tasks.count <= 0 {
+                ProgressView()
+            } else {
+                ForEach(cloudClient.tasks.sorted(by: {$0.date < $1.date}), id: \.id) { task in
+                    NavigationLink(destination: TaskView(task: task)) {
+                        Text(task.name)
+                            .font(.headline)
+                    }
+                    Text(task.projectName ?? "No project")
+                    if let dueAt = task.dueAt {
+                        Text(dueAt)
+                    }
+                }
+            }
+        }
+        .navigationTitle(Text("Today"))
+        .onAppear {
+            cloudClient.getIncompleteTasks()
+        }
     }
 }
 
