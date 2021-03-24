@@ -20,26 +20,31 @@ struct TaskView: View {
                             Button("Start opptak") {
                                 
                                 if let assignedRoom = CloudClient.shared.assignedRoom {
-                                    var successes = 0
-                                    let totalCams = assignedRoom.cameras.count
-                                    var fails = 0
-                                    for _ in assignedRoom.cameras {
+                                    
+                                    let group = DispatchGroup()
+                                    var allCamerasReady = true
+                                    
+                                    for camera in assignedRoom.cameras {
+                                        group.enter()
+                                        
                                         CloudClient.shared.createExhibit(taskFieldId: field.id) { statusCode in
+                                            defer {
+                                                group.leave()
+                                            }
                                             switch statusCode {
                                             case 200:
-                                                print("Yay-time")
-                                                successes += 1
-                                                break
+                                                print("Yay-time for \(camera.name)")
                                             default:
-                                                fails += 1
+                                                allCamerasReady = false
                                             }
-                                            if successes + fails == totalCams {
-                                                if fails == 0 {
-                                                    assignedRoom.startAllCameras()
-                                                } else {
-                                                    // shit went south
-                                                }
-                                            }
+                                        }
+                                    }
+                                    group.notify(queue: .main) {
+                                        if allCamerasReady {
+                                            print("All cameras are ready to be started!")
+//                                                assignedRoom.startAllCameras()
+                                        } else {
+                                            print("Shit went south!")
                                         }
                                     }
                                 }
