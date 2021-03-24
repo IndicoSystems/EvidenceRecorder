@@ -1,15 +1,23 @@
-//
-//  SettingsView.swift
-//  EvidenceRoom
-//
-//  Created by Thomas Swatland on 22/03/2021.
-//
-
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @ObservedObject var cloudClient = CloudClient.shared
+    @State private var assignedRoom = "Room"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section {
+                Picker("Room", selection: $assignedRoom) {
+                    ForEach(cloudClient.rooms, id: \.id) { room in
+                        Text(room.name)
+                    }
+                }.onChange(of: assignedRoom) { roomId in
+                    UserDefaults.standard.setValue(roomId, forKey: "assignedRoomId")
+                }
+            }
+        }
+        .navigationTitle(Text("Settings"))
     }
 }
 
