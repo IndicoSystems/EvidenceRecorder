@@ -259,7 +259,7 @@ class CloudClient: ObservableObject {
         
         getRooms()
         getCameras()
-        getProjects()
+//        getProjects()
     }
     
     func getForms() {
