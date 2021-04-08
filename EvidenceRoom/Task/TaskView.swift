@@ -10,51 +10,11 @@ struct TaskView: View {
             if fields.count > 0 {
                 Form {
                     ForEach(fields, id: \.id) { field in
-                        Text(field.title.extract(fromKey: "no") ?? "")
-                        switch field.type {
-                        case "text":
-                            Text(field.answer ?? "")
-                        case "person":
-                            Text("Person")
-                        case "capture":
-                            Button("Start opptak") {
-                                
-                                if let assignedRoom = CloudClient.shared.assignedRoom {
-                                    
-                                    let group = DispatchGroup()
-                                    var allCamerasReady = true
-                                    
-                                    for camera in assignedRoom.cameras {
-                                        group.enter()
-                                        
-                                        CloudClient.shared.createExhibit(taskFieldId: field.id) { statusCode in
-                                            defer {
-                                                group.leave()
-                                            }
-                                            switch statusCode {
-                                            case 200:
-                                                print("Yay-time for \(camera.name)")
-                                            default:
-                                                print("Failed to create exhibit for \(camera.name)")
-                                                allCamerasReady = false
-                                            }
-                                        }
-                                    }
-                                    group.notify(queue: .main) {
-                                        if allCamerasReady {
-                                            print("All cameras are ready to be started!")
-//                                                assignedRoom.startAllCameras()
-                                        } else {
-                                            print("Shit went south!")
-                                        }
-                                    }
-                                }
-                            }
-                        default:
-                            EmptyView()
-                        }
+                        TaskFieldView(field: field)
                     }
-                }.navigationTitle(Text(task.name))
+                }
+                .padding()
+                .navigationTitle(Text(task.name))
             } else {
                 Text("No content")
                     .font(.title2)

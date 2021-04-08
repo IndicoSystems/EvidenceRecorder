@@ -9,7 +9,7 @@ protocol Camera {
     var streamURL: URL? { get }
     var isRecording: Bool { get }
     
-    func startRecording(completion: @escaping (Result<Bool, Error>) -> ())
+    func startRecording(fieldId: String, completion: @escaping (Result<Bool, Error>) -> ())
     func stopRecording(completion: @escaping (Result<RecordingInfo, Error>) -> ())
     
     func upload(file: File)
@@ -28,9 +28,14 @@ extension Camera {
 }
 
 extension Camera {
-    func startRecording(completion: @escaping (Result<Bool, Error>) -> ()) {
+    func startRecording(fieldId: String, completion: @escaping (Result<Bool, Error>) -> ()) {
         var request = URLRequest(url: serverURL!.appendingPathComponent("record/start"))
         request.httpMethod = "POST"
+        
+        let payload = ["taskFieldId" : fieldId]
+        
+        let jsonData = try! JSONSerialization.data(withJSONObject: payload, options: .fragmentsAllowed)
+        request.httpBody = jsonData
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {

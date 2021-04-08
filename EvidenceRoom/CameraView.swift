@@ -12,31 +12,30 @@ class CameraViewModel: ObservableObject {
         self.camera = camera
     }
     
-    func startRecording() {
-        camera.startRecording() { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let success):
-                if success {
-                    DispatchQueue.main.async {
-                        self.isRecording = true
-                    }
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.isRecording = false
-                }
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    func startRecording() {
+//        camera.startRecording() { [weak self] result in
+//            guard let self = self else { return }
+//            switch result {
+//            case .success(let success):
+//                if success {
+//                    DispatchQueue.main.async {
+//                        self.isRecording = true
+//                    }
+//                }
+//            case .failure(let error):
+//                DispatchQueue.main.async {
+//                    self.isRecording = false
+//                }
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
     
     func stopRecording() {
         camera.stopRecording() { [unowned self] result in
             switch result {
             case .success(let recordingResponse):
 //                self.getUploadURL(recordingInfo: recordingResponse)
-                CloudClient.shared.createExhibit()
                 
                 DispatchQueue.main.async {
                     self.isRecording = false
@@ -95,7 +94,7 @@ struct CameraView: View {
 //                            .foregroundColor(.text)
 //                    }
                     Button {
-                        viewModel.isRecording ? viewModel.stopRecording() : viewModel.startRecording()
+//                        viewModel.isRecording ? viewModel.stopRecording() : viewModel.startRecording()
                         isRecording.toggle()
                     } label: {
                         Image(isRecording ? "stop" : "record")

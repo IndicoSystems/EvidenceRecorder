@@ -31,6 +31,9 @@
 		C25833A825D5488200DBD2EA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25833A725D5488200DBD2EA /* RoomView.swift */; };
 		C25AD19525E005C000BC4C1A /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25AD19425E005C000BC4C1A /* FormView.swift */; };
 		C25AD19A25E006B500BC4C1A /* ERForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25AD19925E006B500BC4C1A /* ERForm.swift */; };
+		C268957B260B5A94007AA104 /* TodayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C268957A260B5A94007AA104 /* TodayCellView.swift */; };
+		C268959A260C9A1F007AA104 /* SubTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2689599260C9A1F007AA104 /* SubTaskView.swift */; };
+		C268959F260C9EB9007AA104 /* TaskFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C268959E260C9EB9007AA104 /* TaskFieldView.swift */; };
 		C26BEF6C25E6D18A004010F4 /* RoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BEF6A25E6D18A004010F4 /* RoomTests.swift */; };
 		C285D075255D959200271787 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C285D074255D959200271787 /* AuthModels.swift */; };
 		C293202925D3C82B00521277 /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293202825D3C82B00521277 /* RoomsView.swift */; };
@@ -47,6 +50,7 @@
 		C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A801B3258361BF0072635A /* ColorTheme.swift */; };
 		C2A801BC258363C10072635A /* metro-df.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801BB258363C00072635A /* metro-df.ttf */; };
 		C2A801C42583B68F0072635A /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A801C32583B68F0072635A /* Roboto-Regular.ttf */; };
+		C2AC8041260CC4F600417D9D /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AC8040260CC4F600417D9D /* PersonView.swift */; };
 		C2AE270E25ED19870047A927 /* CaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE270D25ED19870047A927 /* CaseView.swift */; };
 		C2BCC32C25F0F5B300A1EF35 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BCC32B25F0F5B300A1EF35 /* TaskView.swift */; };
 		C2C52F912608A90B00E11D9F /* TaskField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C52F902608A90B00E11D9F /* TaskField.swift */; };
@@ -109,6 +113,9 @@
 		C25833A725D5488200DBD2EA /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		C25AD19425E005C000BC4C1A /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		C25AD19925E006B500BC4C1A /* ERForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERForm.swift; sourceTree = "<group>"; };
+		C268957A260B5A94007AA104 /* TodayCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCellView.swift; sourceTree = "<group>"; };
+		C2689599260C9A1F007AA104 /* SubTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTaskView.swift; sourceTree = "<group>"; };
+		C268959E260C9EB9007AA104 /* TaskFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFieldView.swift; sourceTree = "<group>"; };
 		C26BEF6A25E6D18A004010F4 /* RoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTests.swift; sourceTree = "<group>"; };
 		C285D074255D959200271787 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
 		C293202825D3C82B00521277 /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
@@ -132,6 +139,7 @@
 		C2A801B3258361BF0072635A /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		C2A801BB258363C00072635A /* metro-df.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "metro-df.ttf"; sourceTree = "<group>"; };
 		C2A801C32583B68F0072635A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		C2AC8040260CC4F600417D9D /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		C2AE270D25ED19870047A927 /* CaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseView.swift; sourceTree = "<group>"; };
 		C2BCC32B25F0F5B300A1EF35 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C2C52F902608A90B00E11D9F /* TaskField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskField.swift; sourceTree = "<group>"; };
@@ -206,6 +214,8 @@
 				C2BCC32B25F0F5B300A1EF35 /* TaskView.swift */,
 				C219AA8F2603512E00590DC9 /* Task.swift */,
 				C2C52F902608A90B00E11D9F /* TaskField.swift */,
+				C2689599260C9A1F007AA104 /* SubTaskView.swift */,
+				C268959E260C9EB9007AA104 /* TaskFieldView.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -276,6 +286,7 @@
 				C2A43607255579D5004479E0 /* ContentView.swift */,
 				C242638A2587935900BC3005 /* TitleView.swift */,
 				C219AA9D260397F600590DC9 /* TodayView.swift */,
+				C268957A260B5A94007AA104 /* TodayCellView.swift */,
 				C2116437257F92EE00FC788F /* API.swift */,
 				C2116426257F8A7500FC788F /* schema.json */,
 				C216CC7F255BC22A00699CA5 /* LoginView.swift */,
@@ -287,6 +298,7 @@
 				C285D074255D959200271787 /* AuthModels.swift */,
 				C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */,
 				C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */,
+				C2AC8045260CC61400417D9D /* Person */,
 				C200BCDF258B9C1C00BDFAD0 /* Forms */,
 				C211647C25824AD500FC788F /* File.swift */,
 				C2C52F9F2609F49500E11D9F /* Exhibit.swift */,
@@ -340,6 +352,14 @@
 				C2A801C32583B68F0072635A /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C2AC8045260CC61400417D9D /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				C2AC8040260CC4F600417D9D /* PersonView.swift */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 		C2FCCFCD25767A9C00790212 /* Main */ = {
@@ -598,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C268959A260C9A1F007AA104 /* SubTaskView.swift in Sources */,
 				C2D95186255D647B008ED51D /* Camera.swift in Sources */,
 				C2E6B8F825E787BB00D0FA7C /* Room.swift in Sources */,
 				C2FCCFE025767B9900790212 /* CameraView.swift in Sources */,
@@ -605,6 +626,7 @@
 				C285D075255D959200271787 /* AuthModels.swift in Sources */,
 				C200BCDB258B92A800BDFAD0 /* FormsView.swift in Sources */,
 				C2E6B8FD25E7A45900D0FA7C /* Axis.swift in Sources */,
+				C2AC8041260CC4F600417D9D /* PersonView.swift in Sources */,
 				C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */,
 				C219AA9E260397F600590DC9 /* TodayView.swift in Sources */,
 				C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */,
@@ -632,10 +654,12 @@
 				C211648E258261BB00FC788F /* WebView.swift in Sources */,
 				C2E6B8EE25E7846000D0FA7C /* Uploader.swift in Sources */,
 				C2D025BB2600E4D3003A0D14 /* Project.swift in Sources */,
+				C268957B260B5A94007AA104 /* TodayCellView.swift in Sources */,
 				C2116438257F92EE00FC788F /* API.swift in Sources */,
 				C2C52F912608A90B00E11D9F /* TaskField.swift in Sources */,
 				C219AA902603512E00590DC9 /* Task.swift in Sources */,
 				C2A678972577D3950022D16B /* RecordingModel.swift in Sources */,
+				C268959F260C9EB9007AA104 /* TaskFieldView.swift in Sources */,
 				C2C52F9B2608DD9300E11D9F /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
