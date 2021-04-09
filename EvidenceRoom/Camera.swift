@@ -13,7 +13,6 @@ protocol Camera {
     func stopRecording(completion: @escaping (Result<RecordingInfo, Error>) -> ())
     
     func upload(file: File)
-    func getUploadURL(recordingInfo: RecordingInfo)
 }
 
 extension Camera {
@@ -23,14 +22,14 @@ extension Camera {
     }
     
     var streamURL: URL? {
-        return serverURL?.appendingPathComponent("feed")
+        return serverURL?.appendingPathComponent(CameraCommand.feed)
     }
 }
 
 extension Camera {
     func startRecording(fieldId: String, completion: @escaping (Result<Bool, Error>) -> ()) {
-        var request = URLRequest(url: serverURL!.appendingPathComponent("record/start"))
-        request.httpMethod = "POST"
+        var request = URLRequest(url: serverURL!.appendingPathComponent(CameraCommand.startRecording))
+        request.httpMethod = HTTPMethod.post
         
         let payload = ["taskFieldId" : fieldId]
         
@@ -58,8 +57,8 @@ extension Camera {
     }
     
     func stopRecording(completion: @escaping (Result<RecordingInfo, Error>) -> ()) {
-        var request = URLRequest(url: serverURL!.appendingPathComponent("record/stop"))
-        request.httpMethod = "POST"
+        var request = URLRequest(url: serverURL!.appendingPathComponent(CameraCommand.stopRecording))
+        request.httpMethod = HTTPMethod.post
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
@@ -90,28 +89,10 @@ extension Camera {
 }
 
 extension Camera {
-    func getUploadURL(recordingInfo: RecordingInfo) {
-
-//        DispatchQueue.global().async {
-//            AuthClient.shared.authenticate()
-//
-//            DispatchQueue.main.async {
-//                CloudClient.shared.createFile(with: recordingInfo.id, size: recordingInfo.fileSize) { result in
-//                    switch result {
-//                    case .success(let url):
-//                        let file = File(location: url, id: recordingInfo.id)
-//                        upload(file: file)
-//                    case .failure(let error):
-//                        print(error.localizedDescription)
-//                    }
-//                }
-//            }
-//        }
-    }
     
     func upload(file: File) {
-        var request = URLRequest(url: serverURL!.appendingPathComponent("file"))
-        request.httpMethod = "POST"
+        var request = URLRequest(url: serverURL!.appendingPathComponent(CameraCommand.upload))
+        request.httpMethod = HTTPMethod.post
         request.allHTTPHeaderFields = [
             "Content-Type" : "application/json-header"
         ]
@@ -134,41 +115,3 @@ extension Camera {
         }.resume()
     }
 }
-
-//class Camera {
-//
-//    let id: String
-//    let name: String
-//    let address: String
-//
-//    var url: URL {
-//        let ip = address.split(separator: ":").first!
-//        return URL(string: "http://\(ip)")!
-//    }
-//
-//    var serverURL: URL {
-//        return URL(string: "http://\(address)")!
-//    }
-//
-//    init(apolloCam: GetRoomsQuery.Data.Room.Camera) {
-//        self.id = apolloCam.id
-//        self.name = apolloCam.name
-//        self.address = apolloCam.address
-//    }
-//
-//    var streamURL: URL {
-//        return serverURL.appendingPathComponent("feed")
-//    }
-//}
-//
-//class AxisCamera: Camera {
-//
-//    enum Request: String {
-//        case start = "/record/start"
-//        case stop  = "/record/stop"
-//    }
-//
-//    var stream: URL {
-//        return URL(string: "rtsp://\(address)/axis-media/media.amp")!
-//    }
-//}
