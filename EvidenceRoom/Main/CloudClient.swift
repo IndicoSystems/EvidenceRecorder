@@ -28,7 +28,6 @@ class CloudClient: ObservableObject {
     
     static let shared = CloudClient()
     
-    @Published var forms = [ERForm]()
     @Published var rooms = [Room]()
     @Published var cameras = [Camera]()
     @Published var projects = [Project]()

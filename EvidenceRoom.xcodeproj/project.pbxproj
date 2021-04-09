@@ -10,11 +10,7 @@
 		2ED1269DED803A59285D83FA /* Pods_EvidenceRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47760F72D0C901320F71599E /* Pods_EvidenceRoom.framework */; };
 		54789189252A2F8D17BA251A /* Pods_EvidenceRoom_EvidenceRoomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E7FEE431D9C6D51239E4FD /* Pods_EvidenceRoom_EvidenceRoomUITests.framework */; };
 		596A79BFB793633835265F0B /* Pods_EvidenceRoomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548209EF05A24EEC9143C3AC /* Pods_EvidenceRoomTests.framework */; };
-		C200BCDB258B92A800BDFAD0 /* FormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200BCDA258B92A800BDFAD0 /* FormsView.swift */; };
-		C2116422257F892900FC788F /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = C2116421257F892900FC788F /* Apollo */; };
-		C2116427257F8A7500FC788F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = C2116426257F8A7500FC788F /* schema.json */; };
 		C211642C257F8AF600FC788F /* CloudClient.graphql in Resources */ = {isa = PBXBuildFile; fileRef = C211642B257F8AF600FC788F /* CloudClient.graphql */; };
-		C2116438257F92EE00FC788F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2116437257F92EE00FC788F /* API.swift */; };
 		C2116447257FB6B900FC788F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = C2116446257FB6B900FC788F /* SwiftKeychainWrapper */; };
 		C211647D25824AD500FC788F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211647C25824AD500FC788F /* File.swift */; };
 		C211648E258261BB00FC788F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211648D258261BB00FC788F /* WebView.swift */; };
@@ -30,8 +26,6 @@
 		C2442E6325FB8C57002CA0B3 /* UserPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */; };
 		C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */; };
 		C25833A825D5488200DBD2EA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25833A725D5488200DBD2EA /* RoomView.swift */; };
-		C25AD19525E005C000BC4C1A /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25AD19425E005C000BC4C1A /* FormView.swift */; };
-		C25AD19A25E006B500BC4C1A /* ERForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25AD19925E006B500BC4C1A /* ERForm.swift */; };
 		C268957B260B5A94007AA104 /* TodayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C268957A260B5A94007AA104 /* TodayCellView.swift */; };
 		C268959A260C9A1F007AA104 /* SubTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2689599260C9A1F007AA104 /* SubTaskView.swift */; };
 		C268959F260C9EB9007AA104 /* TaskFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C268959E260C9EB9007AA104 /* TaskFieldView.swift */; };
@@ -95,10 +89,7 @@
 		85912F9BE65A5FEFAE74DE45 /* Pods-EvidenceRoomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoomTests.debug.xcconfig"; path = "Target Support Files/Pods-EvidenceRoomTests/Pods-EvidenceRoomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C64C2CA74C96E8EA36336A /* Pods-EvidenceRoomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoomTests.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoomTests/Pods-EvidenceRoomTests.release.xcconfig"; sourceTree = "<group>"; };
 		B54FA67BE7131E85E9C4F3AF /* Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom-EvidenceRoomUITests/Pods-EvidenceRoom-EvidenceRoomUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C200BCDA258B92A800BDFAD0 /* FormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsView.swift; sourceTree = "<group>"; };
-		C2116426257F8A7500FC788F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		C211642B257F8AF600FC788F /* CloudClient.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CloudClient.graphql; sourceTree = "<group>"; };
-		C2116437257F92EE00FC788F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C211647C25824AD500FC788F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C211648D258261BB00FC788F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		C216CC7F255BC22A00699CA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -113,8 +104,6 @@
 		C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPasswordView.swift; sourceTree = "<group>"; };
 		C24F6688257521D000D6A62C /* CameraNetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNetworkingClient.swift; sourceTree = "<group>"; };
 		C25833A725D5488200DBD2EA /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
-		C25AD19425E005C000BC4C1A /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
-		C25AD19925E006B500BC4C1A /* ERForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERForm.swift; sourceTree = "<group>"; };
 		C268957A260B5A94007AA104 /* TodayCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCellView.swift; sourceTree = "<group>"; };
 		C2689599260C9A1F007AA104 /* SubTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTaskView.swift; sourceTree = "<group>"; };
 		C268959E260C9EB9007AA104 /* TaskFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFieldView.swift; sourceTree = "<group>"; };
@@ -165,7 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2D95179255D46D3008ED51D /* OAuthSwift in Frameworks */,
-				C2116422257F892900FC788F /* Apollo in Frameworks */,
 				C2116447257FB6B900FC788F /* SwiftKeychainWrapper in Frameworks */,
 				2ED1269DED803A59285D83FA /* Pods_EvidenceRoom.framework in Frameworks */,
 			);
@@ -198,16 +186,6 @@
 				548209EF05A24EEC9143C3AC /* Pods_EvidenceRoomTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C200BCDF258B9C1C00BDFAD0 /* Forms */ = {
-			isa = PBXGroup;
-			children = (
-				C200BCDA258B92A800BDFAD0 /* FormsView.swift */,
-				C25AD19425E005C000BC4C1A /* FormView.swift */,
-				C25AD19925E006B500BC4C1A /* ERForm.swift */,
-			);
-			path = Forms;
 			sourceTree = "<group>";
 		};
 		C219AA8B2603512700590DC9 /* Task */ = {
@@ -289,8 +267,6 @@
 				C242638A2587935900BC3005 /* TitleView.swift */,
 				C219AA9D260397F600590DC9 /* TodayView.swift */,
 				C268957A260B5A94007AA104 /* TodayCellView.swift */,
-				C2116437257F92EE00FC788F /* API.swift */,
-				C2116426257F8A7500FC788F /* schema.json */,
 				C216CC7F255BC22A00699CA5 /* LoginView.swift */,
 				C21E3964262039D800BC885C /* Helpers.swift */,
 				C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */,
@@ -302,7 +278,6 @@
 				C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */,
 				C242638F2587AAE800BC3005 /* EvidenceTextFieldStyle.swift */,
 				C2AC8045260CC61400417D9D /* Person */,
-				C200BCDF258B9C1C00BDFAD0 /* Forms */,
 				C211647C25824AD500FC788F /* File.swift */,
 				C2C52F9F2609F49500E11D9F /* Exhibit.swift */,
 				C293202D25D3C83000521277 /* Rooms */,
@@ -397,7 +372,6 @@
 				C2A435FC255579D5004479E0 /* Sources */,
 				C2A435FD255579D5004479E0 /* Frameworks */,
 				C2A435FE255579D5004479E0 /* Resources */,
-				C2116430257F8B8D00FC788F /* Generate Apollo GraphQL API */,
 			);
 			buildRules = (
 			);
@@ -406,7 +380,6 @@
 			name = EvidenceRoom;
 			packageProductDependencies = (
 				C2D95178255D46D3008ED51D /* OAuthSwift */,
-				C2116421257F892900FC788F /* Apollo */,
 				C2116446257FB6B900FC788F /* SwiftKeychainWrapper */,
 			);
 			productName = EvidenceRoom;
@@ -484,7 +457,6 @@
 			mainGroup = C2A435F7255579D5004479E0;
 			packageReferences = (
 				C2D95177255D46D3008ED51D /* XCRemoteSwiftPackageReference "OAuthSwift" */,
-				C2116420257F892900FC788F /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				C2116445257FB6B900FC788F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = C2A43601255579D5004479E0 /* Products */;
@@ -505,7 +477,6 @@
 			files = (
 				C2A801BC258363C10072635A /* metro-df.ttf in Resources */,
 				C2A801C42583B68F0072635A /* Roboto-Regular.ttf in Resources */,
-				C2116427257F8A7500FC788F /* schema.json in Resources */,
 				C2A43610255579D7004479E0 /* LaunchScreen.storyboard in Resources */,
 				C2A4360D255579D7004479E0 /* Preview Assets.xcassets in Resources */,
 				C211642C257F8AF600FC788F /* CloudClient.graphql in Resources */,
@@ -596,24 +567,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C2116430257F8B8D00FC788F /* Generate Apollo GraphQL API */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Generate Apollo GraphQL API";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --passthroughCustomScalars --localSchemaFile=\"schema.json\" API.swift\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -627,7 +580,6 @@
 				C2FCCFE025767B9900790212 /* CameraView.swift in Sources */,
 				C293202925D3C82B00521277 /* RoomsView.swift in Sources */,
 				C285D075255D959200271787 /* AuthModels.swift in Sources */,
-				C200BCDB258B92A800BDFAD0 /* FormsView.swift in Sources */,
 				C2E6B8FD25E7A45900D0FA7C /* Axis.swift in Sources */,
 				C2AC8041260CC4F600417D9D /* PersonView.swift in Sources */,
 				C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */,
@@ -642,8 +594,6 @@
 				C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */,
 				C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */,
 				C2AE270E25ED19870047A927 /* CaseView.swift in Sources */,
-				C25AD19525E005C000BC4C1A /* FormView.swift in Sources */,
-				C25AD19A25E006B500BC4C1A /* ERForm.swift in Sources */,
 				C293203225D420F800521277 /* CasesView.swift in Sources */,
 				C25833A825D5488200DBD2EA /* RoomView.swift in Sources */,
 				C2E6B8F325E785E400D0FA7C /* MockCamera.swift in Sources */,
@@ -659,7 +609,6 @@
 				C2E6B8EE25E7846000D0FA7C /* Uploader.swift in Sources */,
 				C2D025BB2600E4D3003A0D14 /* Project.swift in Sources */,
 				C268957B260B5A94007AA104 /* TodayCellView.swift in Sources */,
-				C2116438257F92EE00FC788F /* API.swift in Sources */,
 				C2C52F912608A90B00E11D9F /* TaskField.swift in Sources */,
 				C219AA902603512E00590DC9 /* Task.swift in Sources */,
 				C2A678972577D3950022D16B /* RecordingModel.swift in Sources */,
@@ -1120,14 +1069,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C2116420257F892900FC788F /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.38.3;
-			};
-		};
 		C2116445257FB6B900FC788F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
@@ -1147,11 +1088,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C2116421257F892900FC788F /* Apollo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C2116420257F892900FC788F /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
-		};
 		C2116446257FB6B900FC788F /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C2116445257FB6B900FC788F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
