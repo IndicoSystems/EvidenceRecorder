@@ -34,7 +34,6 @@ class CloudClient: ObservableObject {
     @Published var projects = [Project]()
     @Published var tasks = [Task]()
     
-//    @Published var assignedRoomId = UserDefaults.standard.string(forKey: "assignedRoomID")
     var assignedRoom: Room? {
         let assignedRoomId = UserDefaults.standard.string(forKey: "assignedRoomId")
         return rooms.first(where: {$0.id == assignedRoomId })
@@ -73,9 +72,6 @@ class CloudClient: ObservableObject {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
-//                completion((0, err.localizedDescription.data(using: .utf8)!))
-//                let ft4Response = FT4Response(statusCode: 0, body: err.localizedDescription.data(using: .utf8)!)
-//                completion(.success(ft4Response))
                 DispatchQueue.main.async {
                     CloudClient.shared.isSignedOut = true
                 }
@@ -156,8 +152,21 @@ class CloudClient: ObservableObject {
         }
     }
     
-    func getTasks(inProjectWithID id: String) {
-        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_tasks_in_project", "project_id" : id]) { result in
+    func getTasks(inProjectWithID id: String?) {
+        
+        var payload = [String : String]()
+        if let id = id {
+            payload = [
+                "action"     : "get_tasks_in_project",
+                "project_id" : id
+            ]
+        } else {
+            payload = [
+                "action" : "get_tasks"
+            ]
+        }
+        
+        phpRequest(method: .post, endpoint: .api, payload: payload) { result in
             switch result {
             case .success(let ft4Response):
                 let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
@@ -172,20 +181,6 @@ class CloudClient: ObservableObject {
     
     func getIncompleteTasks() {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_pending_tasks"]) { result in
-            switch result {
-            case .success(let ft4Response):
-                let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
-                DispatchQueue.main.async {
-                    self.tasks = tasks
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func getAllTasks() {
-        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_tasks"]) { result in
             switch result {
             case .success(let ft4Response):
                 let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
@@ -259,13 +254,6 @@ class CloudClient: ObservableObject {
         
         getRooms()
         getCameras()
-//        getProjects()
-    }
-    
-    func getForms() {
-    }
-    
-    func createFile(with clientMediaId: String, size: Int, completion: @escaping (Result<String, Error>) -> ()) {
     }
     
     func createExhibit(taskFieldId: String, completion: @escaping (Int)->()) {
