@@ -19,6 +19,7 @@
 		C219AA9E260397F600590DC9 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219AA9D260397F600590DC9 /* TodayView.swift */; };
 		C219AAA3260495EA00590DC9 /* ProjectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C219AAA2260495EA00590DC9 /* ProjectCellView.swift */; };
 		C21E3965262039D800BC885C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E3964262039D800BC885C /* Helpers.swift */; };
+		C21E39A52624884100BC885C /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E39A42624884100BC885C /* CaptureView.swift */; };
 		C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23FE7AA25A85381009A1428 /* String+JWT.swift */; };
 		C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */; };
 		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
@@ -97,6 +98,7 @@
 		C219AA9D260397F600590DC9 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		C219AAA2260495EA00590DC9 /* ProjectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCellView.swift; sourceTree = "<group>"; };
 		C21E3964262039D800BC885C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		C21E39A42624884100BC885C /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		C23FE7AA25A85381009A1428 /* String+JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JWT.swift"; sourceTree = "<group>"; };
 		C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceButtonStyle.swift; sourceTree = "<group>"; };
 		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				C2C52F902608A90B00E11D9F /* TaskField.swift */,
 				C2689599260C9A1F007AA104 /* SubTaskView.swift */,
 				C268959E260C9EB9007AA104 /* TaskFieldView.swift */,
+				C21E39A42624884100BC885C /* CaptureView.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				C2A43606255579D5004479E0 /* SceneDelegate.swift in Sources */,
 				C211647D25824AD500FC788F /* File.swift in Sources */,
 				C2C52F962608B5EC00E11D9F /* String+ExtractKey.swift in Sources */,
+				C21E39A52624884100BC885C /* CaptureView.swift in Sources */,
 				C2A43608255579D5004479E0 /* ContentView.swift in Sources */,
 				C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */,
 				C219AAA3260495EA00590DC9 /* ProjectCellView.swift in Sources */,
