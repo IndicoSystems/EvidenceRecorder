@@ -10,7 +10,7 @@ struct TaskView: View {
             if fields.count > 0 {
                 Form {
                     ForEach(fields, id: \.id) { field in
-                        TaskFieldView(field: field)
+                        TaskFieldView(viewModel: TaskFieldViewModel(field: field))
                     }
                 }
                 .padding()
