@@ -104,8 +104,8 @@ class CloudClient: ObservableObject {
         }.resume()
     }
     
-    func getCameras() {
-        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_cameras"]) { result in
+    func getDevices() {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_devices"]) { result in
             switch result {
             case .success(let ft4Response):
                 
@@ -212,7 +212,7 @@ class CloudClient: ObservableObject {
                 UserDefaults.standard.setValue(token, forKey: "token")
                 
                 self.getRooms()
-                self.getCameras()
+                self.getDevices()
                 
                 DispatchQueue.main.async {
                     self.isSignedOut = false
@@ -252,7 +252,7 @@ class CloudClient: ObservableObject {
         isSignedOut = false
         
         getRooms()
-        getCameras()
+        getDevices()
     }
     
     func createExhibit(taskFieldId: String, completion: @escaping (Int)->()) {
