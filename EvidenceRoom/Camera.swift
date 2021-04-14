@@ -1,13 +1,9 @@
 import Foundation
 
-protocol Camera {
-    var id: String { get }
-    var roomId: String? { get }
-    var name: String { get }
-    var address: String? { get }
+protocol Camera: Device {
     var serverURL: URL? { get }
     var streamURL: URL? { get }
-    var isRecording: Bool { get }
+    var isRecording: Bool { get set }
     
     func startRecording(fieldId: String, completion: @escaping (Result<Bool, Error>) -> ())
     func stopRecording(completion: @escaping (Result<RecordingInfo, Error>) -> ())
