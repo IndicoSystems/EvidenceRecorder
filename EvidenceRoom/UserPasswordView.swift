@@ -18,23 +18,26 @@ struct UserPasswordView: View {
                 .autocapitalization(.none)
                 .padding()
             
-            Button("Sign in") {
-                CloudClient.shared.signIn(username: username, password: password) { ft4Response in
-                    
-                    switch ft4Response.statusCode {
-                    case 0, 400..<600:
-                        DispatchQueue.main.async {
-                            CloudClient.shared.isSignedOut = true
-                        }
-                    default:
-                        DispatchQueue.main.async {
-                            CloudClient.shared.isSignedOut = false
-                            presentationMode.wrappedValue.dismiss()
+            HStack {
+                Spacer()
+                Button("Sign in") {
+                    CloudClient.shared.signIn(username: username, password: password) { ft4Response in
+                        
+                        switch ft4Response.statusCode {
+                        case 0, 400..<600:
+                            DispatchQueue.main.async {
+                                CloudClient.shared.isSignedOut = true
+                            }
+                        default:
+                            DispatchQueue.main.async {
+                                CloudClient.shared.isSignedOut = false
+                                presentationMode.wrappedValue.dismiss()
+                            }
                         }
                     }
                 }
+                .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
             }
-            .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
             .padding()
         }
         .padding()
