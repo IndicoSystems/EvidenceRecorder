@@ -71,36 +71,18 @@ class CloudClient: ObservableObject {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
-                DispatchQueue.main.async {
-                    CloudClient.shared.isSignedOut = true
-                }
                 completion(.failure(err))
                 return
             }
             
-            var statusCode = 0
-            
             if let response = response as? HTTPURLResponse {
-                statusCode = response.statusCode
-                
-                switch statusCode {
-                case 0, 400..<600:
-                    DispatchQueue.main.async {
-                        CloudClient.shared.isSignedOut = true
-                    }
-                    return
-                default:
-                    DispatchQueue.main.async {
-                        CloudClient.shared.isSignedOut = false
-                    }
-                    break
+                if let d = data {
+                    let ft4Response = FT4Response(statusCode: response.statusCode, body: d)
+                    completion(.success(ft4Response))
                 }
             }
             
-            if let d = data {
-                let ft4Response = FT4Response(statusCode: statusCode, body: d)
-                completion(.success(ft4Response))
-            }
+            
         }.resume()
     }
     
@@ -203,10 +185,19 @@ class CloudClient: ObservableObject {
         }
     }
     
-    func signIn(username: String, password: String) {
+    func signIn(username: String, password: String, completion: @escaping (FT4Response)->()) {
         phpRequest(method: .post, endpoint: .auth, payload: ["action" : "sign_in", "username" : username, "password" : password]) { result in
             switch result {
             case .success(let ft4Response):
+                
+                switch ft4Response.statusCode {
+                case 0, 400..<600:
+                    completion(ft4Response)
+                    return
+                default:
+                    completion(ft4Response)
+                }
+                
                 let json = try! JSONSerialization.jsonObject(with: ft4Response.body) as! [String : Any]
                 guard let token = json["access_token"] as? String else { return }
                 UserDefaults.standard.setValue(token, forKey: "token")
@@ -214,9 +205,6 @@ class CloudClient: ObservableObject {
                 self.getRooms()
                 self.getDevices()
                 
-                DispatchQueue.main.async {
-                    self.isSignedOut = false
-                }
             case .failure(let err):
                 print(err.localizedDescription)
             }
