@@ -6,7 +6,6 @@ struct TodayView: View {
     
     var body: some View {
         Form {
-//        VStack(alignment: .leading, spacing: 16) {
             if cloudClient.tasks.count <= 0 {
                 ProgressView()
             } else {
@@ -19,7 +18,7 @@ struct TodayView: View {
         }
         .navigationTitle(Text("Today"))
         .onAppear {
-            cloudClient.getIncompleteTasks()
+            cloudClient.getPendingTasks()
         }
     }
 }
