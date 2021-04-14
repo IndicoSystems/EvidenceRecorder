@@ -12,10 +12,15 @@ struct CaptureView: View {
                     .font(.caption)
                 HStack {
                     ForEach(assignedRoom.cameras, id: \.id) { camera in
-                        Text(camera.name)
-                            .padding()
-                            .background(Color.gray.opacity(0.5))
-                            .cornerRadius(16)
+                        HStack {
+                            Text(camera.name)
+                            Circle()
+                                .fill(Color.red)
+                                .frame(width: 16, height: 16)
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
                     }
                 }
                 
