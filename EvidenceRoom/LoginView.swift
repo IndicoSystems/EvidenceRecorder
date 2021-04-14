@@ -33,6 +33,7 @@ struct LoginView: View {
                         }
                         .textFieldStyle(EvidenceTextFieldStyle())
                         .autocapitalization(.none)
+                        .disableAutocorrection(true)
                     }
                     .padding(.horizontal)
                                         
@@ -40,7 +41,6 @@ struct LoginView: View {
                         Spacer()
                         
                         Button("Sign in") {
-//                            authClient.signIn(withHost: host)
                             UserDefaults.standard.setValue(host, forKey: "host")
                             isUserPassViewPresented = true
                         }
