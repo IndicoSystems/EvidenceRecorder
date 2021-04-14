@@ -2,18 +2,6 @@ import Foundation
 import SwiftUI
 import SwiftKeychainWrapper
 
-public typealias Email = String
-public typealias MimeType = String
-public typealias LongString = String
-public typealias ShortString = String
-public typealias ShortReqString = String
-public typealias Longitude = Double
-public typealias Latitude = Double
-public typealias PositiveInt = Int
-public typealias PositiveNonZeroInt = Int
-public typealias DateTime = String
-public typealias Json = [String : Any?]
-
 class CloudClient: ObservableObject {
     
     enum HTTPMethod: String {
@@ -32,6 +20,7 @@ class CloudClient: ObservableObject {
     @Published var cameras = [Camera]()
     @Published var projects = [Project]()
     @Published var tasks = [Task]()
+    @Published var templates = [Task]()
     
     var assignedRoom: Room? {
         let assignedRoomId = UserDefaults.standard.string(forKey: "assignedRoomId")
@@ -160,7 +149,7 @@ class CloudClient: ObservableObject {
         }
     }
     
-    func getIncompleteTasks() {
+    func getPendingTasks() {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_pending_tasks"]) { result in
             switch result {
             case .success(let ft4Response):
@@ -243,13 +232,71 @@ class CloudClient: ObservableObject {
         getDevices()
     }
     
-    func createExhibit(taskFieldId: String, completion: @escaping (Int)->()) {
-        phpRequest(method: .post, endpoint: .api, payload: ["action" : "create_exhibit", "id" : UUID().uuidString, "taskfield_id" : taskFieldId]) { result in
+    func createExhibit(taskFieldId: String, completion: @escaping (Data)->()) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "create_exhibit", "exhibit_id" : UUID().uuidString, "taskfield_id" : taskFieldId, "started_at" : Date().ft4TimeStamp]) { result in
+            switch result {
+            case .success(let ft4Response):
+                completion(ft4Response.body)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func updateExhibit(exhibit: Exhibit, completion: @escaping (Int)->()) {
+        // TODO: - Needs checksum and location
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "update_exhibit", "exhibit_id" : exhibit.id]) { result in
             switch result {
             case .success(let ft4Response):
                 completion(ft4Response.statusCode)
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getTaskTemplates(completion: @escaping ([Task]) -> ()) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_task_templates"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                let templates = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
+                self.templates = templates
+                completion(templates)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func createTaskFromTemplate(completion: @escaping (Int)->()) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "create_task_from_template"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                completion(ft4Response.statusCode)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func submitTask(completion: @escaping (Int)->()) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "submit_task"]) { result in
+            switch result {
+            case .success(let ft4Response):
+                completion(ft4Response.statusCode)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAccount(withId id: String, completion: @escaping (String) -> ()) {
+        phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_account", "account_id" : id]) { result in
+            switch result {
+            case .success(let ft4Response):
+                completion(String(data: ft4Response.body, encoding: .utf8)!)
+            case .failure(let error):
+                completion(error.localizedDescription)
             }
         }
     }
@@ -260,6 +307,13 @@ extension Date {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [ISO8601DateFormatter.Options.withInternetDateTime, ISO8601DateFormatter.Options.withFractionalSeconds]
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter.string(from: self)
+    }
+    
+    var ft4TimeStamp: String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
         return formatter.string(from: self)
     }
 }
