@@ -2,14 +2,15 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @ObservedObject var cloudClient = CloudClient.shared
+    private var cloudClient = CloudClient.shared
+    @ObservedObject var appState = AppState.shared
     @State private var assignedRoom = "Room"
     
     var body: some View {
         Form {
             Section {
                 Picker("Room", selection: $assignedRoom) {
-                    ForEach(cloudClient.rooms, id: \.id) { room in
+                    ForEach(appState.rooms, id: \.id) { room in
                         Text(room.name)
                     }
                 }.onChange(of: assignedRoom) { roomId in

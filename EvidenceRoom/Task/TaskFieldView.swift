@@ -25,7 +25,7 @@ class TaskFieldViewModel: ObservableObject {
     }
     
     func tapCapture() {
-        if let assignedRoom = CloudClient.shared.assignedRoom {
+        if let assignedRoom = AppState.shared.assignedRoom {
             for camera in assignedRoom.cameras {
                 camera.startRecording(fieldId: field.id) { result in
                     switch result {

@@ -6,7 +6,7 @@ struct CaptureView: View {
     
     var body: some View {
         
-        if let assignedRoom = CloudClient.shared.assignedRoom {
+        if let assignedRoom = AppState.shared.assignedRoom {
             VStack(alignment: .leading) {
                 Text("Cameras:")
                     .font(.caption)

@@ -5,6 +5,6 @@ struct Room: Codable {
     let name: String
     
     var cameras: [Camera] {
-        CloudClient.shared.cameras.filter({ id == $0.roomId })
+        AppState.shared.cameras.filter({ id == $0.roomId })
     }
 }

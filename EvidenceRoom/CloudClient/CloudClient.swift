@@ -1,8 +1,6 @@
 import Foundation
-import SwiftUI
-import SwiftKeychainWrapper
 
-class CloudClient: ObservableObject {
+class CloudClient {
     
     enum HTTPMethod: String {
         case get = "GET"
@@ -16,46 +14,35 @@ class CloudClient: ObservableObject {
     
     static let shared = CloudClient()
     
-    @Published var rooms = [Room]()
-    @Published var cameras = [Camera]()
-    @Published var projects = [Project]()
-    @Published var tasks = [Task]()
-    @Published var templates = [Task]()
-    
-    var assignedRoom: Room? {
-        let assignedRoomId = UserDefaults.standard.string(forKey: "assignedRoomId")
-        return rooms.first(where: {$0.id == assignedRoomId })
+    var host: String {
+        UserDefaults.standard.string(forKey: "host") ?? ""
     }
     
-    @Published var isSignedOut = true
+    var token: String? {
+        UserDefaults.standard.string(forKey: "token")
+    }
     
     private init() {
         authenticate()
     }
     
-    private func phpRequest(method: HTTPMethod, endpoint: Endpoint, payload: [String : Any]? = nil, completion: @escaping (Result<FT4Response, Error>)->()) {
+    private func phpRequest(method: HTTPMethod, endpoint: Endpoint, payload: [String : Any], completion: @escaping (Result<FT4Response, Error>)->()) {
         
-        if endpoint == .api && isSignedOut {
+        if endpoint == .api && AppState.shared.isSignedOut {
             return
         }
         
-        let host = UserDefaults.standard.string(forKey: "host") ?? ""
         let url = URL(string: "https://\(host)/")!
         var request = URLRequest(url: url.appendingPathComponent(endpoint.rawValue))
         request.httpMethod = method.rawValue
         
-        if let token = UserDefaults.standard.string(forKey: "token") {
+        if let token = token {
             request.allHTTPHeaderFields = ["indico-access-token" : token]
         }
         
-        switch method {
-        case .post:
-            if let payload = payload {
-                let json = try! JSONSerialization.data(withJSONObject: payload)
-                request.httpBody = json
-            }
-        default:
-            break
+        if case .post = method {
+            let json = try! JSONSerialization.data(withJSONObject: payload)
+            request.httpBody = json
         }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -70,21 +57,17 @@ class CloudClient: ObservableObject {
                     completion(.success(ft4Response))
                 }
             }
-            
-            
         }.resume()
     }
     
-    func getDevices() {
+    func getDevices(completion: @escaping ([Device])->()) {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_devices"]) { result in
             switch result {
             case .success(let ft4Response):
                 
                 do {
                     let cams = try JSONDecoder().decode([Axis].self, from: ft4Response.body)
-                    DispatchQueue.main.async {
-                        self.cameras = cams
-                    }
+                    completion(cams)
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -94,35 +77,31 @@ class CloudClient: ObservableObject {
         }
     }
     
-    func getRooms() {
+    func getRooms(completion: @escaping ([Room])->()) {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_rooms"]) { result in
             switch result {
             case .success(let ft4Response):
                 let rooms = try! JSONDecoder().decode([Room].self, from: ft4Response.body)
-                DispatchQueue.main.async {
-                    self.rooms = rooms
-                }
+                completion(rooms)
             case .failure(let err):
                 print(err.localizedDescription)
             }
         }
     }
     
-    func getProjects() {
+    func getProjects(completion: @escaping ([Project])->()) {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_projects"]) { result in
             switch result {
             case .success(let ft4Response):
                 let projects = try! JSONDecoder().decode([Project].self, from: ft4Response.body)
-                DispatchQueue.main.async {
-                    self.projects = projects
-                }
+                completion(projects)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
     
-    func getTasks(inProjectWithID id: String?) {
+    func getTasksInProject(projectId id: String?, completion: @escaping ([Task])->()) {
         
         var payload = [String : String]()
         if let id = id {
@@ -140,23 +119,19 @@ class CloudClient: ObservableObject {
             switch result {
             case .success(let ft4Response):
                 let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
-                DispatchQueue.main.async {
-                    self.tasks = tasks
-                }
+                completion(tasks)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
     
-    func getPendingTasks() {
+    func getPendingTasks(completion: @escaping ([Task])->()) {
         phpRequest(method: .post, endpoint: .api, payload: ["action" : "get_pending_tasks"]) { result in
             switch result {
             case .success(let ft4Response):
                 let tasks = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
-                DispatchQueue.main.async {
-                    self.tasks = tasks
-                }
+                completion(tasks)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -190,10 +165,6 @@ class CloudClient: ObservableObject {
                 let json = try! JSONSerialization.jsonObject(with: ft4Response.body) as! [String : Any]
                 guard let token = json["access_token"] as? String else { return }
                 UserDefaults.standard.setValue(token, forKey: "token")
-                
-                self.getRooms()
-                self.getDevices()
-                
             case .failure(let err):
                 print(err.localizedDescription)
             }
@@ -207,10 +178,6 @@ class CloudClient: ObservableObject {
             case .success(let ft4Response):
                 switch ft4Response.statusCode {
                 case 200:
-                    DispatchQueue.main.async {
-                        self.isSignedOut = true
-                    }
-                    
                     UserDefaults.standard.setValue(nil, forKey: "token")
                 default:
                     break
@@ -226,10 +193,7 @@ class CloudClient: ObservableObject {
             return
         }
         
-        isSignedOut = false
-        
-        getRooms()
-        getDevices()
+        AppState.shared.isSignedOut = false
     }
     
     func createExhibit(taskFieldId: String, completion: @escaping (Data)->()) {
@@ -260,9 +224,6 @@ class CloudClient: ObservableObject {
             switch result {
             case .success(let ft4Response):
                 let templates = try! JSONDecoder().decode([Task].self, from: ft4Response.body)
-                DispatchQueue.main.async {
-                    self.templates = templates
-                }
                 completion(templates)
             case .failure(let error):
                 print(error.localizedDescription)
@@ -302,25 +263,4 @@ class CloudClient: ObservableObject {
             }
         }
     }
-}
-
-extension Date {
-    var iso8601: String {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [ISO8601DateFormatter.Options.withInternetDateTime, ISO8601DateFormatter.Options.withFractionalSeconds]
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        return formatter.string(from: self)
-    }
-    
-    var ft4TimeStamp: String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
-        return formatter.string(from: self)
-    }
-}
-
-struct FT4Response {
-    let statusCode: Int
-    let body: Data
 }

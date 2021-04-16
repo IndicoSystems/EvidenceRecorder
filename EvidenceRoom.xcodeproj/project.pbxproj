@@ -35,6 +35,9 @@
 		C285D075255D959200271787 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C285D074255D959200271787 /* AuthModels.swift */; };
 		C293202925D3C82B00521277 /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293202825D3C82B00521277 /* RoomsView.swift */; };
 		C293203225D420F800521277 /* CasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293203125D420F800521277 /* CasesView.swift */; };
+		C29691EB26287A6200AC5667 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29691EA26287A6200AC5667 /* AppState.swift */; };
+		C29691FD26287F4C00AC5667 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29691FC26287F4C00AC5667 /* Date.swift */; };
+		C29692062629640400AC5667 /* FT4Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29692052629640400AC5667 /* FT4Response.swift */; };
 		C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43603255579D5004479E0 /* AppDelegate.swift */; };
 		C2A43606255579D5004479E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43605255579D5004479E0 /* SceneDelegate.swift */; };
 		C2A43608255579D5004479E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A43607255579D5004479E0 /* ContentView.swift */; };
@@ -115,6 +118,9 @@
 		C285D074255D959200271787 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
 		C293202825D3C82B00521277 /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
 		C293203125D420F800521277 /* CasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesView.swift; sourceTree = "<group>"; };
+		C29691EA26287A6200AC5667 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		C29691FC26287F4C00AC5667 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C29692052629640400AC5667 /* FT4Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FT4Response.swift; sourceTree = "<group>"; };
 		C2A43600255579D5004479E0 /* EvidenceRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvidenceRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A43603255579D5004479E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2A43605255579D5004479E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +246,23 @@
 			path = Cases;
 			sourceTree = "<group>";
 		};
+		C29691FB26287F4300AC5667 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C29691FC26287F4C00AC5667 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C2969204262963E400AC5667 /* CloudClient */ = {
+			isa = PBXGroup;
+			children = (
+				C2FCCFEE257691F000790212 /* CloudClient.swift */,
+				C29692052629640400AC5667 /* FT4Response.swift */,
+			);
+			path = CloudClient;
+			sourceTree = "<group>";
+		};
 		C2A435F7255579D5004479E0 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +288,8 @@
 		C2A43602255579D5004479E0 /* EvidenceRoom */ = {
 			isa = PBXGroup;
 			children = (
+				C2969204262963E400AC5667 /* CloudClient */,
+				C29691FB26287F4300AC5667 /* Extensions */,
 				C2A4363625557B98004479E0 /* EvidenceRoom.entitlements */,
 				C2A43603255579D5004479E0 /* AppDelegate.swift */,
 				C2A43605255579D5004479E0 /* SceneDelegate.swift */,
@@ -349,7 +374,7 @@
 		C2FCCFCD25767A9C00790212 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C2FCCFEE257691F000790212 /* CloudClient.swift */,
+				C29691EA26287A6200AC5667 /* AppState.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -599,6 +624,7 @@
 				C216CC80255BC22A00699CA5 /* LoginView.swift in Sources */,
 				C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */,
 				C2A43604255579D5004479E0 /* AppDelegate.swift in Sources */,
+				C29691FD26287F4C00AC5667 /* Date.swift in Sources */,
 				C2AE270E25ED19870047A927 /* CaseView.swift in Sources */,
 				C293203225D420F800521277 /* CasesView.swift in Sources */,
 				C25833A825D5488200DBD2EA /* RoomView.swift in Sources */,
@@ -608,6 +634,7 @@
 				C2C52F962608B5EC00E11D9F /* String+ExtractKey.swift in Sources */,
 				C21E39A52624884100BC885C /* CaptureView.swift in Sources */,
 				C2A43608255579D5004479E0 /* ContentView.swift in Sources */,
+				C29692062629640400AC5667 /* FT4Response.swift in Sources */,
 				C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */,
 				C219AAA3260495EA00590DC9 /* ProjectCellView.swift in Sources */,
 				C242638B2587935900BC3005 /* TitleView.swift in Sources */,
@@ -616,6 +643,7 @@
 				C21E39AA26258A5F00BC885C /* Device.swift in Sources */,
 				C2E6B8EE25E7846000D0FA7C /* Uploader.swift in Sources */,
 				C2D025BB2600E4D3003A0D14 /* Project.swift in Sources */,
+				C29691EB26287A6200AC5667 /* AppState.swift in Sources */,
 				C268957B260B5A94007AA104 /* TodayCellView.swift in Sources */,
 				C2C52F912608A90B00E11D9F /* TaskField.swift in Sources */,
 				C219AA902603512E00590DC9 /* Task.swift in Sources */,

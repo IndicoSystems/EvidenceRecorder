@@ -2,11 +2,12 @@ import SwiftUI
 
 struct RoomsView: View {
     
-    @ObservedObject var cloudClient = CloudClient.shared
+    private var cloudClient = CloudClient.shared
+    @ObservedObject var appState = AppState.shared
     
     var body: some View {
         List {
-            ForEach(cloudClient.rooms, id: \.id) { room in
+            ForEach(appState.rooms, id: \.id) { room in
                 
                 NavigationLink(destination: RoomView(room: room)) {
                     Button {

@@ -2,14 +2,15 @@ import SwiftUI
 
 struct TodayView: View {
     
-    @ObservedObject var cloudClient = CloudClient.shared
+    private var cloudClient = CloudClient.shared
+    @ObservedObject var appState = AppState.shared
     
     var body: some View {
         Form {
-            if cloudClient.tasks.count <= 0 {
+            if appState.tasks.count <= 0 {
                 ProgressView()
             } else {
-                ForEach(cloudClient.tasks.sorted(by: {$0.date < $1.date}), id: \.id) { task in
+                ForEach(appState.tasks.sorted(by: {$0.date < $1.date}), id: \.id) { task in
                     NavigationLink(destination: TaskView(task: task)) {
                         TodayCellView(task: task)
                     }
@@ -18,7 +19,11 @@ struct TodayView: View {
         }
         .navigationTitle(Text("Today"))
         .onAppear {
-            cloudClient.getPendingTasks()
+            cloudClient.getPendingTasks() { tasks in
+                DispatchQueue.main.async {
+                    appState.tasks = tasks
+                }
+            }
         }
     }
 }

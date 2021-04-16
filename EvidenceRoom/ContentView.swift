@@ -6,7 +6,8 @@ struct ContentView: View {
         UITableView.appearance().backgroundColor = .clear
     }
     
-    @ObservedObject var authClient = CloudClient.shared
+    @ObservedObject var appState = AppState.shared
+    private var cloudClient = CloudClient.shared
     
     var body: some View {
         
@@ -34,14 +35,14 @@ struct ContentView: View {
             .navigationTitle("Evidence")
             .navigationBarItems(trailing:
                 Button {
-                    authClient.signOut()
+                    cloudClient.signOut()
                 } label: {
                     Image(systemName: "icloud.and.arrow.down.fill")
                 }
             )
             
             TodayView()
-        }.fullScreenCover(isPresented: $authClient.isSignedOut, content: LoginView.init)
+        }.fullScreenCover(isPresented: $appState.isSignedOut, content: LoginView.init)
     }
 }
 

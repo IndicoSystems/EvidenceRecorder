@@ -26,11 +26,11 @@ struct UserPasswordView: View {
                         switch ft4Response.statusCode {
                         case 0, 400..<600:
                             DispatchQueue.main.async {
-                                CloudClient.shared.isSignedOut = true
+                                AppState.shared.isSignedOut = true
                             }
                         default:
                             DispatchQueue.main.async {
-                                CloudClient.shared.isSignedOut = false
+                                AppState.shared.isSignedOut = false
                                 presentationMode.wrappedValue.dismiss()
                             }
                         }

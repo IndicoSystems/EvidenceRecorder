@@ -6,14 +6,16 @@ struct CaseView: View {
     
     @State private var isShowingFormsView = false
     
-    @ObservedObject var cloudClient = CloudClient.shared
+    @ObservedObject var appState = AppState.shared
+    
+    private var cloudClient = CloudClient.shared
     
     var body: some View {
         VStack {
-            if cloudClient.tasks.count <= 0 {
+            if appState.tasks.count <= 0 {
                 ProgressView()
             } else {
-                ForEach(cloudClient.tasks, id: \.id) { task in
+                ForEach(appState.tasks, id: \.id) { task in
                     NavigationLink(destination: TaskView(task: task)) {
                         Text(task.name)
                             .padding()
@@ -27,7 +29,9 @@ struct CaseView: View {
 //            Text(task.name)
 //        }
         .onAppear {
-            cloudClient.getTasks(inProjectWithID: project.id)
+            cloudClient.getTasksInProject(projectId: project.id) { tasks in
+                
+            }
         }
         .navigationTitle(Text(project.name))
     }
