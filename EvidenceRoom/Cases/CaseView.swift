@@ -16,7 +16,7 @@ struct CaseView: View {
                 ProgressView()
             } else {
                 ForEach(appState.tasks, id: \.id) { task in
-                    NavigationLink(destination: TaskView(task: task)) {
+                    NavigationLink(destination: TaskView(viewModel: TaskViewModel(task: task))) {
                         Text(getTranslation(dict: task.name))
                             .padding()
                             .background(Color.orange)
