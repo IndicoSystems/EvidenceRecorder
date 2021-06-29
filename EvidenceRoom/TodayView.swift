@@ -12,8 +12,8 @@ struct TodayView: View {
                 Text("No tasks")
             } else {
                 ForEach(appState.tasks.sorted(by: {$0.date < $1.date}), id: \.id) { task in
-                    NavigationLink(destination: TaskView(task: task)) {
-                        TodayCellView(task: task)
+                    NavigationLink(destination: TaskView(viewModel: TaskViewModel(task: task))) {
+                        TodayCellView(viewModel: TodayCellViewModel(task: task))
                     }
                 }
             }

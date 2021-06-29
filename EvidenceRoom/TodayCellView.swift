@@ -1,16 +1,32 @@
 import SwiftUI
 
+class TodayCellViewModel: ObservableObject {
+    private let task: Task
+    
+    var title: String {
+        task.fields.first?.answer ?? getTranslation(dict: task.name)
+    }
+    
+    var dueAt: String? {
+        task.dueAt
+    }
+    
+    init(task: Task) {
+        self.task = task
+    }
+}
+
 struct TodayCellView: View {
     
-    let task: Task
+    @ObservedObject var viewModel: TodayCellViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if let dueDate = task.dueAt {
+            if let dueDate = viewModel.dueAt {
                 Text(dueDate)
                     .font(.caption)
             }
-            Text(getTranslation(dict: task.name))
+            Text(viewModel.title)
                 .font(.title)
         }
         .padding()
