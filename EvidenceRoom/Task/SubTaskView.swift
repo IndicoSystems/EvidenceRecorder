@@ -6,7 +6,7 @@ struct SubTaskView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(task.name)
+            Text(getTranslation(dict: task.name))
                 .font(.caption)
             if let fields = task.fields {
                 ForEach(fields, id: \.id) { field in

@@ -10,7 +10,7 @@ struct TodayCellView: View {
                 Text(dueDate)
                     .font(.caption)
             }
-            Text(task.name)
+            Text(getTranslation(dict: task.name))
                 .font(.title)
         }
         .padding()

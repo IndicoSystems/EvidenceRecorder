@@ -6,5 +6,13 @@ struct MockCamera: Camera {
     let name = "Mock"
     let address: String? = "localhost:8089"
     
-    var isRecording: Bool { return false }
+    var isRecording: Bool {
+        get {
+            false
+        }
+        
+        set {
+            isRecording = newValue
+        }
+    }
 }

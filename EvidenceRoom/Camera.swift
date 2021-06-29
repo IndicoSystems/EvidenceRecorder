@@ -27,7 +27,13 @@ extension Camera {
         var request = URLRequest(url: serverURL!.appendingPathComponent(CameraCommand.startRecording))
         request.httpMethod = HTTPMethod.post
         
-        let payload = ["taskFieldId" : fieldId]
+        let token = UserDefaults.standard.value(forKey: "token") as! String
+        
+        request.allHTTPHeaderFields = ["indico-access-token" : token]
+        
+        let payload = [
+            "taskFieldId" : fieldId
+        ]
         
         let jsonData = try! JSONSerialization.data(withJSONObject: payload, options: .fragmentsAllowed)
         request.httpBody = jsonData
@@ -55,6 +61,10 @@ extension Camera {
     func stopRecording(completion: @escaping (Result<RecordingInfo, Error>) -> ()) {
         var request = URLRequest(url: serverURL!.appendingPathComponent(CameraCommand.stopRecording))
         request.httpMethod = HTTPMethod.post
+        
+        let token = UserDefaults.standard.value(forKey: "token") as! String
+        
+        request.allHTTPHeaderFields = ["indico-access-token" : token]
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {

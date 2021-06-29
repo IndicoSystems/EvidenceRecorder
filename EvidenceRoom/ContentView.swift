@@ -35,7 +35,18 @@ struct ContentView: View {
             .navigationTitle("Evidence")
             .navigationBarItems(trailing:
                 Button {
-                    cloudClient.signOut()
+                    cloudClient.signOut {
+                        appState.isSignedOut = true
+                    }
+                    
+//                    cloudClient.signOut { ft4Response in
+//                        switch ft4Response.statusCode {
+//                        case 200:
+//                            UserDefaults.standard.setValue(nil, forKey: "token")
+//                        default:
+//                            print("Sign out failed with status:", ft4Response.statusCode)
+//                        }
+//                    }
                 } label: {
                     Image(systemName: "icloud.and.arrow.down.fill")
                 }

@@ -8,7 +8,8 @@ struct TodayView: View {
     var body: some View {
         Form {
             if appState.tasks.count <= 0 {
-                ProgressView()
+//                ProgressView()
+                Text("No tasks")
             } else {
                 ForEach(appState.tasks.sorted(by: {$0.date < $1.date}), id: \.id) { task in
                     NavigationLink(destination: TaskView(task: task)) {
@@ -19,9 +20,16 @@ struct TodayView: View {
         }
         .navigationTitle(Text("Today"))
         .onAppear {
-            cloudClient.getPendingTasks() { tasks in
+            cloudClient.getTasks { tasks in
                 DispatchQueue.main.async {
                     appState.tasks = tasks
+                }
+            } failure: { error in
+                print(error.error)
+            }
+            cloudClient.getDevices { devices in
+                DispatchQueue.main.async {
+                    appState.devices = devices
                 }
             }
         }

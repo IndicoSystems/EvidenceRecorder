@@ -17,7 +17,7 @@ struct CaseView: View {
             } else {
                 ForEach(appState.tasks, id: \.id) { task in
                     NavigationLink(destination: TaskView(task: task)) {
-                        Text(task.name)
+                        Text(getTranslation(dict: task.name))
                             .padding()
                             .background(Color.orange)
                             .cornerRadius(8)
@@ -28,11 +28,11 @@ struct CaseView: View {
 //        List(cloudClient.tasks, id: \.id) { task in
 //            Text(task.name)
 //        }
-        .onAppear {
-            cloudClient.getTasksInProject(projectId: project.id) { tasks in
-                
-            }
-        }
+//        .onAppear {
+//            cloudClient.getTasksInProject(projectId: project.id) { tasks in
+//                
+//            }
+//        }
         .navigationTitle(Text(project.name))
     }
 }

@@ -5,6 +5,7 @@ class AppState: ObservableObject {
     
     @Published var rooms = [Room]()
     @Published var cameras = [Camera]()
+    @Published var devices = [Device]()
     @Published var projects = [Project]()
     @Published var tasks = [Task]()
     @Published var templates = [Task]()

@@ -21,19 +21,16 @@ struct UserPasswordView: View {
             HStack {
                 Spacer()
                 Button("Sign in") {
-                    CloudClient.shared.signIn(username: username, password: password) { ft4Response in
-                        
-                        switch ft4Response.statusCode {
-                        case 0, 400..<600:
-                            DispatchQueue.main.async {
-                                AppState.shared.isSignedOut = true
-                            }
-                        default:
-                            DispatchQueue.main.async {
-                                AppState.shared.isSignedOut = false
-                                presentationMode.wrappedValue.dismiss()
-                            }
+                    CloudClient.shared.signIn(username: username, password: password) { account in
+                        DispatchQueue.main.async {
+                            AppState.shared.isSignedOut = false
+                            UserDefaults.standard.setValue(account.accessToken, forKey: "token")
+                            presentationMode.wrappedValue.dismiss()
                         }
+                    }
+                    failure: { error in
+                        print(error.error)
+                        AppState.shared.isSignedOut = true
                     }
                 }
                 .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))

@@ -2,13 +2,15 @@ import Foundation
 
 struct Task: Codable {
     let id: String
+    let template: Bool
+    let complete: Bool
     let entity: TaskEntity?
     let entityId: String?
-    let name: String
+    let name: [String : String]
     let projectId: String?
     let projectName: String?
     let dueAt: String?
-    let fields: [TaskField]?
+    let fields: [TaskField]
     
     var date: Date {
         let dateFormatter = DateFormatter()
@@ -17,14 +19,11 @@ struct Task: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case entity = "entity"
+        case id, template, complete, entity, name, fields
         case entityId = "entity_id"
-        case name = "name"
         case projectId = "project_id"
         case projectName = "project_name"
         case dueAt = "due_at"
-        case fields = "fields"
     }
 }
 

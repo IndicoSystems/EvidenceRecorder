@@ -4,27 +4,29 @@ struct TaskField: Codable {
     
     let id: String
     let entityField: String?
-    let title: String
-    let placeholder: String
-    let description: String
-    let required: String
+    let title: [String : String]?
+    let placeholder: [String : String]?
+    let description: [String : String]?
+    let required: Bool
     let type: TaskFieldType
+    let min: Int?
+    let max: Int?
     let answer: String?
-    let subTasks: [Task]?
     let exhibits: [Exhibit]
+    let subtasks: [Task]
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id, title, placeholder, description, required, type, answer, exhibits, min, max, subtasks
         case entityField = "entity_field"
-        case title = "title"
-        case placeholder = "placeholder"
-        case description = "description"
-        case required = "required"
-        case type = "type"
-        case answer = "answer"
-        case subTasks = "subtasks"
-        case exhibits = "exhibits"
     }
+}
+
+//enum TaskFieldType: String, Codable {
+//    case person, text, capture, subtask
+//}
+
+enum TaskFieldType: String, Codable {
+    case text, subtask, number, file, time, choice, layout
 }
 
 struct Language: Codable {
@@ -32,6 +34,4 @@ struct Language: Codable {
     let value: String
 }
 
-enum TaskFieldType: String, Codable {
-    case person, text, capture, subtask
-}
+
