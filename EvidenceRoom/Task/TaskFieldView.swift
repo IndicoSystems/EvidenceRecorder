@@ -30,7 +30,7 @@ struct TaskFieldView: View {
     @ObservedObject var viewModel: TaskFieldViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             
             if viewModel.type != .file {
                 Text(viewModel.title)
@@ -48,11 +48,16 @@ struct TaskFieldView: View {
                     }
                 }
             case .number:
-                Text("Number")
+                Text(viewModel.answer)
+                    .font(.title)
             case .file:
                 CaptureView(viewModel: CaptureViewModel(field: viewModel.field))
-            default:
-                EmptyView()
+            case .choice:
+                ChoicesView(viewModel: ChoicesViewModel(field: viewModel.field))
+            case .time:
+                Text(viewModel.answer)
+            case .layout:
+                Text("Layout")
             }
         }
     }
