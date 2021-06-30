@@ -67,6 +67,8 @@
 		C2E6B8F325E785E400D0FA7C /* MockCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6B8F225E785E400D0FA7C /* MockCamera.swift */; };
 		C2E6B8F825E787BB00D0FA7C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6B8F725E787BB00D0FA7C /* Room.swift */; };
 		C2E6B8FD25E7A45900D0FA7C /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6B8FC25E7A45900D0FA7C /* Axis.swift */; };
+		C2F56DAE268B4A4F00D99D3C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F56DAD268B4A4F00D99D3C /* LoadingView.swift */; };
+		C2F56DB0268B4F1E00D99D3C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F56DAF268B4F1E00D99D3C /* HomeView.swift */; };
 		C2FCCFE025767B9900790212 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCFDF25767B9900790212 /* CameraView.swift */; };
 		C2FCCFEF257691F000790212 /* CloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FCCFEE257691F000790212 /* CloudClient.swift */; };
 /* End PBXBuildFile section */
@@ -159,6 +161,8 @@
 		C2E6B8F225E785E400D0FA7C /* MockCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCamera.swift; sourceTree = "<group>"; };
 		C2E6B8F725E787BB00D0FA7C /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		C2E6B8FC25E7A45900D0FA7C /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
+		C2F56DAD268B4A4F00D99D3C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C2F56DAF268B4F1E00D99D3C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C2FCCFDF25767B9900790212 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		C2FCCFEE257691F000790212 /* CloudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudClient.swift; sourceTree = "<group>"; };
 		F886CA1A44C6FDBDF756C760 /* Pods-EvidenceRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvidenceRoom.release.xcconfig"; path = "Target Support Files/Pods-EvidenceRoom/Pods-EvidenceRoom.release.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 				C2A43603255579D5004479E0 /* AppDelegate.swift */,
 				C2A43605255579D5004479E0 /* SceneDelegate.swift */,
 				C2A43607255579D5004479E0 /* ContentView.swift */,
+				C2F56DAD268B4A4F00D99D3C /* LoadingView.swift */,
+				C2F56DAF268B4F1E00D99D3C /* HomeView.swift */,
 				C242638A2587935900BC3005 /* TitleView.swift */,
 				C219AA9D260397F600590DC9 /* TodayView.swift */,
 				C268957A260B5A94007AA104 /* TodayCellView.swift */,
@@ -617,6 +623,7 @@
 				C268959A260C9A1F007AA104 /* SubTaskView.swift in Sources */,
 				C2D95186255D647B008ED51D /* Camera.swift in Sources */,
 				C2E6B8F825E787BB00D0FA7C /* Room.swift in Sources */,
+				C2F56DB0268B4F1E00D99D3C /* HomeView.swift in Sources */,
 				C2FCCFE025767B9900790212 /* CameraView.swift in Sources */,
 				C293202925D3C82B00521277 /* RoomsView.swift in Sources */,
 				C285D075255D959200271787 /* AuthModels.swift in Sources */,
@@ -626,6 +633,7 @@
 				C219AA9E260397F600590DC9 /* TodayView.swift in Sources */,
 				C24F6689257521D000D6A62C /* CameraNetworkingClient.swift in Sources */,
 				C2442E6325FB8C57002CA0B3 /* UserPasswordView.swift in Sources */,
+				C2F56DAE268B4A4F00D99D3C /* LoadingView.swift in Sources */,
 				C2C284D926848877002E763E /* FT4Time.swift in Sources */,
 				C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */,
 				C2BCC32C25F0F5B300A1EF35 /* TaskView.swift in Sources */,

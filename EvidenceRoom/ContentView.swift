@@ -1,59 +1,60 @@
 import SwiftUI
 
+class ContentViewModel: ObservableObject {
+    @Published var isFinishedLoading = false
+    
+    init() {
+        loadDataFromServer()
+    }
+    
+    func loadDataFromServer() {
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        CloudClient.shared.getTasks { tasks in
+            DispatchQueue.main.async {
+                AppState.shared.tasks = tasks
+                dispatchGroup.leave()
+            }
+        } failure: { error in
+            print(error.error)
+        }
+
+        dispatchGroup.enter()
+        CloudClient.shared.getRooms { rooms in
+            DispatchQueue.main.async {
+                AppState.shared.rooms = rooms
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.isFinishedLoading = true
+        }
+    }
+}
+
 struct ContentView: View {
     
     init() {
         UITableView.appearance().backgroundColor = .clear
     }
     
+    private let cloudClient = CloudClient.shared
     @ObservedObject var appState = AppState.shared
-    private var cloudClient = CloudClient.shared
+    
+    @StateObject private var viewModel = ContentViewModel()
     
     var body: some View {
         
-        NavigationView {
-            VStack(spacing: 16) {
-                NavigationLink(destination: TodayView()) {
-                    Text("Today")
-                }
-                Divider()
-                    .padding()
-                NavigationLink(destination: RoomsView()) {
-                    Text("Rooms")
-                }
-                Divider()
-                    .padding()
-//                NavigationLink(destination: CasesView()) {
-//                    Text("Cases")
-//                }
-//                Divider()
-//                    .padding()
-                NavigationLink(destination: SettingsView()) {
-                    Text("Settings")
-                }
-            }
-            .navigationTitle("Evidence")
-            .navigationBarItems(trailing:
-                Button {
-                    cloudClient.signOut {
-                        appState.isSignedOut = true
-                    }
-                    
-//                    cloudClient.signOut { ft4Response in
-//                        switch ft4Response.statusCode {
-//                        case 200:
-//                            UserDefaults.standard.setValue(nil, forKey: "token")
-//                        default:
-//                            print("Sign out failed with status:", ft4Response.statusCode)
-//                        }
-//                    }
-                } label: {
-                    Image(systemName: "icloud.and.arrow.down.fill")
-                }
-            )
-            
-            TodayView()
-        }.fullScreenCover(isPresented: $appState.isSignedOut, content: LoginView.init)
+        if appState.isSignedOut {
+            LoginView()
+        } else if viewModel.isFinishedLoading {
+            HomeView()
+                .fullScreenCover(isPresented: $appState.isSignedOut, content: LoginView.init)
+        } else {
+            LoadingView(isFinishedLoading: $viewModel.isFinishedLoading)
+        }
     }
 }
 
