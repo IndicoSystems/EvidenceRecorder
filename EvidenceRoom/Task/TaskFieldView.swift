@@ -16,6 +16,29 @@ class TaskFieldViewModel: ObservableObject {
         field.answer ?? ""
     }
     
+    var dateString: String {
+        let f = field
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateStyle = f.features.contains("date") || f.features.isEmpty ?.long:.none
+        dateFormatter.timeStyle = f.features.contains("time") || f.features.isEmpty ?.short:.none
+        
+        let dF = DateFormatter()
+        if (f.features.contains("time") && f.features.contains("date")) || f.features.isEmpty {
+            dF.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        } else if f.features.contains("time") {
+            dF.dateFormat = "'T'HH:mm"
+        } else if f.features.contains("date") {
+            dF.dateFormat = "yyyy-MM-dd"
+        }
+        
+        if let date = dF.date(from: f.answer ?? "") {
+            return dateFormatter.string(from: date)
+        } else {
+            return ""
+        }
+    }
+    
     var title: String {
         getTranslation(dict: field.title)
     }
@@ -55,7 +78,7 @@ struct TaskFieldView: View {
             case .choice:
                 ChoicesView(viewModel: ChoicesViewModel(field: viewModel.field))
             case .time:
-                Text(viewModel.answer)
+                Text(viewModel.dateString)
             case .layout:
                 Text("Layout")
             }

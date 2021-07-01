@@ -11,13 +11,14 @@ struct TaskField: Codable {
     let type: TaskFieldType
     let min: Int?
     let max: Int?
+    let features: [String]
     let answer: String?
     let exhibits: [Exhibit]
     let subtasks: [Task]
     let options: [ChoiceOption]
     
     enum CodingKeys: String, CodingKey {
-        case id, title, placeholder, description, required, type, answer, exhibits, min, max, subtasks, options
+        case id, title, placeholder, description, required, type, answer, exhibits, min, max, features, subtasks, options
         case entityField = "entity_field"
     }
 }
