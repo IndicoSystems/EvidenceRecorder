@@ -10,7 +10,9 @@ struct LoadingView: View {
     var body: some View {
         
         VStack {
-            
+            Image("logo")
+                .resizable()
+                .frame(width: 240, height: 240)
             VStack {
                 if isFinishedLoading {
                     Text("Finished")
