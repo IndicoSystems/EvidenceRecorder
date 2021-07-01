@@ -7,8 +7,12 @@ class TodayCellViewModel: ObservableObject {
         task.fields.first?.answer ?? getTranslation(dict: task.name)
     }
     
-    var dueAt: String? {
-        task.dueAt
+    var dueAt: String {
+        task.dueAt ?? "No due date"
+    }
+    
+    var templateTitle: String {
+        getTranslation(dict: task.name)
     }
     
     init(task: Task) {
@@ -22,12 +26,14 @@ struct TodayCellView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if let dueDate = viewModel.dueAt {
-                Text(dueDate)
-                    .font(.caption)
-            }
+            Text(viewModel.dueAt)
+                .font(.caption)
+                .foregroundColor(.gray)
             Text(viewModel.title)
                 .font(.title)
+            Text(viewModel.templateTitle)
+                .font(.title3)
+                .foregroundColor(.gray)
         }
         .padding()
     }
