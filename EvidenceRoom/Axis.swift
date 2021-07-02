@@ -11,7 +11,7 @@ class Axis: Camera, Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-        roomId = try container.decode(String.self, forKey: .roomId)
+        roomId = try container.decode(String?.self, forKey: .roomId)
         name = try container.decode(String.self, forKey: .name)
         address = try container.decode(String.self, forKey: .address)
     }
