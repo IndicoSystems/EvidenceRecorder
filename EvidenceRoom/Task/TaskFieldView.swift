@@ -43,6 +43,10 @@ class TaskFieldViewModel: ObservableObject {
         getTranslation(dict: field.title)
     }
     
+    var exhibits: [Exhibit] {
+        field.exhibits
+    }
+    
     var subTasks: [Task] {
         field.subtasks
     }
@@ -74,6 +78,7 @@ struct TaskFieldView: View {
                 Text(viewModel.answer)
                     .font(.title)
             case .file:
+                ExhibitsView(viewModel: ExhibitsViewModel(exhibits: viewModel.exhibits))
                 CaptureView(viewModel: CaptureViewModel(field: viewModel.field))
             case .choice:
                 ChoicesView(viewModel: ChoicesViewModel(field: viewModel.field))

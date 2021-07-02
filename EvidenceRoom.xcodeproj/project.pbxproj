@@ -22,6 +22,7 @@
 		C21E3965262039D800BC885C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E3964262039D800BC885C /* Helpers.swift */; };
 		C21E39A52624884100BC885C /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E39A42624884100BC885C /* CaptureView.swift */; };
 		C21E39AA26258A5F00BC885C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E39A926258A5F00BC885C /* Device.swift */; };
+		C225227F268F119500E29F7C /* ExhibitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C225227E268F119500E29F7C /* ExhibitsView.swift */; };
 		C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23FE7AA25A85381009A1428 /* String+JWT.swift */; };
 		C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */; };
 		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
@@ -111,6 +112,7 @@
 		C21E3964262039D800BC885C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C21E39A42624884100BC885C /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		C21E39A926258A5F00BC885C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C225227E268F119500E29F7C /* ExhibitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitsView.swift; sourceTree = "<group>"; };
 		C23FE7AA25A85381009A1428 /* String+JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JWT.swift"; sourceTree = "<group>"; };
 		C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceButtonStyle.swift; sourceTree = "<group>"; };
 		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				C2C52F9A2608DD9300E11D9F /* SettingsView.swift */,
 				C23FE7AA25A85381009A1428 /* String+JWT.swift */,
 				C2C52F952608B5EC00E11D9F /* String+ExtractKey.swift */,
+				C225227E268F119500E29F7C /* ExhibitsView.swift */,
 				C21E39A926258A5F00BC885C /* Device.swift */,
 				C24F667F257518BF00D6A62C /* Camera */,
 				C2FCCFCD25767A9C00790212 /* Main */,
@@ -639,6 +642,7 @@
 				C2F56DAE268B4A4F00D99D3C /* LoadingView.swift in Sources */,
 				C2C284D926848877002E763E /* FT4Time.swift in Sources */,
 				C2A801B4258361BF0072635A /* ColorTheme.swift in Sources */,
+				C225227F268F119500E29F7C /* ExhibitsView.swift in Sources */,
 				C2BCC32C25F0F5B300A1EF35 /* TaskView.swift in Sources */,
 				C21E3965262039D800BC885C /* Helpers.swift in Sources */,
 				C24263902587AAE800BC3005 /* EvidenceTextFieldStyle.swift in Sources */,
