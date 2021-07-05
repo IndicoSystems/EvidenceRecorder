@@ -34,13 +34,19 @@ struct ExhibitsView: View {
         VStack(alignment: .leading) {
             Text("Exhibits:")
                 .font(.caption)
-            LazyVGrid(columns: columns) {
-                ForEach(viewModel.thumbnails, id: \.self) { thumbnail in
-                    Image(uiImage: thumbnail)
-                        .resizable()
-                        .scaledToFit()
-                        .cornerRadius(4)
+            
+            if viewModel.thumbnails.count > 0 {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.thumbnails, id: \.self) { thumbnail in
+                        Image(uiImage: thumbnail)
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(4)
+                    }
                 }
+            } else {
+                Text("No thumbnails available")
+                    .font(.title3)
             }
         }
     }
