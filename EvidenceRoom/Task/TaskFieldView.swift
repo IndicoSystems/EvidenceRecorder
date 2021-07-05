@@ -78,7 +78,9 @@ struct TaskFieldView: View {
                 Text(viewModel.answer)
                     .font(.title)
             case .file:
-                ExhibitsView(viewModel: ExhibitsViewModel(exhibits: viewModel.exhibits))
+                if viewModel.exhibits.count > 0 {
+                    ExhibitsView(viewModel: ExhibitsViewModel(exhibits: viewModel.exhibits))
+                }
                 CaptureView(viewModel: CaptureViewModel(field: viewModel.field))
             case .choice:
                 ChoicesView(viewModel: ChoicesViewModel(field: viewModel.field))
