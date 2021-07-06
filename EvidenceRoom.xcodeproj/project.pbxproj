@@ -23,6 +23,7 @@
 		C21E39A52624884100BC885C /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E39A42624884100BC885C /* CaptureView.swift */; };
 		C21E39AA26258A5F00BC885C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E39A926258A5F00BC885C /* Device.swift */; };
 		C225227F268F119500E29F7C /* ExhibitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C225227E268F119500E29F7C /* ExhibitsView.swift */; };
+		C22522812693083500E29F7C /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22522802693083500E29F7C /* AddNewTaskView.swift */; };
 		C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23FE7AA25A85381009A1428 /* String+JWT.swift */; };
 		C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */; };
 		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
@@ -113,6 +114,7 @@
 		C21E39A42624884100BC885C /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		C21E39A926258A5F00BC885C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C225227E268F119500E29F7C /* ExhibitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitsView.swift; sourceTree = "<group>"; };
+		C22522802693083500E29F7C /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
 		C23FE7AA25A85381009A1428 /* String+JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JWT.swift"; sourceTree = "<group>"; };
 		C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceButtonStyle.swift; sourceTree = "<group>"; };
 		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				C21E3964262039D800BC885C /* Helpers.swift */,
 				C2C284DA26848A3D002E763E /* Date+FT4TimeStamp.swift */,
 				C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */,
+				C22522802693083500E29F7C /* AddNewTaskView.swift */,
 				C2C284D826848877002E763E /* FT4Time.swift */,
 				C21DAA09268C64EC0093F512 /* ChoicesView.swift */,
 				C211642B257F8AF600FC788F /* CloudClient.graphql */,
@@ -653,6 +656,7 @@
 				C2AE270E25ED19870047A927 /* CaseView.swift in Sources */,
 				C293203225D420F800521277 /* CasesView.swift in Sources */,
 				C25833A825D5488200DBD2EA /* RoomView.swift in Sources */,
+				C22522812693083500E29F7C /* AddNewTaskView.swift in Sources */,
 				C2E6B8F325E785E400D0FA7C /* MockCamera.swift in Sources */,
 				C2A43606255579D5004479E0 /* SceneDelegate.swift in Sources */,
 				C211647D25824AD500FC788F /* File.swift in Sources */,

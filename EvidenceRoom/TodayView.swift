@@ -4,6 +4,7 @@ struct TodayView: View {
     
     private var cloudClient = CloudClient.shared
     @ObservedObject var appState = AppState.shared
+    @State private var isAddNewTaskShowing = false
     
     var body: some View {
         Form {
@@ -19,6 +20,20 @@ struct TodayView: View {
             }
         }
         .navigationTitle(Text("Today"))
+        .navigationBarItems(trailing:
+                                Button(action: {
+                                    isAddNewTaskShowing = true
+                                }, label: {
+                                    Image(systemName: "plus")
+                                        .padding()
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(8)
+                                })
+        )
+        .sheet(isPresented: $isAddNewTaskShowing, content: {
+            AddNewTaskView()
+        })
         .onAppear {
             cloudClient.getTasks { tasks in
                 DispatchQueue.main.async {
