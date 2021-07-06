@@ -97,7 +97,7 @@ class CloudClient {
     }
     
     func getDevices(completion: @escaping ([Device])->()) {
-        let getDevicesInput = GetDevicesInput(archived: false)
+        let getDevicesInput = GetDevicesInput()
         let payload = try! jsonEncoder.encode(getDevicesInput)
         
         apiRequest(endpoint: .api, payload: payload) { result in
@@ -188,17 +188,6 @@ class CloudClient {
             }
         }
     }
-    
-//    func submitTask(withId id: String, fields: [String : Any]) {
-//        apiRequest(endpoint: .api, payload: ["action" : "submit_task", "task_id" : id, "fields" : [fields]]) { result in
-//            switch result {
-//            case .success(let ft4Response):
-//                print(ft4Response.statusCode)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
     
     func submitTask(task: Task, complete: Bool? = nil, completion: @escaping (FT4Response)->(), failure: @escaping (FT4Error) -> ()) {
         

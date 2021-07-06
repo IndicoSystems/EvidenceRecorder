@@ -187,13 +187,14 @@ struct FT4Account: Codable {
 
 struct GetDevicesInput: FT4Input {
     let action = "get_devices"
-    let archived: Bool
+    let archived = false
 }
 
 //MARK: - Rooms
 
 struct GetRoomsInput: FT4Input {
     let action = "get_rooms"
+    let archived = false
 }
 
 // MARK: - Errors
