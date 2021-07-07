@@ -24,6 +24,7 @@
 		C21E39AA26258A5F00BC885C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21E39A926258A5F00BC885C /* Device.swift */; };
 		C225227F268F119500E29F7C /* ExhibitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C225227E268F119500E29F7C /* ExhibitsView.swift */; };
 		C22522812693083500E29F7C /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22522802693083500E29F7C /* AddNewTaskView.swift */; };
+		C225228326947AAF00E29F7C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C225228226947AAF00E29F7C /* Logger.swift */; };
 		C23FE7AB25A85381009A1428 /* String+JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23FE7AA25A85381009A1428 /* String+JWT.swift */; };
 		C242638625876AC500BC3005 /* EvidenceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */; };
 		C242638B2587935900BC3005 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242638A2587935900BC3005 /* TitleView.swift */; };
@@ -115,6 +116,7 @@
 		C21E39A926258A5F00BC885C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C225227E268F119500E29F7C /* ExhibitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitsView.swift; sourceTree = "<group>"; };
 		C22522802693083500E29F7C /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
+		C225228226947AAF00E29F7C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		C23FE7AA25A85381009A1428 /* String+JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JWT.swift"; sourceTree = "<group>"; };
 		C242638525876AC500BC3005 /* EvidenceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceButtonStyle.swift; sourceTree = "<group>"; };
 		C242638A2587935900BC3005 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				C2F56DAF268B4F1E00D99D3C /* HomeView.swift */,
 				C242638A2587935900BC3005 /* TitleView.swift */,
 				C219AA9D260397F600590DC9 /* TodayView.swift */,
+				C225228226947AAF00E29F7C /* Logger.swift */,
 				C268957A260B5A94007AA104 /* TodayCellView.swift */,
 				C216CC7F255BC22A00699CA5 /* LoginView.swift */,
 				C2C284D626848832002E763E /* API.swift */,
@@ -660,6 +663,7 @@
 				C2E6B8F325E785E400D0FA7C /* MockCamera.swift in Sources */,
 				C2A43606255579D5004479E0 /* SceneDelegate.swift in Sources */,
 				C211647D25824AD500FC788F /* File.swift in Sources */,
+				C225228326947AAF00E29F7C /* Logger.swift in Sources */,
 				C2C52F962608B5EC00E11D9F /* String+ExtractKey.swift in Sources */,
 				C21E39A52624884100BC885C /* CaptureView.swift in Sources */,
 				C2A43608255579D5004479E0 /* ContentView.swift in Sources */,

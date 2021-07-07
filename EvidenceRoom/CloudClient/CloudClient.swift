@@ -97,6 +97,9 @@ class CloudClient {
     }
     
     func getDevices(completion: @escaping ([Device])->()) {
+        
+        Logger.log(category: .read, level: .techSupport, action: "get_devices", subaction: "\(#function)")
+        
         let getDevicesInput = GetDevicesInput()
         let payload = try! jsonEncoder.encode(getDevicesInput)
         
@@ -117,6 +120,9 @@ class CloudClient {
     }
     
     func getRooms(completion: @escaping ([Room])->()) {
+        
+        Logger.log(category: .read, level: .techSupport, action: "get_rooms", subaction: "\(#function)")
+        
         let getRoomsInput = GetRoomsInput()
         let payload = try! jsonEncoder.encode(getRoomsInput)
         
@@ -168,6 +174,9 @@ class CloudClient {
 //    }
     
     func getTasks(completion: @escaping ([Task]) -> (), failure: @escaping (FT4Error) -> ()) {
+        
+        Logger.log(category: .read, level: .techSupport, action: "get_tasks", subaction: "\(#function)")
+        
         let input = GetTasksInput(projectId: nil, template: false, complete: false, include: .full, archived: false)
         let payload = try! jsonEncoder.encode(input)
         

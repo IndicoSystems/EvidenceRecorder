@@ -197,6 +197,23 @@ struct GetRoomsInput: FT4Input {
     let archived = false
 }
 
+// MARK: - Logging
+
+struct LogInput: Encodable {
+    let time = Date().ft4TimeStamp
+    let source = "recorder_ios"
+    let level: Int
+    let category: String
+    var initiator: String?
+    var action: String
+    var subaction: String?
+    var target: String?
+    var targetType: String?
+    var inTarget: String?
+    var inTargetType: String?
+    var details: [String : String]?
+}
+
 // MARK: - Errors
 
 struct FT4Error: Decodable {
