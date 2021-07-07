@@ -44,20 +44,20 @@ struct TodayView: View {
         .sheet(isPresented: $isAddNewTaskShowing, content: {
             AddNewTaskView()
         })
-        .onAppear {
-            cloudClient.getTasks { tasks in
-                DispatchQueue.main.async {
-                    appState.tasks = tasks
-                }
-            } failure: { error in
-                print(error.error)
-            }
-            cloudClient.getDevices { devices in
-                DispatchQueue.main.async {
-                    appState.devices = devices
-                }
-            }
-        }
+//        .onAppear {
+//            cloudClient.getTasks { tasks in
+//                DispatchQueue.main.async {
+//                    appState.tasks = tasks
+//                }
+//            } failure: { error in
+//                Logger.log(category: .error, level: .techDebug, action: "get_tasks", details: ["error" : error.error])
+//            }
+//            cloudClient.getDevices { devices in
+//                DispatchQueue.main.async {
+//                    appState.devices = devices
+//                }
+//            }
+//        }
     }
 }
 
