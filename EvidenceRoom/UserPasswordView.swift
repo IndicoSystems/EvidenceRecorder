@@ -30,7 +30,9 @@ struct UserPasswordView: View {
                     }
                     failure: { error in
                         print(error.error)
-                        AppState.shared.isSignedOut = true
+                        DispatchQueue.main.async {
+                            AppState.shared.isSignedOut = true
+                        }
                     }
                 }
                 .buttonStyle(EvidenceButtonStyle(bgColor: .secondary, clipShape: .capsule))
