@@ -28,6 +28,14 @@ class ContentViewModel: ObservableObject {
             }
         }
         
+        dispatchGroup.enter()
+        CloudClient.shared.getDevices { devices in
+            DispatchQueue.main.async {
+                AppState.shared.devices = devices
+                dispatchGroup.leave()
+            }
+        }
+        
         dispatchGroup.notify(queue: .main) { [weak self] in
             self?.isFinishedLoading = true
         }
