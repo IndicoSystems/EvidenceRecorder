@@ -17,7 +17,7 @@ class CaptureViewModel: ObservableObject {
                     camera.stopRecording { [weak self] result in
                         switch result {
                         case .success(let recordingInfo):
-                            Logger.log(category: .info, level: .custodyMajor, action: "capture", subaction: "\(#function)", target: camera.id, targetType: .device, inTarget: camera.roomId, inTargetType: .room)
+                            Logger.log(category: .info, level: .custodyMajor, action: "capture", subaction: "stop", target: camera.id, targetType: .device, inTarget: camera.roomId, inTargetType: .room)
                             print(recordingInfo.id)
                             print("Camera \(camera.name) ended successfully")
                             DispatchQueue.main.async {
@@ -33,7 +33,7 @@ class CaptureViewModel: ObservableObject {
                         switch result {
                         case .success(let success):
                             if success {
-                                Logger.log(category: .info, level: .custodyMajor, action: "capture", subaction: "\(#function)", target: camera.id, targetType: .device, inTarget: camera.roomId, inTargetType: .device)
+                                Logger.log(category: .info, level: .custodyMajor, action: "capture", subaction: "start", target: camera.id, targetType: .device, inTarget: camera.roomId, inTargetType: .room)
                                 DispatchQueue.main.async {
                                     print("Camera \(camera.name) started successfully")
                                     self?.isRecording = true
