@@ -9,8 +9,18 @@ struct TodayView: View {
     var body: some View {
         Form {
             if appState.tasks.count <= 0 {
-//                ProgressView()
-                Text("No tasks")
+                VStack {
+                    Text("No tasks")
+                    Button(action: {
+                        isAddNewTaskShowing = true
+                    }, label: {
+                        Image(systemName: "plus")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    })
+                }
             } else {
                 ForEach(appState.tasks.sorted(by: {$0.date < $1.date}), id: \.id) { task in
                     NavigationLink(destination: TaskView(viewModel: TaskViewModel(task: task))) {
