@@ -13,7 +13,11 @@ class TaskFieldViewModel: ObservableObject {
     }
     
     var answer: String {
-        field.answer ?? ""
+        if let answer = field.answer {
+            return answer.isEmpty ? getTranslation(dict: field.placeholder) : answer
+        } else {
+            return getTranslation(dict: field.placeholder)
+        }
     }
     
     var dateString: String {
