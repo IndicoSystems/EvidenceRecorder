@@ -12,6 +12,7 @@ struct SettingsView: View {
                     ForEach(appState.rooms, id: \.id) { room in
                         Text(room.name)
                     }
+                    .navigationTitle("Rooms")
                 }
                 .onChange(of: assignedRoom) { roomId in
                     UserDefaults.standard.setValue(roomId, forKey: "assignedRoomId")
