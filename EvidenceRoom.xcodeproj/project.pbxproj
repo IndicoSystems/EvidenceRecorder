@@ -59,7 +59,6 @@
 		C2BCC32C25F0F5B300A1EF35 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BCC32B25F0F5B300A1EF35 /* TaskView.swift */; };
 		C2C284D726848832002E763E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C284D626848832002E763E /* API.swift */; };
 		C2C284D926848877002E763E /* FT4Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C284D826848877002E763E /* FT4Time.swift */; };
-		C2C284DB26848A3D002E763E /* Date+FT4TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C284DA26848A3D002E763E /* Date+FT4TimeStamp.swift */; };
 		C2C52F912608A90B00E11D9F /* TaskField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C52F902608A90B00E11D9F /* TaskField.swift */; };
 		C2C52F962608B5EC00E11D9F /* String+ExtractKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C52F952608B5EC00E11D9F /* String+ExtractKey.swift */; };
 		C2C52F9B2608DD9300E11D9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C52F9A2608DD9300E11D9F /* SettingsView.swift */; };
@@ -158,7 +157,6 @@
 		C2BCC32B25F0F5B300A1EF35 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C2C284D626848832002E763E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C2C284D826848877002E763E /* FT4Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FT4Time.swift; sourceTree = "<group>"; };
-		C2C284DA26848A3D002E763E /* Date+FT4TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FT4TimeStamp.swift"; sourceTree = "<group>"; };
 		C2C52F902608A90B00E11D9F /* TaskField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskField.swift; sourceTree = "<group>"; };
 		C2C52F952608B5EC00E11D9F /* String+ExtractKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtractKey.swift"; sourceTree = "<group>"; };
 		C2C52F9A2608DD9300E11D9F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -267,6 +265,8 @@
 		C29691FB26287F4300AC5667 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C23FE7AA25A85381009A1428 /* String+JWT.swift */,
+				C2C52F952608B5EC00E11D9F /* String+ExtractKey.swift */,
 				C29691FC26287F4C00AC5667 /* Date.swift */,
 			);
 			path = Extensions;
@@ -321,7 +321,6 @@
 				C216CC7F255BC22A00699CA5 /* LoginView.swift */,
 				C2C284D626848832002E763E /* API.swift */,
 				C21E3964262039D800BC885C /* Helpers.swift */,
-				C2C284DA26848A3D002E763E /* Date+FT4TimeStamp.swift */,
 				C2442E6225FB8C57002CA0B3 /* UserPasswordView.swift */,
 				C22522802693083500E29F7C /* AddNewTaskView.swift */,
 				C2C284D826848877002E763E /* FT4Time.swift */,
@@ -339,8 +338,6 @@
 				C293202D25D3C83000521277 /* Rooms */,
 				C2A801B3258361BF0072635A /* ColorTheme.swift */,
 				C2C52F9A2608DD9300E11D9F /* SettingsView.swift */,
-				C23FE7AA25A85381009A1428 /* String+JWT.swift */,
-				C2C52F952608B5EC00E11D9F /* String+ExtractKey.swift */,
 				C225227E268F119500E29F7C /* ExhibitsView.swift */,
 				C21E39A926258A5F00BC885C /* Device.swift */,
 				C24F667F257518BF00D6A62C /* Camera */,
@@ -683,7 +680,6 @@
 				C2C52F912608A90B00E11D9F /* TaskField.swift in Sources */,
 				C219AA902603512E00590DC9 /* Task.swift in Sources */,
 				C2A678972577D3950022D16B /* RecordingModel.swift in Sources */,
-				C2C284DB26848A3D002E763E /* Date+FT4TimeStamp.swift in Sources */,
 				C268959F260C9EB9007AA104 /* TaskFieldView.swift in Sources */,
 				C2C52F9B2608DD9300E11D9F /* SettingsView.swift in Sources */,
 			);
