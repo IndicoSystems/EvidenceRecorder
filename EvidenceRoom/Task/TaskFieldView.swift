@@ -62,16 +62,9 @@ struct TaskFieldView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            
-            if viewModel.type != .file {
-                Text(viewModel.title)
-                    .font(.caption)
-            }
-            
             switch viewModel.type {
             case .text:
                 Text(viewModel.answer)
-                    .font(.title)
             case .subtask:
                 if let subTasks = viewModel.subTasks {
                     ForEach(subTasks, id: \.id) { task in
