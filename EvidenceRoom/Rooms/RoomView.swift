@@ -10,15 +10,16 @@ struct RoomView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(room.cameras, id: \.id) { camera in
-                    CameraView(camera: camera)
-                        .background(Color.gray.opacity(0.2))
+        Form {
+            Section(header: Text("Cameras")) {
+                LazyVGrid(columns: columns) {
+                    ForEach(room.cameras, id: \.id) { camera in
+                        CameraView(camera: camera)
+                    }
                 }
+                .navigationTitle(room.name)
+                .padding()
             }
-            .navigationTitle(room.name)
-            .padding()
         }
     }
 }
