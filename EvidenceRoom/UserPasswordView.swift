@@ -8,9 +8,6 @@ struct UserPasswordView: View {
     
     var body: some View {
         Form {
-            Text("Sign in")
-                .font(.largeTitle)
-                .padding()
             TextField("Username", text: $username)
                 .autocapitalization(.none)
                 .padding()
@@ -39,7 +36,7 @@ struct UserPasswordView: View {
             }
             .padding()
         }
-        .padding()
+        .navigationTitle(Text("Sign in"))
     }
 }
 

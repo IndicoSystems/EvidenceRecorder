@@ -55,7 +55,9 @@ struct LoginView: View {
             }
         }
         .sheet(isPresented: $isUserPassViewPresented) {
-            UserPasswordView()
+            NavigationView {
+                UserPasswordView()
+            }
         }
     }
 }
