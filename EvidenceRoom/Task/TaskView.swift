@@ -25,7 +25,9 @@ struct TaskView: View {
         if viewModel.fields.count > 0 {
             Form {
                 ForEach(viewModel.fields, id: \.id) { field in
-                    TaskFieldView(viewModel: TaskFieldViewModel(field: field))
+                    Section(header: Text(getTranslation(dict: field.title)), footer: Text(getTranslation(dict: field.description))) {
+                        TaskFieldView(viewModel: TaskFieldViewModel(field: field))
+                    }
                 }
             }
             .navigationTitle(Text(viewModel.title))
