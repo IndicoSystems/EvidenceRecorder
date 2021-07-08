@@ -73,7 +73,6 @@ struct TaskFieldView: View {
                 }
             case .number:
                 Text(viewModel.answer)
-                    .font(.title)
             case .file:
                 if viewModel.exhibits.count > 0 {
                     ExhibitsView(viewModel: ExhibitsViewModel(exhibits: viewModel.exhibits))
@@ -84,7 +83,7 @@ struct TaskFieldView: View {
             case .time:
                 Text(viewModel.dateString)
             case .layout:
-                Text("Layout")
+                Divider()
             }
         }
     }
