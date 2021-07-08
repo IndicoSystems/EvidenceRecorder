@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  EvidenceRoom
-//
-//  Created by Thomas Swatland on 29/06/2021.
-//
-
 import SwiftUI
 
 struct HomeView: View {
@@ -14,6 +7,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
+                Spacer()
                 NavigationLink(destination: TodayView()) {
                     Text("Today")
                 }
@@ -24,14 +18,19 @@ struct HomeView: View {
                 }
                 Divider()
                     .padding()
-//                NavigationLink(destination: CasesView()) {
-//                    Text("Cases")
-//                }
-//                Divider()
-//                    .padding()
                 NavigationLink(destination: SettingsView()) {
                     Text("Settings")
                 }
+                
+                Spacer()
+                
+                VStack {
+                    Text("Powered by")
+                    Text("Indico Systems AS")
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(.gray)
+                .padding()
             }
             .navigationTitle("Evidence")
             .navigationBarItems(trailing:
@@ -41,15 +40,6 @@ struct HomeView: View {
                             appState.isSignedOut = true
                         }
                     }
-                    
-//                    cloudClient.signOut { ft4Response in
-//                        switch ft4Response.statusCode {
-//                        case 200:
-//                            UserDefaults.standard.setValue(nil, forKey: "token")
-//                        default:
-//                            print("Sign out failed with status:", ft4Response.statusCode)
-//                        }
-//                    }
                 } label: {
                     Image(systemName: "icloud.and.arrow.down.fill")
                 }
