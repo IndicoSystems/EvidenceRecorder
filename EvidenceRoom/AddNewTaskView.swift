@@ -34,19 +34,18 @@ struct AddNewTaskView: View {
     var body: some View {
         Form {
             Section {
-                Text("Add new task")
-                    .font(.largeTitle)
                 TextField("Task name", text: $taskName)
-            }
-            
-            Button("Create task") {
-                if !taskName.isEmpty {
-                    viewModel.createTask(withName: taskName) {
-                        presentationMode.wrappedValue.dismiss()
+                
+                Button("Create task") {
+                    if !taskName.isEmpty {
+                        viewModel.createTask(withName: taskName) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
                 }
             }
         }
+        .navigationTitle(Text("Add new task"))
     }
 }
 

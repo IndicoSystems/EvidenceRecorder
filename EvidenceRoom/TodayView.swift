@@ -31,7 +31,9 @@ struct TodayView: View {
                                     .opacity(appState.tasks.count <= 0 ? 0 : 1)
             )
             .sheet(isPresented: $isAddNewTaskShowing, content: {
-                AddNewTaskView()
+                NavigationView {
+                    AddNewTaskView()
+                }
             })
             if appState.tasks.count <= 0 {
                 VStack {
