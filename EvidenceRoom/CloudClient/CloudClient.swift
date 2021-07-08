@@ -72,7 +72,7 @@ class CloudClient {
 //    }
     
     private func apiRequest(endpoint: Endpoint, payload: Data, completion: @escaping (Result<FT4Response, Error>)->()) {
-        let url = URL(string: "https://\(host)/")!
+        let url = URL(string: "https://\(host.trimmingCharacters(in: .whitespacesAndNewlines))/")!
         var request = URLRequest(url: url.appendingPathComponent(endpoint.rawValue))
         request.httpMethod = HTTPMethod.post.rawValue
         
