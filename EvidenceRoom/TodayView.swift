@@ -26,7 +26,9 @@ struct TodayView: View {
                                             .background(Color.blue)
                                             .foregroundColor(.white)
                                             .cornerRadius(8)
-                                    }).opacity(appState.tasks.count <= 0 ? 0 : 1)
+                                    })
+                                    .padding(.top)
+                                    .opacity(appState.tasks.count <= 0 ? 0 : 1)
             )
             .sheet(isPresented: $isAddNewTaskShowing, content: {
                 AddNewTaskView()
