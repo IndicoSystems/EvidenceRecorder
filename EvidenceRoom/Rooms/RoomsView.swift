@@ -6,15 +6,11 @@ struct RoomsView: View {
     @ObservedObject var appState = AppState.shared
     
     var body: some View {
-        List {
+        Form {
             ForEach(appState.rooms, id: \.id) { room in
                 
                 NavigationLink(destination: RoomView(room: room)) {
-                    Button {
-                        print(room.name)
-                    } label: {
-                        Text(room.name)
-                    }
+                    Text(room.name)
                 }
             }
         }
