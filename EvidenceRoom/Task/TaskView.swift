@@ -28,7 +28,6 @@ struct TaskView: View {
                     TaskFieldView(viewModel: TaskFieldViewModel(field: field))
                 }
             }
-            .padding()
             .navigationTitle(Text(viewModel.title))
         } else {
             Text("No content")
