@@ -2,10 +2,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-    }
-    
     @ObservedObject var appState = AppState.shared
     @State private var isFinishedLoading = false
     
